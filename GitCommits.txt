@@ -3,6 +3,7 @@
  
 
  
+ Identity.Domain > Update Entity class attributes
 
  Identity.Domain > Add 'Model' folder > Add a class named: 'Entity'
  

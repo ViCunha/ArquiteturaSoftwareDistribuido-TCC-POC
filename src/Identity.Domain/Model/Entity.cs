@@ -10,5 +10,7 @@ namespace Identity.Domain.Model
     {
         public Guid Id { get; set; }
 
+        public Boolean isActive { get; private set; }
+
     }
 }
