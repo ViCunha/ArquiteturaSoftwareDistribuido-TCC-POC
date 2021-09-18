@@ -1,16 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using Identity.Domain.Model;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Identity.WebAPI.Controllers
 {
-    public class CustomerController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CustomerController : ControllerBase
     {
-        public IActionResult Index()
+        public async Task<IEnumerable<Customer>> GetAllCustomers()
         {
-            return View();
+            await Task.Factory.StartNew(() => { });
+            return new List<Customer>()
+                {
+                    new Customer() { Id = System.Guid.NewGuid(), isActive = true, Name = "a" }
+                    ,
+                    new Customer() { Id = System.Guid.NewGuid(), isActive = true, Name = "b" }
+                    ,
+                    new Customer() { Id = System.Guid.NewGuid(), isActive = true, Name = "c" }
+                };
         }
     }
 }

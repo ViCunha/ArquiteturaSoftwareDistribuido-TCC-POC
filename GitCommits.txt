@@ -1,7 +1,10 @@
 
 
 
-Identity.WebAPI > Add Customer Controller
+
+Identity.WebAPI > Update CustomerController; Add reference to 'Identity.Domain' project
+
+Identity.WebAPI > Add CustomerController
 
 Identity.WebAPI > Remove WeatherForecast class and Controller 
 
