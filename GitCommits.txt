@@ -1,0 +1,3 @@
+
+
+ Create a blank solution; Add 'notes' folder; Add GitCommit.txt file to 'notes' folder;
