@@ -1,6 +1,12 @@
 
 
+Identity.UnitTests > install-package xunit.runner.visualstudio
 
+Identity.UnitTests > Add XUnit Test project named: Identity.UnitTests;
+
+xAureoDigital-BackEnd-MicroService-Identity > Add 'tests' folder > Add folders 'UnitTests', 'IntegrationTests', and 'EndToEndTests'
+
+#
 
 Identity.WebAPI > Add CustomerController; Update CustomerController; Add reference to 'Identity.Domain' project
 
@@ -20,7 +26,7 @@ Identity.Domain > Add 'Model' folder > Add a class named: 'Entity'
  
 xAureoDigital-BackEnd-MicroService-Identity > Domain folder > Add a Class Libray project named: 'Identity.Domain'
 
-xAureoDigital-BackEnd-MicroService-Identity > Add 'src' folder > Add 'Services', 'Application', 'Domain', 'Infrastructure.General', and 'Infrastructure.Persistence' folder;
+xAureoDigital-BackEnd-MicroService-Identity > Add 'src' folder > Add folders 'Services', 'Application', 'Domain', 'Infrastructure.General', and 'Infrastructure.Persistence' folder;
  
 xAureoDigital-BackEnd-MicroService-Identity > Add 'notes' folder > Add GitCommit.txt file to 'notes' folder;
  
