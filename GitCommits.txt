@@ -1,6 +1,9 @@
 
 
 
+
+Identity.WebAPI > Remove WeatherForecast class and Controller 
+
 Identity.WebAPI > Set as a Stratup project 
 
 xAureoDigital-BackEnd-MicroService-Identity > Services folder > Add a Class Libray project named: 'Identity.WebAPI'
