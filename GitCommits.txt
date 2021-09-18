@@ -1,5 +1,7 @@
 
 
+Identity.UnitTests > Add reference to 'Identity.WebAPI'
+
 Identity.UnitTests > install-package xunit.runner.visualstudio
 
 Identity.UnitTests > Add XUnit Test project named: Identity.UnitTests;
