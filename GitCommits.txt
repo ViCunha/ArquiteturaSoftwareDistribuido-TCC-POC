@@ -3,6 +3,8 @@
  
 
  
+
+ Identity.Domain > Add 'Model' folder > Add a class named: 'Entity'
  
  xAureoDigital-BackEnd-MicroService-Identity > Domain folder > Add a Class Libray project named: 'Identity.Domain'
 
