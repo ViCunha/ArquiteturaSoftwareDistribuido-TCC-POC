@@ -1,6 +1,9 @@
 
 
 
+
+xAureoDigital-BackEnd-MicroService-Identity > Services folder > Add a Class Libray project named: 'Identity.WebAPI'
+
 Identity.Domain > Update 'Customer' class attributes
  
 Identity.Domain > 'Model' folder > Add a class named: 'Customer'
