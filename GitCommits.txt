@@ -1,3 +1,11 @@
 
 
- Create a blank solution; Add 'notes' folder; Add GitCommit.txt file to 'notes' folder;
+ 
+
+
+ xAureoDigital-BackEnd-MicroService-Identity > Add 'src' folder > Add 'Services', 'Application', 'Domain', 'Infrastructure.General', and 'Infrastructure.Persistence' folder;
+ 
+ xAureoDigital-BackEnd-MicroService-Identity > Add 'notes' folder > Add GitCommit.txt file to 'notes' folder;
+ 
+ Create a blank solution named: 'xAureoDigital-BackEnd-MicroService-Identity';
+ 

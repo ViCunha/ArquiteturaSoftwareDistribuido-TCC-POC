@@ -3,14 +3,33 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{6AB5F42D-F757-4CCB-9F00-7634BDAFCC22}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "notes", "notes", "{6AB5F42D-F757-4CCB-9F00-7634BDAFCC22}"
 	ProjectSection(SolutionItems) = preProject
 		GitCommits.txt = GitCommits.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FF84C7C3-7F2E-49D2-A7CB-30DE20AB3794}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{D5CD828E-A5B6-427A-824C-B9BDBD8617E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{B61BEE43-90BF-4DE0-B609-C960EC2E795B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{8F4012F3-C759-4577-80BA-E5920AC5425F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure.General", "Infrastructure.General", "{F732BBFD-2048-4995-8200-54BDB79DE149}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure.Persistence", "Infrastructure.Persistence", "{40DA11BD-DC3C-45CD-B9BC-403E1AAE84CA}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D5CD828E-A5B6-427A-824C-B9BDBD8617E0} = {FF84C7C3-7F2E-49D2-A7CB-30DE20AB3794}
+		{B61BEE43-90BF-4DE0-B609-C960EC2E795B} = {FF84C7C3-7F2E-49D2-A7CB-30DE20AB3794}
+		{8F4012F3-C759-4577-80BA-E5920AC5425F} = {FF84C7C3-7F2E-49D2-A7CB-30DE20AB3794}
+		{F732BBFD-2048-4995-8200-54BDB79DE149} = {FF84C7C3-7F2E-49D2-A7CB-30DE20AB3794}
+		{40DA11BD-DC3C-45CD-B9BC-403E1AAE84CA} = {FF84C7C3-7F2E-49D2-A7CB-30DE20AB3794}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {79099CD0-2F00-4A1F-8C7B-57DB8357B245}
