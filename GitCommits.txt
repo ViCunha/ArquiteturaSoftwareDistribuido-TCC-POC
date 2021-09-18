@@ -2,6 +2,9 @@
 
  
 
+ 
+ 
+ xAureoDigital-BackEnd-MicroService-Identity > Domain folder > Add a Class Libray project named: 'Identity.Domain'
 
  xAureoDigital-BackEnd-MicroService-Identity > Add 'src' folder > Add 'Services', 'Application', 'Domain', 'Infrastructure.General', and 'Infrastructure.Persistence' folder;
  
