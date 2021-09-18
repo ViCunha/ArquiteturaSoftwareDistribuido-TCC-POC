@@ -1,4 +1,5 @@
 ﻿using Identity.Domain.Model;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,17 +10,22 @@ namespace Identity.WebAPI.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        public async Task<IEnumerable<Customer>> GetAllCustomers()
+        [HttpGet]
+        [ProducesResponseType(typeof(Customer), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<Customer>>> GetAllCustomers()
         {
             await Task.Factory.StartNew(() => { });
-            return new List<Customer>()
-                {
-                    new Customer() { Id = System.Guid.NewGuid(), isActive = true, Name = "a" }
-                    ,
-                    new Customer() { Id = System.Guid.NewGuid(), isActive = true, Name = "b" }
-                    ,
-                    new Customer() { Id = System.Guid.NewGuid(), isActive = true, Name = "c" }
-                };
+
+            return 
+                Ok(
+                    new List<Customer>()
+                    {
+                        new Customer() { Id = System.Guid.NewGuid(), isActive = true, Name = "a" }
+                        ,
+                        new Customer() { Id = System.Guid.NewGuid(), isActive = true, Name = "b" }
+                        ,
+                        new Customer() { Id = System.Guid.NewGuid(), isActive = true, Name = "c" }
+                });
         }
     }
 }
