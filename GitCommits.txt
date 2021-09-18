@@ -1,17 +1,19 @@
 
 
- 
 
+Identity.Domain > Update 'Customer' class attributes
  
- Identity.Domain > Update Entity class attributes
+Identity.Domain > 'Model' folder > Add a class named: 'Customer'
+ 
+Identity.Domain > Update Entity class attributes
 
- Identity.Domain > Add 'Model' folder > Add a class named: 'Entity'
+Identity.Domain > Add 'Model' folder > Add a class named: 'Entity'
  
- xAureoDigital-BackEnd-MicroService-Identity > Domain folder > Add a Class Libray project named: 'Identity.Domain'
+xAureoDigital-BackEnd-MicroService-Identity > Domain folder > Add a Class Libray project named: 'Identity.Domain'
 
- xAureoDigital-BackEnd-MicroService-Identity > Add 'src' folder > Add 'Services', 'Application', 'Domain', 'Infrastructure.General', and 'Infrastructure.Persistence' folder;
+xAureoDigital-BackEnd-MicroService-Identity > Add 'src' folder > Add 'Services', 'Application', 'Domain', 'Infrastructure.General', and 'Infrastructure.Persistence' folder;
  
- xAureoDigital-BackEnd-MicroService-Identity > Add 'notes' folder > Add GitCommit.txt file to 'notes' folder;
+xAureoDigital-BackEnd-MicroService-Identity > Add 'notes' folder > Add GitCommit.txt file to 'notes' folder;
  
- Create a blank solution named: 'xAureoDigital-BackEnd-MicroService-Identity';
+Create a blank solution named: 'xAureoDigital-BackEnd-MicroService-Identity';
  
