@@ -1,5 +1,16 @@
 
 
+
+Partial convertion of  'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects' from Identity.UnitTests to Identity.IntegrationTests
+
+Identity.IntegrationTests > Add reference to 'Identity.Domain' project
+
+Identity.IntegrationTests > Add reference to 'Identity.WebAPI'
+
+Identity.IntegrationTests > install-package xunit.runner.visualstudio
+
+xAureoDigital-BackEnd-MicroService-Identity > Add on ~/tests/Identity.IntegrationTests a XUnit Test project named: Identity.IntegrationTests;
+
 Identity.WebAPI > Invoke IGetAllCustomersQuery method to get all customers / Identity.Application > Update the class GetAllCustomersQuery and an interface IGetAllCustomersQuery
 
 Identity.WebAPI > Add a Contructor with IGetAllCustomersQuery parameter for DI
@@ -35,7 +46,7 @@ Identity.UnitTests > Add reference to 'Identity.WebAPI'
 
 Identity.UnitTests > install-package xunit.runner.visualstudio
 
-Identity.UnitTests > Add XUnit Test project named: Identity.UnitTests;
+xAureoDigital-BackEnd-MicroService-Identity > > Add XUnit Test project named: Identity.UnitTests;
 
 xAureoDigital-BackEnd-MicroService-Identity > Add 'tests' folder > Add folders 'UnitTests', 'IntegrationTests', and 'EndToEndTests'
 
