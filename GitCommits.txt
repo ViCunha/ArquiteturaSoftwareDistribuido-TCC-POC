@@ -1,6 +1,5 @@
 
 
-
 Identity.Application > Add reference to 'Identity.Domain' project
 
 Identity.Application > Add on ~/CQRS/Queires a class GetAllCustomersQuery and an interface IGetAllCustomersQuery
