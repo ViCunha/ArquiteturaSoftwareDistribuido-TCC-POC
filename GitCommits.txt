@@ -4,6 +4,10 @@ Identity.Application > Install-Package Microsoft.Extensions.DependencyInjection.
 
 Identity.Application > Install-Package Microsoft.Extensions.Configuration.Abstractions
 
+@
+
+Identity.IntegrationTests > install-package moq.automock / Version 02 of 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects'
+
 Version 01 of 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects'
 
 Identity.IntegrationTests > install-package moq

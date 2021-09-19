@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
 using System;
+using Moq.AutoMock;
 
 namespace Identity.IntegrationTests
 {
@@ -18,10 +19,11 @@ namespace Identity.IntegrationTests
         public async Task CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects()
         {
             //Arrange
-            var getAllCustomersQuery = new Mock<IGetAllCustomersQuery>();
-            getAllCustomersQuery.Setup(x => x.GetAllCustomers())
-                                .Returns(GetAllCustomers());
-            var controller = new CustomerController(getAllCustomersQuery.Object);
+            var mocker = new AutoMocker();
+            var controller = mocker.CreateInstance<CustomerController>();
+            mocker.GetMock<IGetAllCustomersQuery>()
+                  .Setup(x => x.GetAllCustomers())
+                  .Returns(GetAllCustomers());
 
             //Act
             var response = await controller.GetAllCustomers();
@@ -30,13 +32,13 @@ namespace Identity.IntegrationTests
 
             //Assert
             Assert.True(statuscodeOk200Result != null);
-            getAllCustomersQuery.Verify(c => c.GetAllCustomers(), Times.Once);
+            mocker.GetMock<IGetAllCustomersQuery>().Verify(c => c.GetAllCustomers(), Times.Once);
             Assert.True(resultObject.Result.Count() == 3);
 
             async static Task<T> GetCollectionResultContent<T>(ActionResult<T> result)
             {
                 await Task.Factory.StartNew(() => { });
-                return (T)((ObjectResult)result.Result).Value; 
+                return (T)((ObjectResult)result.Result).Value;
             }
 
             async static Task<IEnumerable<Customer>> GetAllCustomers()
