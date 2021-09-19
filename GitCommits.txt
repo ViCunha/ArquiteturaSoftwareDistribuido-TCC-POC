@@ -4,12 +4,13 @@ Identity.Application > Install-Package Microsoft.Extensions.DependencyInjection.
 
 Identity.Application > Install-Package Microsoft.Extensions.Configuration.Abstractions
 
+Version 01 of 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects'
 
 Identity.IntegrationTests > install-package moq
 
 Rename 'Indentity.UnitTests' to 'Identity.UnitTests'
 
-Partial convertion of  'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects' from Identity.UnitTests to Identity.IntegrationTests
+Partial convertion of 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects' from Identity.UnitTests to Identity.IntegrationTests
 
 Identity.IntegrationTests > Add reference to 'Identity.Domain' project
 
