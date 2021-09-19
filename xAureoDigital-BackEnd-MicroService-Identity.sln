@@ -20,9 +20,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure.General", "I
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure.Persistence", "Infrastructure.Persistence", "{40DA11BD-DC3C-45CD-B9BC-403E1AAE84CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Domain", "src\Identity.Domain\Identity.Domain.csproj", "{BEC6B763-51ED-4C8D-A882-B80567B99C73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.Domain", "src\Identity.Domain\Identity.Domain.csproj", "{BEC6B763-51ED-4C8D-A882-B80567B99C73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.WebAPI", "src\Identity.WebAPI\Identity.WebAPI.csproj", "{0E0CFA91-0B95-45C8-8B66-ADD524B5CD60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.WebAPI", "src\Identity.WebAPI\Identity.WebAPI.csproj", "{0E0CFA91-0B95-45C8-8B66-ADD524B5CD60}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AFDA0212-E3A8-4565-8AF7-8AC39EF673B5}"
 EndProject
@@ -32,11 +32,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTests", "Integra
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EndToEndTests", "EndToEndTests", "{10C75318-EB21-439E-A8D3-29A0D00D5C17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indentity.UnitTests", "tests\Indentity.UnitTests\Indentity.UnitTests.csproj", "{01215884-9E2C-43F0-91B5-C0C6AA0D52EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.UnitTests", "tests\Indentity.UnitTests\Identity.UnitTests.csproj", "{01215884-9E2C-43F0-91B5-C0C6AA0D52EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Application", "src\Identity.Application\Identity.Application.csproj", "{CE4465D0-4F19-4973-BE9D-D29FF45C24B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.Application", "src\Identity.Application\Identity.Application.csproj", "{CE4465D0-4F19-4973-BE9D-D29FF45C24B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.IntegrationTests", "tests\Identity.IntegrationTests\Identity.IntegrationTests.csproj", "{7E5B2C57-13F5-4D52-983B-8ED204240697}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.IntegrationTests", "tests\Identity.IntegrationTests\Identity.IntegrationTests.csproj", "{7E5B2C57-13F5-4D52-983B-8ED204240697}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

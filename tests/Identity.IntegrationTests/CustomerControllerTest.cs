@@ -10,15 +10,17 @@ namespace Identity.IntegrationTests
         [Fact]
         public async Task CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects()
         {
-            //    //Arrange
+            //Arrange
+
             //    var controller = new CustomerController();
 
-            //    //Act
+            //Act
             //    var response = await controller.GetAllCustomers();
             //    var statuscodeOk200Result = response.Result as OkObjectResult;
             //    var resultObject = GetCollectionResultContent<IEnumerable<Customer>>(statuscodeOk200Result);
 
-            //    //Assert
+            //Assert
+
             //    Assert.True(statuscodeOk200Result != null);
             //    Assert.True(resultObject.Count() > 0);
             //}

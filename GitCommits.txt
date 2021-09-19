@@ -1,5 +1,13 @@
 
 
+Identity.Application > Install-Package Microsoft.Extensions.DependencyInjection.Abstractions
+
+Identity.Application > Install-Package Microsoft.Extensions.Configuration.Abstractions
+
+
+Identity.IntegrationTests > install-package moq
+
+Rename 'Indentity.UnitTests' to 'Identity.UnitTests'
 
 Partial convertion of  'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects' from Identity.UnitTests to Identity.IntegrationTests
 
