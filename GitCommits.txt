@@ -1,6 +1,8 @@
 
 
 
+Identity.Application > Add 'CQRS' folder > Add 'Queries' folder; Add 'Commands' folder;
+
 xAureoDigital-BackEnd-MicroService-Identity > 'Application' folder > Add a Class Libray project named: 'Identity.Application'
 
 Identity.UnitTests > Rename fact 'GetAllCustomers_CallTheMethod_ExpectedResultOkAndEnumerableOfObjects' to 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects'
