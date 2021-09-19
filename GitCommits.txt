@@ -1,6 +1,6 @@
 
 
-Identity.Application > Add 'Configure' folder;
+Identity.Application > Add 'Configure' folder > Add a class 'ApplicationServiceCollectionExtensions';
 
 Identity.Application > Add 'CQRS' folder > Add 'Queries' folder; Add 'Commands' folder;
 
