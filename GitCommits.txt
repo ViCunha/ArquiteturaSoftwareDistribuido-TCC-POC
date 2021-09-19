@@ -1,5 +1,7 @@
 
 
+Identity.WebAPI > Add reference to 'Identity.Application'
+
 Identity.Application > Add 'Configure' folder > Add a class 'ApplicationServiceCollectionExtensions';
 
 Identity.Application > Add 'CQRS' folder > Add 'Queries' folder; Add 'Commands' folder;
