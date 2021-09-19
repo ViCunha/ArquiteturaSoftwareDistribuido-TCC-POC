@@ -1,5 +1,13 @@
 
 
+Identity.UnitTests > Add reference to 'Identity.Domain' project
+
++ https://docs.microsoft.com/pt-br/dotnet/core/testing/
++ https://docs.microsoft.com/pt-br/aspnet/core/mvc/controllers/testing?view=aspnetcore-5.0
++ https://docs.microsoft.com/pt-br/aspnet/core/test/integration-tests?view=aspnetcore-5.0
++ http://www.macoratti.net/19/10/cshp_unitestmoq1.htm
++ http://www.macoratti.net/19/09/aspc_utst2.htm
+
 Identity.UnitTests > Add reference to 'Identity.WebAPI'
 
 Identity.UnitTests > install-package xunit.runner.visualstudio
