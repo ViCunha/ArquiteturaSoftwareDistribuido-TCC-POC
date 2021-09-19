@@ -1,4 +1,5 @@
-﻿using Identity.Domain.Model;
+﻿using Identity.Application.CQRS.Queries;
+using Identity.Domain.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -10,6 +11,13 @@ namespace Identity.WebAPI.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
+        private readonly IGetAllCustomersQuery _getAllCustomersQuery;
+
+        public CustomerController(IGetAllCustomersQuery getAllCustomersQuery)
+        {
+            this._getAllCustomersQuery = getAllCustomersQuery;
+        }
+
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Customer))]
         public async Task<ActionResult<IEnumerable<Customer>>> GetAllCustomers()
