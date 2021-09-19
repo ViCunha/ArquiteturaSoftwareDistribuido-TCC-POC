@@ -11,7 +11,7 @@ namespace Identity.WebAPI.Controllers
     public class CustomerController : ControllerBase
     {
         [HttpGet]
-        [ProducesResponseType(typeof(Customer), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Customer))]
         public async Task<ActionResult<IEnumerable<Customer>>> GetAllCustomers()
         {
             await Task.Factory.StartNew(() => { });

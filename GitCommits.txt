@@ -1,4 +1,5 @@
 
+Identity.UnitTests > Add fact 'GetAllCustomers_CallTheMethod_ExpectedResultOkAndEnumerableOfObjects'
 
 Identity.UnitTests > Add reference to 'Identity.Domain' project
 
@@ -7,6 +8,7 @@ Identity.UnitTests > Add reference to 'Identity.Domain' project
 + https://docs.microsoft.com/pt-br/aspnet/core/test/integration-tests?view=aspnetcore-5.0
 + http://www.macoratti.net/19/10/cshp_unitestmoq1.htm
 + http://www.macoratti.net/19/09/aspc_utst2.htm
++ https://stackoverflow.com/questions/51489111/how-to-unit-test-with-actionresultt
 
 Identity.UnitTests > Add reference to 'Identity.WebAPI'
 

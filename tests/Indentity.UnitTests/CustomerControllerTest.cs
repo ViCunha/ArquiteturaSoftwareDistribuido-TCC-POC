@@ -1,6 +1,8 @@
 using Identity.Domain.Model;
 using Identity.WebAPI.Controllers;
-using System;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -15,10 +17,18 @@ namespace Indentity.UnitTests
             var controller = new CustomerController();
 
             //Act
-            var prossessing = await controller.GetAllCustomers();
+            var response = await controller.GetAllCustomers();
+            var statuscodeOk200Result = response.Result as OkObjectResult;
+            var resultObject = GetCollectionResultContent<IEnumerable<Customer>>(statuscodeOk200Result);
 
             //Assert
-            Assert.True(prossessing.Result.GetType(), Customer);
+            Assert.True(statuscodeOk200Result != null);
+            Assert.True(resultObject.Count() > 0);
+        }
+
+        private static T GetCollectionResultContent<T>(ActionResult<T> result)
+        {
+            return (T)((ObjectResult)result.Result).Value;
         }
     }
 }
