@@ -1,5 +1,7 @@
 
 
+Identity.WebAPI > Invoke 'ApplicationServiceCollectionExtensions' on the Startup class
+
 Identity.WebAPI > Add reference to 'Identity.Application'
 
 Identity.Application > Add 'Configure' folder > Add a class 'ApplicationServiceCollectionExtensions';

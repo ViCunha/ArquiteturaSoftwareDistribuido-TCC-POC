@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,8 @@ namespace Identity.Application.Configure
 {
     public static class ApplicationServiceCollectionExtensions
     {
-        public static IServiceCollection AddApplicationServiceCollection(this IServiceCollection services)
+        public static IServiceCollection AddApplicationServiceCollection(this IServiceCollection services, IConfiguration configuration)
         {
-
             return services;
         }
     }
