@@ -1,10 +1,11 @@
 ﻿using Identity.Domain.Model;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Identity.Application.CQRS.Queries
 {
     public interface IGetAllCustomersQuery
     {
-        IEnumerable<Customer> GetAllCustomers();
+        Task<IEnumerable<Customer>> GetAllCustomers();
     }
 }

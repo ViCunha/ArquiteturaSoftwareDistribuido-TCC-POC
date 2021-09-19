@@ -9,16 +9,19 @@ namespace Identity.Application.CQRS.Queries
 {
     public class GetAllCustomersQuery : IGetAllCustomersQuery
     {
-        public IEnumerable<Customer> GetAllCustomers()
+        public async Task<IEnumerable<Customer>> GetAllCustomers()
         {
-            return new List<Customer>()
-            {
-                new Customer() { Id = System.Guid.NewGuid(), isActive = true, Name = "a" }
+            return await Task.Factory.StartNew
+                (
+                    () => new List<Customer>()
+                    {
+                        new Customer() { Id = Guid.NewGuid(), isActive = true, Name = "a" }
                         ,
-                new Customer() { Id = System.Guid.NewGuid(), isActive = true, Name = "b" }
+                        new Customer() { Id = Guid.NewGuid(), isActive = true, Name = "b" }
                         ,
-                new Customer() { Id = System.Guid.NewGuid(), isActive = true, Name = "c" }
-            };
+                        new Customer() { Id = Guid.NewGuid(), isActive = true, Name = "c" }
+                    }
+                );
         }
     }
 }

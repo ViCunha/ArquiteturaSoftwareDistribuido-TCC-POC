@@ -1,5 +1,7 @@
 
 
+Identity.WebAPI > Invoke IGetAllCustomersQuery method to get all customers / Identity.Application > Update the class GetAllCustomersQuery and an interface IGetAllCustomersQuery
+
 Identity.WebAPI > Add a Contructor with IGetAllCustomersQuery parameter for DI
 
 Identity.Application > Add reference to 'Identity.Domain' project

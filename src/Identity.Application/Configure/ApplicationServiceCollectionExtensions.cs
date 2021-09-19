@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Identity.Application.CQRS.Queries;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,9 @@ namespace Identity.Application.Configure
     {
         public static IServiceCollection AddApplicationServiceCollection(this IServiceCollection services, IConfiguration configuration)
         {
+            // Dependency Injection
+            services.AddScoped<IGetAllCustomersQuery, GetAllCustomersQuery>();
+
             return services;
         }
     }

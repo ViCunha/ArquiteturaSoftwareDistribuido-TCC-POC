@@ -22,18 +22,7 @@ namespace Identity.WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Customer))]
         public async Task<ActionResult<IEnumerable<Customer>>> GetAllCustomers()
         {
-            await Task.Factory.StartNew(() => { });
-
-            return 
-                Ok(
-                    new List<Customer>()
-                    {
-                        new Customer() { Id = System.Guid.NewGuid(), isActive = true, Name = "a" }
-                        ,
-                        new Customer() { Id = System.Guid.NewGuid(), isActive = true, Name = "b" }
-                        ,
-                        new Customer() { Id = System.Guid.NewGuid(), isActive = true, Name = "c" }
-                });
+            return Ok(await _getAllCustomersQuery.GetAllCustomers());
         }
     }
 }
