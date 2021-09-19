@@ -11,7 +11,7 @@ namespace Indentity.UnitTests
     public class CustomerControllerTest
     {
         [Fact]
-        public async Task GetAllCustomers_CallTheMethod_ExpectedResultOkAndEnumerableOfObjects()
+        public async Task CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects()
         {
             //Arrange
             var controller = new CustomerController();

@@ -1,4 +1,6 @@
 
+Identity.UnitTests > Rename fact 'GetAllCustomers_CallTheMethod_ExpectedResultOkAndEnumerableOfObjects' to 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects'
+
 Identity.UnitTests > Add fact 'GetAllCustomers_CallTheMethod_ExpectedResultOkAndEnumerableOfObjects'
 
 Identity.UnitTests > Add reference to 'Identity.Domain' project
