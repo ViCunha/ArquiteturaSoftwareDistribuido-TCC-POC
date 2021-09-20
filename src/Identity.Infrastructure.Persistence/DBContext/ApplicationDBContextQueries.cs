@@ -12,11 +12,6 @@ namespace Identity.Infrastructure.Persistence.DBContext
     {
         public DbSet<Customer> Customers { get; set; }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    base.OnConfiguring(optionsBuilder);
-        //}
-
         public ApplicationDBContextQueries(DbContextOptions<ApplicationDBContextQueries> options)
             : base(options)
         {
