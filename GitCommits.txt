@@ -1,12 +1,7 @@
 
 
 
-
-CustomerRepository that implements ICustomerRepository that inheriting from IRepository; 
-
-@@
-
-
+Identity.WebAPI > Install-package Microsoft.EntityFrameworkCore.Design
 
 @
 
