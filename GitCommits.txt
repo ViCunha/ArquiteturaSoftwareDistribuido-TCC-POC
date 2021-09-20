@@ -15,9 +15,11 @@ Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkC
 
 Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore
 
-Identity.Infrastructure.Persistence > Add 'Context' folder > Add 'ApplicationDBContext class 
+@@
 
 @
+
+Identity.Infrastructure.Persistence > Add 'Context' folder > Add 'ApplicationDBContext class 
 
 Identity.WebAPI > Set the connectingString in the Startup class
 
