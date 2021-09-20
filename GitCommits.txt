@@ -7,6 +7,13 @@ Identity.Infrastructure.Persistence > Add Repository class inheriting  from IRep
 Identity.Infrastructure.Persistence > Update 'ApplicationDBContext' class 
 
 
+Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore
+
+Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore
+
+Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore.Design
+
+Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore
 
 Identity.Infrastructure.Persistence > Add 'Context' folder > Add 'ApplicationDBContext class 
 
