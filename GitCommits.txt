@@ -4,7 +4,7 @@ Identity.Infrastructure.Persistence > Add UnitOfWork class inheriting  from IUni
 
 Identity.Infrastructure.Persistence > Add Repository class inheriting  from IRepository
 
-Identity.Infrastructure.Persistence > Update 'ApplicationDBContext' class 
+Identity.Infrastructure.Persistence > Update 'ApplicationDBContext' class;  Add reference to 'Identity.Domain' project
 
 
 @@
