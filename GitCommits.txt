@@ -8,9 +8,9 @@ CustomerRepository that implements ICustomerRepository that inheriting from IRep
 
 
 
-Identity.Infrastructure.Persistence > Add 'Repositories' folder > Add RepositoryCustomer class and extract IRepositoryCustomer interface; Update RepositoryCustomer
-
 @
+
+Identity.Infrastructure.Persistence > Add 'Repositories' folder > Add RepositoryCustomer class and extract IRepositoryCustomer interface; Update RepositoryCustomer / Identity.Infrastructure.Persistence > Upddate InfrastructurePersistenceServiceCollectionExtensions
 
 Identity.Infrastructure.Persistence > Add 'UnitOfWork' folder > Add UnitOfWork class inheriting from IUnitOfWork
 

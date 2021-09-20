@@ -1,7 +1,9 @@
-﻿using Identity.Infrastructure.Persistence.DBContext;
+﻿using Identity.Domain.Interfaces;
+using Identity.Infrastructure.Persistence.DBContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Identity.Infrastructure.Persistence.UnitOfWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +17,13 @@ namespace Identity.Infrastructure.Persistence.Configure
         public static IServiceCollection AddInfrastructurePersistenceServiceCollection(this IServiceCollection services, IConfiguration configuration)
         {
 
-            // Dependecy Injection 
+            
+            // Dependency Injection 
+            {
+                services.AddScoped<IUnitOfWork, UnitOfWork.UnitOfWork>();
+            }
+
+            // DbContext 
             {
                 services.AddDbContext<ApplicationDBContextQueries>
                     (options => options.UseSqlServer(configuration.GetConnectionString("ApplicationDbContextQueries")));
