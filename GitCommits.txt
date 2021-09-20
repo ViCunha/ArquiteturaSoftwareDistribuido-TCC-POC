@@ -1,9 +1,11 @@
 
 
 
-Identity.WebAPI > Install-package Microsoft.EntityFrameworkCore.Design
+Identity.Infrastructure.Persistence > add-migration 'first migration' -Context  ApplicationDBContextQueries -Output ~/Migrations/CQRS/Queries
 
 @
+
+Identity.WebAPI > Install-package Microsoft.EntityFrameworkCore.Design
 
 Identity.Infrastructure.Persistence > Add 'Repositories' folder > Add RepositoryCustomer class and extract IRepositoryCustomer interface; Update RepositoryCustomer / Identity.Infrastructure.Persistence > Upddate InfrastructurePersistenceServiceCollectionExtensions
 

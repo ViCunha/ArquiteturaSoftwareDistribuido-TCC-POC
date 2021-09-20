@@ -1,4 +1,5 @@
 ﻿using Identity.Application.CQRS.Queries;
+using Identity.Infrastructure.Persistence.Configure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -13,8 +14,12 @@ namespace Identity.Application.Configure
     {
         public static IServiceCollection AddApplicationServiceCollection(this IServiceCollection services, IConfiguration configuration)
         {
-            // Dependency Injection
+            // Dependency Injection # Local
             services.AddScoped<IGetAllCustomersQuery, GetAllCustomersQuery>();
+
+
+            // Dependency Injection # Identity.Infrastructure.Persistence
+            InfrastructurePersistenceServiceCollectionExtensions.AddInfrastructurePersistenceServiceCollection(services, configuration);
 
             return services;
         }
