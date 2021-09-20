@@ -1,9 +1,9 @@
 
 
 
-
-
 @
+
+Identity.Infrastructure.Persistence > update-database -Context ApplicationDBContextQueries
 
 Identity.Infrastructure.Persistence > add-migration 'first migration' -Context ApplicationDBContextQueries -Output ~/Migrations/CQRS/Queries
 
