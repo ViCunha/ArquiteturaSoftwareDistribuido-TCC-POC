@@ -1,16 +1,22 @@
 
 
+
+
+Identity.Domain > Add 'Interface' folder > Add IRepository interface; Add IUnitOfWork interface
+
+@
+
+Identity.Domain > 'Model' folder to 'Models'
+
 Identity.Application > Install-Package Microsoft.Extensions.DependencyInjection.Abstractions
 
 Identity.Application > Install-Package Microsoft.Extensions.Configuration.Abstractions
 
-@
-
 + It is better to start with creation of a record using HttpPost
 
-Identity.IntegrationTests > install-package moq.automock / New version of 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects'
+Identity.IntegrationTests > install-package moq.automock / Update 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects'
 
-New version of 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects'
+Update 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects'
 
 Identity.IntegrationTests > install-package moq
 

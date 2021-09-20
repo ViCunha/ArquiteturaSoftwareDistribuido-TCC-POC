@@ -1,4 +1,4 @@
-using Identity.Domain.Model;
+using Identity.Domain.Models;
 using Identity.WebAPI.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;

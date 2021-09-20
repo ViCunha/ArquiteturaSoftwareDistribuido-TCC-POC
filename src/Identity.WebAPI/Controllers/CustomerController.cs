@@ -1,5 +1,5 @@
 ﻿using Identity.Application.CQRS.Queries;
-using Identity.Domain.Model;
+using Identity.Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;

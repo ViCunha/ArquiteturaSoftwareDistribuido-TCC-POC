@@ -1,4 +1,4 @@
-﻿using Identity.Domain.Model;
+﻿using Identity.Domain.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

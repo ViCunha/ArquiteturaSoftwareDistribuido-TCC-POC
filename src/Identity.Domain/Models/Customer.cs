@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Identity.Domain.Model
+namespace Identity.Domain.Models
 {
     public class Customer : Entity 
     {

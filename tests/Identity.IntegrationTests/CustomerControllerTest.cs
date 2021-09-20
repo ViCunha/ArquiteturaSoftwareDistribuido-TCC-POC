@@ -1,7 +1,6 @@
 using Identity.Application.CQRS.Queries;
-using Identity.Domain.Model;
+using Identity.Domain.Models;
 using Identity.WebAPI.Controllers;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using System.Linq;
