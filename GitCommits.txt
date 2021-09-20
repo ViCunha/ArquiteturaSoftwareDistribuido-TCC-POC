@@ -11,13 +11,13 @@ Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkC
 
 Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore
 
-Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore.Design
-
-Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore
-
 @@
 
+Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore.Design
+
 @
+
+Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore
 
 Identity.Infrastructure.Persistence > Add 'Context' folder > Add 'ApplicationDBContext class 
 
