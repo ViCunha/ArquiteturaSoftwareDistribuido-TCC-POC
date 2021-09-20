@@ -1,17 +1,20 @@
 
 
-Identity.Infrastructure.Persistence > Add UnitOfWork class inheriting  from IUnitOfWork
+
 
 CustomerRepository that implements ICustomerRepository that inheriting from IRepository; 
 
 @@
 
+Identity.Infrastructure.Persistence > Add 'UnitOfWork' folder > Add UnitOfWork class inheriting from IUnitOfWork
 
-
-
+Identity.Infrastructure.Persistence > Add 'Repositories' folder > Add RepositoryCustomer 
 
 @
 
+
+
+Identity.Infrastructure.Persistence > Add Repository class that implements IRepository 
 
 Identity.Infrastructure.Persistence > Update 'ApplicationDBContext' class;  Add reference to 'Identity.Domain' project
 

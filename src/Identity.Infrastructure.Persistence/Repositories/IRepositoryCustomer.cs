@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace Identity.Infrastructure.Persistence.Repositories
 {
-    public interface IRepositoryCustomer : IRepository<Customer>
+    public interface IRepositoryCustomer 
     {
+        Task<IEnumerable<Customer>> GetAllCustomers();
     }
 }
