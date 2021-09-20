@@ -8,10 +8,15 @@ Identity.Infrastructure.Persistence > Update 'ApplicationDBContext' class
 
 xAureoDigital-BackEnd-MicroService-Identity > Set the connectingString in the Startup class
 
-Identity.Infrastructure.Persistence > Add 'Configure' folder > Add a class 'InfrastructurePersistenceServiceCollectionExtensions';
+
 
 
 Identity.Infrastructure.Persistence > Add 'Context' folder > Add 'ApplicationDBContext class 
+
+
+Identity.Application > Install-Package Microsoft.Extensions.DependencyInjection.Abstractions
+
+Identity.Infrastructure.Persistence > Add 'Configure' folder > Add a class 'InfrastructurePersistenceServiceCollectionExtensions' > Update 'InfrastructurePersistenceServiceCollectionExtensions';
 
 @
 
