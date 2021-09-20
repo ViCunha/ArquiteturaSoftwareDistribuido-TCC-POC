@@ -1,12 +1,23 @@
 
 
+Identity.Infrastructure.Persistence > Add UnitOfWork class inheriting  from IUnitOfWork
+
+Identity.Infrastructure.Persistence > Add Repository class inheriting  from IRepository
+
+Identity.Infrastructure.Persistence > Update 'ApplicationDBContext' class 
+
+xAureoDigital-BackEnd-MicroService-Identity > Set the connectingString in the Startup class
+
+Identity.Infrastructure.Persistence > Add 'Configure' folder > Add a class 'InfrastructurePersistenceServiceCollectionExtensions';
 
 
-
+Identity.Infrastructure.Persistence > Add 'Context' folder > Add 'ApplicationDBContext class 
 
 @
 
+xAureoDigital-BackEnd-MicroService-Identity > 'Infrastructure.Persistence' folder > Add a Class Libray project named: 'Identity.Infrastructure.Persistence'
 
+Identity.Domain > Add 'Interfaces' folder > Add IRepository interface; Add IUnitOfWork interface
 
 Identity.Domain > 'Model' folder to 'Models'
 
