@@ -2,9 +2,11 @@
 
 
 
-Identity.Domain > Add 'Interface' folder > Add IRepository interface; Add IUnitOfWork interface
+
 
 @
+
+
 
 Identity.Domain > 'Model' folder to 'Models'
 
