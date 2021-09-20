@@ -9,13 +9,17 @@ Identity.Infrastructure.Persistence > Update 'ApplicationDBContext' class
 
 Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore.Tools
 
-Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore.SqlServer
 
-Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore.InMemory
+
+
 
 @@
 
 @
+
+Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore.SqlServer
+
+Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore.InMemory
 
 Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore.Design
 
