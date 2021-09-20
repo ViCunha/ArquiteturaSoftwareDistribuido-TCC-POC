@@ -6,19 +6,13 @@ Identity.Infrastructure.Persistence > Add Repository class inheriting  from IRep
 
 Identity.Infrastructure.Persistence > Update 'ApplicationDBContext' class 
 
-xAureoDigital-BackEnd-MicroService-Identity > Set the connectingString in the Startup class
-
-
 
 
 Identity.Infrastructure.Persistence > Add 'Context' folder > Add 'ApplicationDBContext class 
 
-
-
-
-
-
 @
+
+Identity.WebAPI > Set the connectingString in the Startup class
 
 Identity.Infrastructure.Persistence > Add 'Configure' folder > Add a class 'InfrastructurePersistenceServiceCollectionExtensions' > Update 'InfrastructurePersistenceServiceCollectionExtensions';
 
