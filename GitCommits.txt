@@ -1,9 +1,11 @@
 
 
 
-Identity.Infrastructure.Persistence > add-migration 'first migration' -Context  ApplicationDBContextQueries -Output ~/Migrations/CQRS/Queries
+
 
 @
+
+Identity.Infrastructure.Persistence > add-migration 'first migration' -Context ApplicationDBContextQueries -Output ~/Migrations/CQRS/Queries
 
 Identity.WebAPI > Install-package Microsoft.EntityFrameworkCore.Design
 
