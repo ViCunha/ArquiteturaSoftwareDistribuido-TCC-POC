@@ -3,6 +3,8 @@
 
 @
 
+Identity.Infrastructure.Persistence > Update Repository class 
+
 xAureoDigital-BackEnd-MicroService-Identity > Update the 'RepositoryCustomer' to 'PersistenceServicesCustomer'
 
 Identity.Infrastructure.Persistence > update-database -Context ApplicationDBContextQueries

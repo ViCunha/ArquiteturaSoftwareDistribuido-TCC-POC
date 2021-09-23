@@ -116,6 +116,7 @@ namespace Identity.Infrastructure.Persistence.Repositories
         public void Update(T entity)
         {
             _dbSet.Attach(entity);
+            _context.Entry<T>(entity).State = EntityState.Modified;
 
         }
 
@@ -125,8 +126,7 @@ namespace Identity.Infrastructure.Persistence.Repositories
                     (
                         () =>
                         {
-                            _dbSet.Attach(entity);
-                            _context.Entry<T>(entity).State = EntityState.Modified;
+                            Update(entity);
                         }
                     );
 
