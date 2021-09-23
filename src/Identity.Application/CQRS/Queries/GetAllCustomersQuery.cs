@@ -10,16 +10,16 @@ namespace Identity.Application.CQRS.Queries
 {
     public class GetAllCustomersQuery : IGetAllCustomersQuery
     {
-        private readonly IRepositoryCustomer _repositoryCustomer;
+        private readonly IPersistenceServicesCustomer _PersistenceServicesCustomer;
 
-        public GetAllCustomersQuery(IRepositoryCustomer repositoryCustomer)
+        public GetAllCustomersQuery(IPersistenceServicesCustomer PersistenceServicesCustomer)
         {
-            this._repositoryCustomer = repositoryCustomer;
+            this._PersistenceServicesCustomer = PersistenceServicesCustomer;
         }
 
         public async Task<IEnumerable<Customer>> GetAllCustomers()
         {
-            return await _repositoryCustomer.GetAllCustomers();
+            return await _PersistenceServicesCustomer.GetAllCustomers();
         }
     }
 }
