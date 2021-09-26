@@ -24,5 +24,15 @@ namespace Identity.WebAPI.Controllers
         {
             return Ok(await _getAllCustomersQuery.GetAllCustomers());
         }
+
+        [HttpPost]
+        public async Task<ActionResult<Customer>> Create([FromBody] Customer customer)
+        {
+
+            await Task.Factory.StartNew(() => { });
+            return Ok();
+        }
+
+
     }
 }

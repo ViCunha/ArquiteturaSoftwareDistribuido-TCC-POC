@@ -2,13 +2,21 @@
 
 # TO-DO
 
+Application Versioning 
+
+Cosmos DB
+
+Event-Sourcing 
+
+Identity.IntegrationTests > On CustomerControllerTest Add a CustomerController_CreateNewCustomer_ExpectedResultOkAndCollectionOfObjects
 
 # IN-PROGRESS
 
-
-Identity.Infrastructure.Persistence > ApplicationDBContextCommands > Add Fluent API configuration files
+Identity.WebAPI > On CustomerController Add Create (HttpPost) method
 
 # DONE 
+
+Identity.Infrastructure.Persistence > ApplicationDBContextCommands > Add Fluent API configuration files
 
 Identity.Infrastructure.Persistence > The UnitOfWork and Repository classes to use ApplicationDBContextCommands
 
@@ -121,13 +129,11 @@ xAureoDigital-BackEnd-MicroService-Identity > > Add XUnit Test project named: Id
 
 xAureoDigital-BackEnd-MicroService-Identity > Add 'tests' folder > Add folders 'UnitTests', 'IntegrationTests', and 'EndToEndTests'
 
-#
-
 Identity.WebAPI > Add CustomerController; Update CustomerController; Add reference to 'Identity.Domain' project
 
 Identity.WebAPI > Remove WeatherForecast class and Controller 
 
-Identity.WebAPI > Set as a Stratup project 
+Identity.WebAPI > Set as a Startup project 
 
 xAureoDigital-BackEnd-MicroService-Identity > Services folder > Add a Class Libray project named: 'Identity.WebAPI'
 
