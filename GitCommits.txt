@@ -15,6 +15,10 @@ Event-Sourcing
 + http://www.macoratti.net/19/09/aspnc_utst1.htm
 
 
+Identity.Application > Remove MediatR.Extensions.Microsoft.DependencyInjection
+
+Identity.Application > Remove MediatR
+
 
 # DONE 
 
