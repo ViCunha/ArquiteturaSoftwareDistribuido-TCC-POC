@@ -8,8 +8,6 @@ Cosmos DB
 
 Event-Sourcing 
 
-Identity.IntegrationTests > On CustomerControllerTest Add a CustomerController_CreateNewCustomer_ExpectedResultOkAndCustomerObject
-
 
 
 # IN-PROGRESS
