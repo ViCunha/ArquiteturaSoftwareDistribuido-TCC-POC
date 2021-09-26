@@ -26,7 +26,13 @@ namespace Identity.Infrastructure.Persistence.Configure
             // DbContext 
             {
                 services.AddDbContext<ApplicationDBContextQueries>
-                    (options => options.UseSqlServer(configuration.GetConnectionString("ApplicationDbContextQueries")));
+                    (options => options.UseSqlServer
+                                    (
+                                        configuration.GetConnectionString("ApplicationDbContextQueries")
+                                        , 
+                                        x => x.EnableRetryOnFailure()
+                                    )
+                                    );
             }
 
             return services;

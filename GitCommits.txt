@@ -1,7 +1,12 @@
 
 
 
+Identity.Infrastructure.Persistence > Repair the output of the migration files
+
 @
+
+Identity.Infrastructure.Persistence > Implement retries to connect into DBMS
++ Where will be a good place to store the retries default configuratin ?
 
 Identity.Infrastructure.Persistence > Update Repository class 
 
@@ -46,8 +51,7 @@ Identity.Domain > 'Model' folder to 'Models'
 Identity.Application > Install-Package Microsoft.Extensions.DependencyInjection.Abstractions
 
 Identity.Application > Install-Package Microsoft.Extensions.Configuration.Abstractions
-
-+ It is better to start with creation of a record using HttpPost
++ ! It is better to start the development of a new slution with the creation of a record (using HttpPost)
 
 Identity.IntegrationTests > install-package moq.automock / Update 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects'
 
