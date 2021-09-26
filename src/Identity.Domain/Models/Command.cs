@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Identity.Domain.Models
 {
-    public class Command : Message, 
+    public class Command : Message
     {
     }
 }
