@@ -1,4 +1,5 @@
 ﻿using Identity.Application.CQRS.Queries;
+using Identity.Application.Interfaces;
 using Identity.Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,11 +12,11 @@ namespace Identity.WebAPI.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        private readonly IGetAllCustomersQuery _getAllCustomersQuery;
+        private readonly ICustomerOrchestrator _customerOrchestrator;
 
-        public CustomerController(IGetAllCustomersQuery getAllCustomersQuery)
+        public CustomerController(ICustomerOrchestrator customerOrchestrator)
         {
-            this._getAllCustomersQuery = getAllCustomersQuery;
+            this._customerOrchestrator = customerOrchestrator;
         }
 
         [HttpGet]
@@ -24,7 +25,7 @@ namespace Identity.WebAPI.Controllers
         public async Task<ActionResult<IEnumerable<Customer>>> GetAllCustomers()
         {
 
-            var result = await _getAllCustomersQuery.GetAllCustomers();
+            var result = await _customerOrchestrator.GetAllCustomersQuery.GetAllCustomers();
             if (result == null)
             {
                 return BadRequest();
