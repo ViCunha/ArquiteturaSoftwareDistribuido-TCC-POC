@@ -9,11 +9,19 @@ Cosmos DB
 Event-Sourcing 
 
 
-
 # IN-PROGRESS
+
++ http://www.macoratti.net/20/07/aspc_mediatr1.htm
++ http://www.macoratti.net/19/09/aspnc_utst1.htm
+
+
+Identity.Application > Install-Package MediatR.Extensions.Microsoft.DependencyInjection
+
 
 
 # DONE 
+
+Identity.Application > Install-Package MediatR
 
 Identity.WebAPI > On CustomerController Add Create (HttpPost) method
 

@@ -34,7 +34,7 @@ namespace Identity.WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Customer>> CreateNewCustomer ([FromBody] Customer customer)
+        public async Task<ActionResult<Customer>> CreateNewCustomer (Customer customer)
         {
 
             await Task.Factory.StartNew(() => { });
