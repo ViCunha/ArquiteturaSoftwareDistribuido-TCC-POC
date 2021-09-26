@@ -14,7 +14,7 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
     {
         private bool disposed = false;
 
-        private readonly ApplicationDBContextQueries _applicationDbContext;
+        private readonly ApplicationDBContextCommands _applicationDbContext;
 
         private Repository<Customer> _repositoryCustomer = null;
 
@@ -31,7 +31,7 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
             private set { }
         }
 
-        public UnitOfWork(ApplicationDBContextQueries applicationDbContext)
+        public UnitOfWork(ApplicationDBContextCommands applicationDbContext)
         {
             this._applicationDbContext = applicationDbContext;
         }
