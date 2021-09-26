@@ -8,7 +8,9 @@ Cosmos DB
 
 Event-Sourcing 
 
-Identity.IntegrationTests > On CustomerControllerTest Add a CustomerController_CreateNewCustomer_ExpectedResultOkAndCollectionOfObjects
+Identity.IntegrationTests > On CustomerControllerTest Add a CustomerController_CreateNewCustomer_ExpectedResultOkAndCustomerObject
+
+Identity.IntegrationTests > Rename 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects' to 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfCustomerObjects'
 
 # IN-PROGRESS
 
