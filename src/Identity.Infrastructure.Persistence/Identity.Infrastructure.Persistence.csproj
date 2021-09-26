@@ -5,11 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="..\..\..\..\..\..\..\Migrations\CQRS\Queries\20210920031032_first migration.cs" Link="20210920031032_first migration.cs" />
-    <Compile Include="..\..\..\..\..\..\..\Migrations\CQRS\Queries\20210920031032_first migration.Designer.cs" Link="20210920031032_first migration.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.10">
       <PrivateAssets>all</PrivateAssets>

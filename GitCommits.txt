@@ -1,9 +1,17 @@
 
 
+# TO-DO
+
+
+# IN-PROGRESS
+
 
 Identity.Infrastructure.Persistence > Repair the output of the migration files
 
-@
+Identity.Infrastructure.Persistence > Add ApplicationDBContextCommands class to ~DBContext
+
+
+# DONE 
 
 Identity.Infrastructure.Persistence > Implement retries to connect into DBMS
 + Where will be a good place to store the retries default configuratin ?
