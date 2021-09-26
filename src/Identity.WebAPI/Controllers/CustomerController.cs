@@ -20,13 +20,21 @@ namespace Identity.WebAPI.Controllers
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Customer))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<IEnumerable<Customer>>> GetAllCustomers()
         {
-            return Ok(await _getAllCustomersQuery.GetAllCustomers());
+
+            var result = await _getAllCustomersQuery.GetAllCustomers();
+            if (result == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(result);
         }
 
         [HttpPost]
-        public async Task<ActionResult<Customer>> Create([FromBody] Customer customer)
+        public async Task<ActionResult<Customer>> CreateNewCustomer ([FromBody] Customer customer)
         {
 
             await Task.Factory.StartNew(() => { });
