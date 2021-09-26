@@ -6,7 +6,7 @@
 # IN-PROGRESS
 
 
-Identity.Infrastructure.Persistence > Repair the output of the migration files
+Identity.Infrastructure.Persistence > Delete all previous migrations (into the solution and SGBD)
 
 Identity.Infrastructure.Persistence > Add ApplicationDBContextCommands class to ~DBContext
 
