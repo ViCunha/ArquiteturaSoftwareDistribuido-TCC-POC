@@ -15,11 +15,10 @@ Event-Sourcing
 + http://www.macoratti.net/19/09/aspnc_utst1.htm
 
 
-Identity.Application > Install-Package MediatR.Extensions.Microsoft.DependencyInjection
-
-
 
 # DONE 
+
+Identity.Application > Install-Package MediatR.Extensions.Microsoft.DependencyInjection
 
 Identity.Application > Install-Package MediatR
 
