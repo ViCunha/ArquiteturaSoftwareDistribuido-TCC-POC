@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Identity.Domain.Models;
+using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Identity.Application.CQRS.Commands
 {
-    public class CreateNewCustomerCommand 
+    public class CreateNewCustomerCommand : IRequest<bool> 
     {
 
     }

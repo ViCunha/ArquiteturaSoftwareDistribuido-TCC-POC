@@ -2,7 +2,7 @@
 
 namespace Identity.Application.Interfaces
 {
-    public interface ICustomerOrchestrator
+    public interface ICustomerApplicationServices
     {
         IGetAllCustomersQuery GetAllCustomersQuery { get; }
     }

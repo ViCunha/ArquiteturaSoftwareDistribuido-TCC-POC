@@ -10,9 +10,9 @@ namespace Identity.Application.CQRS.Queries
 {
     public class GetAllCustomersQuery : IGetAllCustomersQuery
     {
-        private readonly IPersistenceServicesCustomer _PersistenceServicesCustomer;
+        private readonly ICustomerPersistenceServices _PersistenceServicesCustomer;
 
-        public GetAllCustomersQuery(IPersistenceServicesCustomer PersistenceServicesCustomer)
+        public GetAllCustomersQuery(ICustomerPersistenceServices PersistenceServicesCustomer)
         {
             this._PersistenceServicesCustomer = PersistenceServicesCustomer;
         }

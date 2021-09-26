@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Identity.Infrastructure.Persistence.Repositories
 {
-    public class PersistenceServicesCustomer : IPersistenceServicesCustomer
+    public class CustomerPersistenceServices : ICustomerPersistenceServices
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public PersistenceServicesCustomer(IUnitOfWork unitOfWork)
+        public CustomerPersistenceServices(IUnitOfWork unitOfWork)
         {
             this._unitOfWork = unitOfWork;
         }

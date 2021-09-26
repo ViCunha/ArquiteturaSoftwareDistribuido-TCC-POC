@@ -8,7 +8,7 @@ using Identity.Application.Interfaces;
 
 namespace Identity.Application.Models
 {
-    public class CustomerOrchestrator : ICustomerOrchestrator
+    public class CustomerApplicationServices : ICustomerApplicationServices
     {
         private readonly IGetAllCustomersQuery _getAllCustomersQuery;
 
@@ -18,7 +18,7 @@ namespace Identity.Application.Models
             private set { }
         }
 
-        public CustomerOrchestrator(IGetAllCustomersQuery getAllCustomersQuery)
+        public CustomerApplicationServices(IGetAllCustomersQuery getAllCustomersQuery)
         {
             this._getAllCustomersQuery = getAllCustomersQuery;
         }

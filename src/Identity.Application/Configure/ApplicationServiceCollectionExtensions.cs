@@ -17,7 +17,7 @@ namespace Identity.Application.Configure
         {
             // Dependency Injection # Local
             services.AddScoped<IGetAllCustomersQuery, GetAllCustomersQuery>();
-            services.AddScoped<IPersistenceServicesCustomer, PersistenceServicesCustomer>();
+            services.AddScoped<ICustomerPersistenceServices, CustomerPersistenceServices>();
 
             // Dependency Injection # Identity.Infrastructure.Persistence
             InfrastructurePersistenceServiceCollectionExtensions.AddInfrastructurePersistenceServiceCollection(services, configuration);

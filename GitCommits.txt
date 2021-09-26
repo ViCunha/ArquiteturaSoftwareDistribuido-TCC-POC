@@ -15,7 +15,9 @@ Event-Sourcing
 + http://www.macoratti.net/19/09/aspnc_utst1.htm
 
 
-Identity.Application > Create CustomerOrchestrator class and ICustomerOrchestrator interface
+xAureoDigital-BackEnd-MicroService-Identity > Remane 'IPersistenceServicesCustomer' to 'CustomerPersistenceServices'
+
+Identity.Application > Add CustomerApplicationServices class and ICustomerApplicationServices interface
 
 # DONE 
 

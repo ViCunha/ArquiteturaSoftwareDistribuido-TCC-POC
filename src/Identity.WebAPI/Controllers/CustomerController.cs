@@ -12,9 +12,9 @@ namespace Identity.WebAPI.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        private readonly ICustomerOrchestrator _customerOrchestrator;
+        private readonly ICustomerApplicationServices _customerOrchestrator;
 
-        public CustomerController(ICustomerOrchestrator customerOrchestrator)
+        public CustomerController(ICustomerApplicationServices customerOrchestrator)
         {
             this._customerOrchestrator = customerOrchestrator;
         }
