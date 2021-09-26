@@ -10,13 +10,14 @@ Event-Sourcing
 
 Identity.IntegrationTests > On CustomerControllerTest Add a CustomerController_CreateNewCustomer_ExpectedResultOkAndCustomerObject
 
-Identity.IntegrationTests > Rename 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects' to 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfCustomerObjects'
+
 
 # IN-PROGRESS
 
-Identity.WebAPI > On CustomerController Add Create (HttpPost) method
 
 # DONE 
+
+Identity.WebAPI > On CustomerController Add Create (HttpPost) method
 
 Identity.Infrastructure.Persistence > ApplicationDBContextCommands > Add Fluent API configuration files
 
