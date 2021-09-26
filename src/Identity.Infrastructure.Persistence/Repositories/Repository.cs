@@ -13,10 +13,10 @@ namespace Identity.Infrastructure.Persistence.Repositories
 {
     public class Repository<T> : IRepository<T> where T : Entity, IAggregateRoot
     {
-        private readonly ApplicationDBContextCommands _context = null;
+        private readonly ApplicationDbContextCommands _context = null;
 
         private readonly DbSet<T> _dbSet;
-        public Repository(ApplicationDBContextCommands context)
+        public Repository(ApplicationDbContextCommands context)
         {
             _context = context;
             _dbSet = _context.Set<T>();
