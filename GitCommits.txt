@@ -5,14 +5,16 @@
 
 # IN-PROGRESS
 
-Identity.Infrastructure.Persistence > The UnitOfWork and Repository classes to use ApplicationDBContextCommands
+
+
 
 # DONE 
+
+Identity.Infrastructure.Persistence > The UnitOfWork and Repository classes to use ApplicationDBContextCommands
 
 Identity.Infrastructure.Persistence > Delete all previous migrations (into the solution and SGBD)
 
 Identity.Infrastructure.Persistence > Add ApplicationDBContextCommands class to ~DBContext
-
 
 Identity.Infrastructure.Persistence > Implement retries to connect into DBMS
 + Where will be a good place to store the retries default configuratin ?
