@@ -5,6 +5,7 @@ using Identity.Application.MediatR;
 using Identity.Application.Models;
 using Identity.Domain.Interfaces;
 using Identity.Infrastructure.Persistence.Configure;
+using Identity.Infrastructure.Persistence.Interfaces;
 using Identity.Infrastructure.Persistence.Repositories;
 using MediatR;
 using Microsoft.Extensions.Configuration;

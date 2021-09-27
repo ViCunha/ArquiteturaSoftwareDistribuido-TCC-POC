@@ -20,9 +20,12 @@ namespace Identity.Application.CQRS.Commands
         public CreateNewCustomerOrchestrator
             (
                 IMediatRHandler mediatRHandler
+                ,
+                IMapper autoMapper
             )
         {
             this._mediatRHandler = mediatRHandler;
+            this._autoMapper = autoMapper;
         }
 
 

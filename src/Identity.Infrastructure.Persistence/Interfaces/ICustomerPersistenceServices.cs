@@ -12,6 +12,6 @@ namespace Identity.Infrastructure.Persistence.Interfaces
     {
         Task<IEnumerable<Customer>> GetAllCustomers();
 
-        Task<Customer> CreateNewCustomer();
+        Task<int> CreateNewCustomer(Customer customer);
     }
 }

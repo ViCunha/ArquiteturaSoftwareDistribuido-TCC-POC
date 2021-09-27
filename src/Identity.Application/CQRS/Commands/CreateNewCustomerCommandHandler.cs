@@ -14,11 +14,11 @@ namespace Identity.Application.CQRS.Commands
 {
     public class CreateNewCustomerCommandHandler : CommandHandler, IRequestHandler<CreateNewCustomerCommand, IEnumerable<ValidationResult>>
     {
-        private readonly ICustomerPersistenceServices _PersistenceServicesCustomer;
+        private readonly ICustomerPersistenceServices _persistenceServicesCustomer;
 
         public CreateNewCustomerCommandHandler(ICustomerPersistenceServices PersistenceServicesCustomer)
         {
-            this._PersistenceServicesCustomer = PersistenceServicesCustomer;
+            this._persistenceServicesCustomer = PersistenceServicesCustomer;
         }
 
         public async Task<IEnumerable<ValidationResult>> Handle(CreateNewCustomerCommand request, CancellationToken cancellationToken)
@@ -27,11 +27,16 @@ namespace Identity.Application.CQRS.Commands
             {
                 AddValidationResult("#01");
                 return ValidationResult;
-
-
             }
 
-            
+            var result = await _persistenceServicesCustomer.CreateNewCustomer(request.Customer);
+
+            if (result != 1)
+            {
+                AddValidationResult("#02");
+                return ValidationResult;
+            }
+
 
             return null;
         }

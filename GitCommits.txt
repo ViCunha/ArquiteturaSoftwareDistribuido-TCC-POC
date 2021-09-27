@@ -15,9 +15,11 @@ Event-Sourcing
 + http://www.macoratti.net/19/09/aspnc_utst1.htm
 
 
-Identity.Application > Add CustomerAutoMapperProfile class implement AutoMapper Profile / Infrastructure.Persistence > Update ICustomerPersistenceServices
+Identity.Application > Update CreateNewCustomerCommandHandler; Update CreateNewCustomerOrchestrator / Identity.Infrastructure > Update ICustomerPersistenceServices and CustomerPersistenceServices
 
 # DONE 
+
+Identity.Application > Add CustomerAutoMapperProfile class implement AutoMapper Profile / Infrastructure.Persistence > Update ICustomerPersistenceServices
 
 Identity.Application > install-package AutoMapper.Extensions.Microsoft.DependencyInjection
 
