@@ -23,8 +23,12 @@ namespace Identity.Application.Configure
         public static IServiceCollection AddApplicationServiceCollection(this IServiceCollection services, IConfiguration configuration)
         {
 
-            // MediatR Dependency Injection # Local
+            // Dependency Injection # MediatR # Local
             services.AddMediatR(typeof(ApplicationServiceCollectionExtensions));
+
+
+            // Dependency Injection # AutoMapper # Local
+            services.AddAutoMapper(typeof(ApplicationServiceCollectionExtensions));
 
 
             // Dependency Injection # Local

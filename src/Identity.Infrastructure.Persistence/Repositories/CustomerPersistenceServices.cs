@@ -1,5 +1,6 @@
 ﻿using Identity.Domain.Interfaces;
 using Identity.Domain.Models;
+using Identity.Infrastructure.Persistence.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,4 +1,5 @@
 ﻿using Identity.Domain.Models.Events;
+using Identity.Infrastructure.Persistence.Interfaces;
 using Identity.Infrastructure.Persistence.Repositories;
 using MediatR;
 using System;
@@ -30,7 +31,7 @@ namespace Identity.Application.CQRS.Commands
 
             }
 
-            await Task.Factory.StartNew(() => { });
+            
 
             return null;
         }

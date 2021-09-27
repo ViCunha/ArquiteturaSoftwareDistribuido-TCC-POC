@@ -15,12 +15,13 @@ Event-Sourcing
 + http://www.macoratti.net/19/09/aspnc_utst1.htm
 
 
+Identity.Application > Add CustomerAutoMapperProfile class implement AutoMapper Profile / Infrastructure.Persistence > Update ICustomerPersistenceServices
+
+# DONE 
 
 Identity.Application > install-package AutoMapper.Extensions.Microsoft.DependencyInjection
 
 Identity.Domain > On ~Models/Events Add Message, Event, DomainEvent and Command classes / Implement the Command & CommandHandlers
-
-# DONE 
 
 xAureoDigital-BackEnd-MicroService-Identity > Remane 'IPersistenceServicesCustomer' to 'CustomerPersistenceServices'
 
