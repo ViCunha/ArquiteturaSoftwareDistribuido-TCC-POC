@@ -14,12 +14,13 @@ Event-Sourcing
 + http://www.macoratti.net/20/07/aspc_mediatr1.htm
 + http://www.macoratti.net/19/09/aspnc_utst1.htm
 
+Identity.Domain > On ~Models/Events Add Message, Event, DomainEvent and Command classes / Implement the Command & CommandHandlers
+
+# DONE 
 
 xAureoDigital-BackEnd-MicroService-Identity > Remane 'IPersistenceServicesCustomer' to 'CustomerPersistenceServices'
 
 Identity.Application > Add CustomerApplicationServices class and ICustomerApplicationServices interface
-
-# DONE 
 
 Identity.Domain > Install-Package MediatR.Extensions.Microsoft.DependencyInjection
 

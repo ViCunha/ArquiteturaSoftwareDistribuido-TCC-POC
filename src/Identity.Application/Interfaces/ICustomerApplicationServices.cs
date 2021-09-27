@@ -4,6 +4,10 @@ namespace Identity.Application.Interfaces
 {
     public interface ICustomerApplicationServices
     {
-        IGetAllCustomersQuery GetAllCustomersQuery { get; }
+        public IGetAllCustomersQuery GetAllCustomersQuery { get; }
+        
+
+       public ICreateNewCustomerOrchestrator CreateNewCustomerOrchestrator { get; }
+
     }
 }

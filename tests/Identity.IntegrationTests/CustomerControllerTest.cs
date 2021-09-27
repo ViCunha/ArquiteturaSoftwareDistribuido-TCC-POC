@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Xunit;
 using System;
 using Moq.AutoMock;
+using Identity.Application.Interfaces;
 
 namespace Identity.IntegrationTests
 {
@@ -46,11 +47,11 @@ namespace Identity.IntegrationTests
                     (
                         () => new List<Customer>()
                         {
-                        new Customer() { Id = Guid.NewGuid(), isActive = true, Name = "a" }
+                        new Customer(Guid.NewGuid(), true, "a")
                         ,
-                        new Customer() { Id = Guid.NewGuid(), isActive = true, Name = "b" }
+                        new Customer(Guid.NewGuid(), true, "b")
                         ,
-                        new Customer() { Id = Guid.NewGuid(), isActive = true, Name = "c" }
+                        new Customer(Guid.NewGuid(), true, "c")
                         }
                     );
             }

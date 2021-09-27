@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Identity.Application.CQRS.Queries
+namespace Identity.Application.Interfaces
 {
     public interface IGetAllCustomersQuery
     {

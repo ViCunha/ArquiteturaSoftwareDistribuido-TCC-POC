@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Identity.Domain.Models
+namespace Identity.Domain.Models.Events
 {
     public class DomainEvent : Event
     {

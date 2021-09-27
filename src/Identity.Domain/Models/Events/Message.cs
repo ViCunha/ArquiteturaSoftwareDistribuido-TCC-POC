@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Identity.Domain.Models
+namespace Identity.Domain.Models.Events
 {
     public abstract class Message
     {
@@ -17,5 +17,6 @@ namespace Identity.Domain.Models
         {
             Type = this.GetType().Name;
         }
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Identity.Application.CQRS.Queries;
 using Identity.Application.Interfaces;
 using Identity.Domain.Models;
+using Identity.Domain.Models.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -35,10 +36,13 @@ namespace Identity.WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Customer>> CreateNewCustomer (Customer customer)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CustomerDTO))]
+
+        public async Task<ActionResult<Customer>> CreateNewCustomer (CustomerDTO customerDTO)
         {
 
-            await Task.Factory.StartNew(() => { });
+            var result = await _customerOrchestrator.CreateNewCustomerOrchestrator.CreateNewCustomer(customerDTO);
             return Ok();
         }
 

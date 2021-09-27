@@ -59,7 +59,7 @@ namespace Identity.Infrastructure.Persistence.Repositories
 
         public async Task<IEnumerable<T>> GetAllAsync()
         {
-            return (await _dbSet.ToListAsync()).AsEnumerable();
+            return (await _dbSet.AsNoTracking().ToListAsync()).AsEnumerable();
         }
 
 
@@ -86,13 +86,13 @@ namespace Identity.Infrastructure.Persistence.Repositories
 
         public void Delete(T entity)
         {
-            entity.isActive = false;
+            entity.SetIsActive(false);
             Update(entity);
         }
 
         public async Task DeleteAsync(T entity)
         {
-            entity.isActive = false;
+            entity.SetIsActive(false);
             await UpdateAsync(entity);
 
         }

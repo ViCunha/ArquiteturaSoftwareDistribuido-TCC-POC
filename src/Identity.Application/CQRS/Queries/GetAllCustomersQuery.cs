@@ -1,4 +1,5 @@
-﻿using Identity.Domain.Models;
+﻿using Identity.Application.Interfaces;
+using Identity.Domain.Models;
 using Identity.Infrastructure.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
