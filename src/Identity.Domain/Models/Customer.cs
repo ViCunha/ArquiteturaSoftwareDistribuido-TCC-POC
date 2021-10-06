@@ -19,7 +19,7 @@ namespace Identity.Domain.Models
         public Customer(Guid Id, bool isActive, string Name)
         {
             this.Id = Id;
-            this.isActive = isActive;
+            this.IsActive = isActive;
             this.Name = Name;
         }
 

@@ -29,7 +29,7 @@ namespace Identity.Application.CQRS.Commands
             //    return ValidationResult;
             //}
 
-            var result = await _persistenceServicesCustomer.CreateNewCustomer(request.Customer);
+            var result = await _persistenceServicesCustomer.CreateNewCustomerAsync(request.Customer);
 
             if (result != 1)
             {

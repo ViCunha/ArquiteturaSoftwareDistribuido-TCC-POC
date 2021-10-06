@@ -26,10 +26,10 @@ namespace Identity.WebAPI.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Customer))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<IEnumerable<Customer>>> GetAllCustomers()
+        public async Task<ActionResult<IEnumerable<Customer>>> GetAllCustomersAsync()
         {
 
-            var result = await _customerOrchestrator.GetAllCustomersQuery.GetAllCustomers();
+            var result = await _customerOrchestrator.GetAllCustomersQuery.GetAllCustomersAsync();
             if (result == null)
             {
                 return BadRequest();
@@ -43,10 +43,10 @@ namespace Identity.WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CustomerDTO))]
 
-        public async Task<ActionResult<Customer>> CreateNewCustomer (CustomerDTO customerDTO)
+        public async Task<ActionResult<Customer>> CreateNewCustomerAsync (CustomerDTO customerDTO)
         {
 
-            var result = await _customerOrchestrator.CreateNewCustomerOrchestrator.CreateNewCustomer(customerDTO);
+            var result = await _customerOrchestrator.CreateNewCustomerOrchestrator.CreateNewCustomerAsync(customerDTO);
             return Ok(result);
         }
     }

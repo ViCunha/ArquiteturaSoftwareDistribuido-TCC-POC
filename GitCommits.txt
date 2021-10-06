@@ -17,7 +17,7 @@ Identity.WebAPI > Define a better route. Example: /api/[public-private]/[control
 
 Define the classes as internal by default
 
-Identity.WebAPI > Sufix 'Async' in all async methods
+
 
 Identity.WebAPI > install-package Microsoft.AspNetCore.Mvc.Api.Analyzers
 
@@ -30,14 +30,16 @@ Event-Sourcing
 
 # IN-PROGRESS
 
-+ http://www.macoratti.net/20/07/aspc_mediatr1.htm
-+ http://www.macoratti.net/19/09/aspnc_utst1.htm
+xAureoDigital-BackEnd-MicroService-Identity > Apply the sufix 'Async' in all async methods
 
-
-Identity.Application > Update CreateNewCustomerCommandHandler; Update CreateNewCustomerOrchestrator / Identity.Infrastructure > Update ICustomerPersistenceServices and CustomerPersistenceServices
 
 
 # DONE 
+
+Identity.Application > Update CreateNewCustomerCommandHandler; Update CreateNewCustomerOrchestrator / Identity.Infrastructure > Update ICustomerPersistenceServices and CustomerPersistenceServices
++ http://www.macoratti.net/20/07/aspc_mediatr1.htm
++ http://www.macoratti.net/19/09/aspnc_utst1.htm
+
 
 Identity.Application > Add CustomerAutoMapperProfile class implement AutoMapper Profile / Infrastructure.Persistence > Update ICustomerPersistenceServices
 

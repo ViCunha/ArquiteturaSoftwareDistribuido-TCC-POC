@@ -29,16 +29,16 @@ namespace Identity.Application.CQRS.Commands
         }
 
 
-        public async Task<CustomerDTO> CreateNewCustomer(CustomerDTO customer)
+        public async Task<CustomerDTO> CreateNewCustomerAsync(CustomerDTO customerDTO)
         {
-            var result = await _mediatRHandler.SendCommand(new CreateNewCustomerCommand(_autoMapper.Map<Customer>(customer)));
+            var result = await _mediatRHandler.SendCommandAsync(new CreateNewCustomerCommand(_autoMapper.Map<Customer>(customerDTO)));
 
             if (result != null)
             {
 
             }
 
-            return _autoMapper.Map<CustomerDTO>(customer);
+            return _autoMapper.Map<CustomerDTO>(customerDTO);
         }
 
     }

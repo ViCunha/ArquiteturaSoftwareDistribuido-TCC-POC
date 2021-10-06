@@ -21,18 +21,19 @@ namespace Identity.IntegrationTests
             //Arrange
             var mocker = new AutoMocker();
             var controller = mocker.CreateInstance<CustomerController>();
+            
             mocker.GetMock<IGetAllCustomersQuery>()
-                  .Setup(x => x.GetAllCustomers())
-                  .Returns(GetAllCustomers());
+                  .Setup(x => x.GetAllCustomersAsync())
+                  .Returns(GetAllCustomersAsync());
 
             //Act
-            var response = await controller.GetAllCustomers();
+            var response = await controller.GetAllCustomersAsync();
             var statuscodeOk200Result = response.Result as OkObjectResult;
             var resultObject = GetCollectionResultContent<IEnumerable<Customer>>(statuscodeOk200Result);
 
             //Assert
             Assert.True(statuscodeOk200Result != null);
-            mocker.GetMock<IGetAllCustomersQuery>().Verify(c => c.GetAllCustomers(), Times.Once);
+            mocker.GetMock<IGetAllCustomersQuery>().Verify(c => c.GetAllCustomersAsync(), Times.Once);
             Assert.True(resultObject.Result.Count() == 3);
 
             async Task<T> GetCollectionResultContent<T>(ActionResult<T> result)
@@ -41,7 +42,7 @@ namespace Identity.IntegrationTests
                 return (T)((ObjectResult)result.Result).Value;
             }
 
-            async Task<IEnumerable<Customer>> GetAllCustomers()
+            async Task<IEnumerable<Customer>> GetAllCustomersAsync()
             {
                 return await Task.Factory.StartNew
                     (

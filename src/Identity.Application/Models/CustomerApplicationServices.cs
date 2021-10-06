@@ -27,9 +27,9 @@ namespace Identity.Application.Models
 
         public CustomerApplicationServices
             (
-            IGetAllCustomersQuery getAllCustomersQuery
-            ,
-            ICreateNewCustomerOrchestrator createNewCustomerOrchestrator
+                IGetAllCustomersQuery getAllCustomersQuery
+                ,
+                ICreateNewCustomerOrchestrator createNewCustomerOrchestrator
             )
         {
             this._getAllCustomersQuery = getAllCustomersQuery;

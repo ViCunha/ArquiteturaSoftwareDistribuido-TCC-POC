@@ -10,8 +10,8 @@ namespace Identity.Infrastructure.Persistence.Interfaces
 {
     public interface ICustomerPersistenceServices 
     {
-        Task<IEnumerable<Customer>> GetAllCustomers();
+        Task<IEnumerable<Customer>> GetAllCustomersAsync();
 
-        Task<int> CreateNewCustomer(Customer customer);
+        Task<int> CreateNewCustomerAsync(Customer customer);
     }
 }

@@ -10,11 +10,11 @@ namespace Identity.Domain.Models
     {
         public Guid Id { get; protected set; }
 
-        public Boolean isActive { get; protected set; }
+        public Boolean IsActive { get; protected set; }
 
         public void SetIsActive(bool value)
         {
-            this.isActive = value;
+            this.IsActive = value;
         }
 
     }

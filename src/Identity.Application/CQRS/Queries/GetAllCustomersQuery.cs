@@ -19,9 +19,9 @@ namespace Identity.Application.CQRS.Queries
             this._PersistenceServicesCustomer = PersistenceServicesCustomer;
         }
 
-        public async Task<IEnumerable<Customer>> GetAllCustomers()
+        public async Task<IEnumerable<Customer>> GetAllCustomersAsync()
         {
-            return await _PersistenceServicesCustomer.GetAllCustomers();
+            return await _PersistenceServicesCustomer.GetAllCustomersAsync();
         }
     }
 }

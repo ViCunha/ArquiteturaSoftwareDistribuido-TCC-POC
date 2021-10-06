@@ -18,7 +18,7 @@ namespace Identity.Infrastructure.Persistence.Repositories
             this._unitOfWork = unitOfWork;
         }
 
-        public async Task<int> CreateNewCustomer(Customer customer)
+        public async Task<int> CreateNewCustomerAsync(Customer customer)
         {
             await _unitOfWork.CustomerRepository.AddAsync(customer);
             var result = await _unitOfWork.SaveAsync();
@@ -26,7 +26,7 @@ namespace Identity.Infrastructure.Persistence.Repositories
             return result;
         }
 
-        public async Task<IEnumerable<Customer>> GetAllCustomers()
+        public async Task<IEnumerable<Customer>> GetAllCustomersAsync()
         {
             return await _unitOfWork.CustomerRepository.GetAllAsync();
         }

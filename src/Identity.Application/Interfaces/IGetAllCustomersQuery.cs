@@ -6,6 +6,6 @@ namespace Identity.Application.Interfaces
 {
     public interface IGetAllCustomersQuery
     {
-        Task<IEnumerable<Customer>> GetAllCustomers();
+        Task<IEnumerable<Customer>> GetAllCustomersAsync();
     }
 }

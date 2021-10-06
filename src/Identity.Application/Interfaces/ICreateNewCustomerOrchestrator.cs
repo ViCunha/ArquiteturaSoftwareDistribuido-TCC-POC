@@ -5,6 +5,6 @@ namespace Identity.Application.Interfaces
 {
     public interface ICreateNewCustomerOrchestrator
     {
-        Task<CustomerDTO> CreateNewCustomer(CustomerDTO customer);
+        Task<CustomerDTO> CreateNewCustomerAsync (CustomerDTO customer);
     }
 }
