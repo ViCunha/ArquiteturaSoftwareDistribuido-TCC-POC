@@ -27,10 +27,8 @@ namespace Identity.Application.Configure
             // Dependency Injection # MediatR # Local
             services.AddMediatR(typeof(ApplicationServiceCollectionExtensions));
 
-
             // Dependency Injection # AutoMapper # Local
-            services.AddAutoMapper(typeof(ApplicationServiceCollectionExtensions));
-
+            services.AddAutoMapper(typeof(CustomerAutoMapperProfile));
 
             // Dependency Injection # Local
             services.AddScoped<IMediatRHandler, MediatRHandler>();

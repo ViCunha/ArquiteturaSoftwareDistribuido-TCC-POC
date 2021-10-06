@@ -13,13 +13,16 @@ namespace Identity.WebAPI.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
+        //
         private readonly ICustomerApplicationServices _customerOrchestrator;
-
+        
+        //
         public CustomerController(ICustomerApplicationServices customerOrchestrator)
         {
             this._customerOrchestrator = customerOrchestrator;
         }
 
+        //
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Customer))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -35,6 +38,7 @@ namespace Identity.WebAPI.Controllers
             return Ok(result);
         }
 
+
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CustomerDTO))]
@@ -43,9 +47,7 @@ namespace Identity.WebAPI.Controllers
         {
 
             var result = await _customerOrchestrator.CreateNewCustomerOrchestrator.CreateNewCustomer(customerDTO);
-            return Ok();
+            return Ok(result);
         }
-
-
     }
 }

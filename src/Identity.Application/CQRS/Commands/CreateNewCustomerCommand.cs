@@ -23,7 +23,7 @@ namespace Identity.Application.CQRS.Commands
 
         public override IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            return base.Validate(validationContext);
+            return new List<ValidationResult>().AsEnumerable();
         }
 
     }

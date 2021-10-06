@@ -23,11 +23,11 @@ namespace Identity.Application.CQRS.Commands
 
         public async Task<IEnumerable<ValidationResult>> Handle(CreateNewCustomerCommand request, CancellationToken cancellationToken)
         {
-            if (request.Validate(null).Count() == 0)
-            {
-                AddValidationResult("#01");
-                return ValidationResult;
-            }
+            //if (request.Validate(null).Count() == 0)
+            //{
+            //    AddValidationResult("#01");
+            //    return ValidationResult;
+            //}
 
             var result = await _persistenceServicesCustomer.CreateNewCustomer(request.Customer);
 
