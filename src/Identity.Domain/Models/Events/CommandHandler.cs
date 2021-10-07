@@ -13,14 +13,6 @@ namespace Identity.Domain.Models.Events
 {
     public abstract class CommandHandler
     {
-        protected readonly List<ValidationResult> ValidationResult = new List<ValidationResult>();
-
-
-        protected void AddValidationResult(string errorMessage) 
-        {
-            ValidationResult.Add(new ValidationResult(errorMessage));
-        }
-
 
     }
 }

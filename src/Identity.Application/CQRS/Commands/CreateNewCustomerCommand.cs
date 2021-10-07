@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Identity.Application.CQRS.Commands
 {
-    public class CreateNewCustomerCommand : Command, IRequest<IEnumerable<ValidationResult>> 
+    public class CreateNewCustomerCommand : Command, IRequest<bool> 
     {
         public Customer Customer { get; set; }
 

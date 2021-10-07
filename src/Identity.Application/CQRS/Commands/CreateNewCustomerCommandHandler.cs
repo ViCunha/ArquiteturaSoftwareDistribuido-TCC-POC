@@ -1,4 +1,5 @@
 ﻿using Identity.Domain.Models.Events;
+using Identity.Domain.Models.Validations;
 using Identity.Infrastructure.Persistence.Interfaces;
 using Identity.Infrastructure.Persistence.Repositories;
 using MediatR;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Identity.Application.CQRS.Commands
 {
-    public class CreateNewCustomerCommandHandler : CommandHandler, IRequestHandler<CreateNewCustomerCommand, IEnumerable<ValidationResult>>
+    public class CreateNewCustomerCommandHandler : CommandHandler, IRequestHandler<CreateNewCustomerCommand, bool>
     {
         private readonly ICustomerPersistenceServices _persistenceServicesCustomer;
 
@@ -21,24 +22,24 @@ namespace Identity.Application.CQRS.Commands
             this._persistenceServicesCustomer = PersistenceServicesCustomer;
         }
 
-        public async Task<IEnumerable<ValidationResult>> Handle(CreateNewCustomerCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(CreateNewCustomerCommand request, CancellationToken cancellationToken)
         {
-            //if (request.Validate(null).Count() == 0)
-            //{
-            //    AddValidationResult("#01");
-            //    return ValidationResult;
-            //}
+            var customerValidator = new CustomerValidator();
+            var customerValidatorResult = await customerValidator.ValidateAsync(request.Customer);
+
+            if (!customerValidatorResult.IsValid)
+            {
+                return false;
+            }
 
             var result = await _persistenceServicesCustomer.CreateNewCustomerAsync(request.Customer);
-
             if (result != 1)
             {
-                AddValidationResult("#02");
-                return ValidationResult;
+                return false;
             }
 
 
-            return null;
+            return true;
         }
     }
 }

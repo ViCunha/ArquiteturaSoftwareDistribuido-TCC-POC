@@ -33,6 +33,7 @@ Identity.Domain > Implement the IValidatableObject in the Entity class
 (Remove business rules from the Entity classes, accept async processing, Inject dependecies into the classvalidator)
 
 
+Identity.Application > Partial Update CreateNewCustomerCommandHandler class
 
 # DONE 
 

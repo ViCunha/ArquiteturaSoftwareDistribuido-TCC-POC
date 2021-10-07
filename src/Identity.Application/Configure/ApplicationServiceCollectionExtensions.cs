@@ -32,7 +32,7 @@ namespace Identity.Application.Configure
 
             // Dependency Injection # Local
             services.AddScoped<IMediatRHandler, MediatRHandler>();
-            services.AddScoped<IRequestHandler<CreateNewCustomerCommand, IEnumerable<ValidationResult>>, CreateNewCustomerCommandHandler>();
+            services.AddScoped<IRequestHandler<CreateNewCustomerCommand, bool>, CreateNewCustomerCommandHandler>();
             services.AddScoped<ICustomerApplicationServices, CustomerApplicationServices>();
             services.AddScoped<ICustomerCommandOrchestrator, CustomerCommandOrchestrator>();
             services.AddScoped<IGetAllCustomersQuery, GetAllCustomersQuery>();
