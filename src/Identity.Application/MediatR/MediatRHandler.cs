@@ -1,11 +1,9 @@
-﻿using Identity.Domain.Interfaces;
+﻿using FluentValidation.Results;
+using Identity.Domain.Interfaces;
 using Identity.Domain.Models.Events;
 using MediatR;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Identity.Application.MediatR
@@ -24,7 +22,7 @@ namespace Identity.Application.MediatR
             await _mediator.Publish(@event);
         }
 
-        public async Task<IEnumerable<ValidationResult>> SendCommandAsync<T>(T @command) where T : Command
+        public async Task<ValidationResult> SendCommandAsync<T>(T @command) where T : Command
         {
             return await _mediator.Send(@command); 
         }

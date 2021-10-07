@@ -21,7 +21,9 @@ Identity.WebAPI > Define the route in the format: "/api/[public-private]/[contro
 
 # IN-PROGRESS
 
-Identity.Domain > Implement the IValidatableObject in the Entity class
+# DONE 
+
+Identity.Domain > Implement the Fluent Validation in the Entity class
 + http://www.macoratti.net/19/11/aspnc_traterr1.htm
 + http://www.macoratti.net/19/11/aspnc_traterr2.htm
 + https://www.youtube.com/watch?v=mGXPXjxCqhA
@@ -29,13 +31,12 @@ Identity.Domain > Implement the IValidatableObject in the Entity class
 + https://stackoverflow.com/questions/45620471/combining-fluentvalidation-and-ivalidatableobject-errors
 + https://github.com/FluentValidation/FluentValidation/issues/545#issuecomment-322757974
 + https://github.com/FluentValidation/FluentValidation
++ https://www.youtube.com/watch?v=Zh1ccvTFzs8&t=107s
 + https://anexinet.com/blog/asp-net-core-fluentvalidation-swagger/
++ https://fluentvalidation.net/
 (Remove business rules from the Entity classes, accept async processing, Inject dependecies into the classvalidator)
 
-
 Identity.Application > Partial Update CreateNewCustomerCommandHandler class
-
-# DONE 
 
 Identity.WebAPI > Update the Startup class to include FluentValidation in the microservice
 
@@ -52,7 +53,6 @@ xAureoDigital-BackEnd-MicroService-Identity > Apply the sufix 'Async' in all asy
 Identity.Application > Update CreateNewCustomerCommandHandler; Update CustomerCommandOrchestrator / Identity.Infrastructure > Update ICustomerPersistenceServices and CustomerPersistenceServices
 + http://www.macoratti.net/20/07/aspc_mediatr1.htm
 + http://www.macoratti.net/19/09/aspnc_utst1.htm
-
 
 Identity.Application > Add CustomerAutoMapperProfile class implement AutoMapper Profile / Infrastructure.Persistence > Update ICustomerPersistenceServices
 

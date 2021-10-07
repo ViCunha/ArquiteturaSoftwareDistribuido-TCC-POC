@@ -1,4 +1,5 @@
-﻿using Identity.Application.CQRS.Commands;
+﻿using FluentValidation.Results;
+using Identity.Application.CQRS.Commands;
 using Identity.Application.CQRS.Queries;
 using Identity.Application.Interfaces;
 using Identity.Application.MediatR;
@@ -10,12 +11,7 @@ using Identity.Infrastructure.Persistence.Repositories;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Identity.Application.Configure
 {
@@ -32,7 +28,7 @@ namespace Identity.Application.Configure
 
             // Dependency Injection # Local
             services.AddScoped<IMediatRHandler, MediatRHandler>();
-            services.AddScoped<IRequestHandler<CreateNewCustomerCommand, bool>, CreateNewCustomerCommandHandler>();
+            services.AddScoped<IRequestHandler<CreateNewCustomerCommand, ValidationResult>, CreateNewCustomerCommandHandler>();
             services.AddScoped<ICustomerApplicationServices, CustomerApplicationServices>();
             services.AddScoped<ICustomerCommandOrchestrator, CustomerCommandOrchestrator>();
             services.AddScoped<IGetAllCustomersQuery, GetAllCustomersQuery>();

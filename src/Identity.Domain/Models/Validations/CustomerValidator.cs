@@ -12,21 +12,19 @@ namespace Identity.Domain.Models.Validations
 
         public CustomerValidator()
         {
-            IdPropertyValidations();
-            NamePropertyValidations();
+            //
+            RuleFor(x => x.Id).NotEqual(Guid.Empty).WithMessage("{PropertyName}...");
+
+            //
+            RuleFor(x => x.Name).NotEmpty().WithMessage("{PropertyName}...");
+            RuleFor(x => x.Name).MinimumLength(005).WithMessage("{PropertyName}...");
+            RuleFor(x => x.Name).MaximumLength(150).WithMessage("{PropertyName}...");
+            RuleFor(x => x.Name).Must(BeAValidSomething).WithMessage("{PropertyName}...");
         }
 
-        private IEnumerable<IRuleBuilder<Customer, Guid>> IdPropertyValidations()
+        protected bool BeAValidSomething(string name)
         {
-            yield return RuleFor(x => x.Id).NotEqual(Guid.Empty).WithMessage("");
+            return true;
         }
-
-        private IEnumerable<IRuleBuilder<Customer, String>> NamePropertyValidations()
-        {
-            yield return RuleFor(x => x.Name).NotNull().WithMessage("");
-            yield return RuleFor(x => x.Name).MinimumLength(005).WithMessage("");
-            yield return RuleFor(x => x.Name).MaximumLength(150).WithMessage("");
-        }
-
     }
 }

@@ -1,19 +1,15 @@
-﻿using Identity.Domain.Models.Events;
+﻿using FluentValidation.Results;
+using Identity.Domain.Models.Events;
 using Identity.Domain.Models.Validations;
 using Identity.Infrastructure.Persistence.Interfaces;
-using Identity.Infrastructure.Persistence.Repositories;
 using MediatR;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Identity.Application.CQRS.Commands
 {
-    public class CreateNewCustomerCommandHandler : CommandHandler, IRequestHandler<CreateNewCustomerCommand, bool>
+    public class CreateNewCustomerCommandHandler : CommandHandler, IRequestHandler<CreateNewCustomerCommand, ValidationResult>
     {
         private readonly ICustomerPersistenceServices _persistenceServicesCustomer;
 
@@ -22,24 +18,25 @@ namespace Identity.Application.CQRS.Commands
             this._persistenceServicesCustomer = PersistenceServicesCustomer;
         }
 
-        public async Task<bool> Handle(CreateNewCustomerCommand request, CancellationToken cancellationToken)
+        public async Task<ValidationResult> Handle(CreateNewCustomerCommand request, CancellationToken cancellationToken)
         {
-            var customerValidator = new CustomerValidator();
-            var customerValidatorResult = await customerValidator.ValidateAsync(request.Customer);
-
-            if (!customerValidatorResult.IsValid)
+            var customerValidationResults = await (new CustomerValidator().ValidateAsync(request.Customer));
+            if (!customerValidationResults.IsValid)
             {
-                return false;
+                // TODO: Create a robust return type 
+                return customerValidationResults;
             }
 
+            var newValidationResult = new ValidationResult();
             var result = await _persistenceServicesCustomer.CreateNewCustomerAsync(request.Customer);
+            
             if (result != 1)
             {
-                return false;
+                newValidationResult.Errors.Add(new ValidationFailure("", ""));
+                return newValidationResult;
             }
 
-
-            return true;
+            return newValidationResult;
         }
     }
 }
