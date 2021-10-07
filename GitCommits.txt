@@ -30,12 +30,13 @@ Identity.Domain > Implement the IValidatableObject in the Entity class
 + https://github.com/FluentValidation/FluentValidation/issues/545#issuecomment-322757974
 + https://github.com/FluentValidation/FluentValidation
 + https://anexinet.com/blog/asp-net-core-fluentvalidation-swagger/
-(Remove business rules from the Entity classes and accept async processing)
-
+(Remove business rules from the Entity classes, accept async processing, Inject dependecies into the classvalidator)
 
 
 
 # DONE 
+
+Identity.WebAPI > Update the Startup class to include FluentValidation in the microservice
 
 Identity.Domain > install-package FluentValidation.AspNetCore # Identity.Domain > Add CustomerValidator on ~/Models/Validations
 

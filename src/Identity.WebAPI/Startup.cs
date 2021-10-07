@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using Identity.Application.Configure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,7 +29,10 @@ namespace Identity.WebAPI
                 services.AddApplicationServiceCollection(Configuration);
             }
 
-            services.AddControllers();
+            services.AddControllers()
+                    .AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<Startup>());
+                
+                ;
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Identity.WebAPI", Version = "v1" });
