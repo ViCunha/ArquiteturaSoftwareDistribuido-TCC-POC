@@ -11,14 +11,7 @@ protected Entity()
 
 Create BackgroundTasks for each Bounded Context
 
-
-
-
-
 Define the classes as internal by default
-
-Identity.WebAPI > install-package Microsoft.AspNetCore.Mvc.Api.Analyzers
-
 
 
 Cosmos DB
@@ -31,11 +24,11 @@ Identity.WebAPI > Define the route in the format: "/api/[public-private]/[contro
 # IN-PROGRESS
 
 
-Identity.Application > Receive and return only DTO-Objects
-
-
 # DONE 
 
+Identity.WebAPI > install-package Microsoft.AspNetCore.Mvc.Api.Analyzers
+
+Identity.Application > Receive and return only DTO-Objects
 
 xAureoDigital-BackEnd-MicroService-Identity > Apply the sufix 'Async' in all async methods
 
