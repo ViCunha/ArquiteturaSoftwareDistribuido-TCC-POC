@@ -7,7 +7,7 @@ namespace Identity.Application.Interfaces
         public IGetAllCustomersQuery GetAllCustomersQuery { get; }
         
 
-       public ICreateNewCustomerOrchestrator CreateNewCustomerOrchestrator { get; }
+       public ICustomerCommandOrchestrator CustomerCommandOrchestrator { get; }
 
     }
 }

@@ -12,7 +12,7 @@ namespace Identity.Domain.Models.DTO
 
         public Guid Id { get; set; }
 
-        public Boolean isActive { get; set; }
+        public Boolean IsActive { get; set; }
 
     }
 }

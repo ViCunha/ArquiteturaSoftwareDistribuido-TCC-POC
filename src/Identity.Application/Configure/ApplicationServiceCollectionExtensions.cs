@@ -34,7 +34,7 @@ namespace Identity.Application.Configure
             services.AddScoped<IMediatRHandler, MediatRHandler>();
             services.AddScoped<IRequestHandler<CreateNewCustomerCommand, IEnumerable<ValidationResult>>, CreateNewCustomerCommandHandler>();
             services.AddScoped<ICustomerApplicationServices, CustomerApplicationServices>();
-            services.AddScoped<ICreateNewCustomerOrchestrator, CreateNewCustomerOrchestrator>();
+            services.AddScoped<ICustomerCommandOrchestrator, CustomerCommandOrchestrator>();
             services.AddScoped<IGetAllCustomersQuery, GetAllCustomersQuery>();
             services.AddScoped<ICustomerPersistenceServices, CustomerPersistenceServices>();
 

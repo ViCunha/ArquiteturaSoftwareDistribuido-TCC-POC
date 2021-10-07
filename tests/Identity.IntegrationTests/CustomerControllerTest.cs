@@ -10,6 +10,7 @@ using Xunit;
 using System;
 using Moq.AutoMock;
 using Identity.Application.Interfaces;
+using Identity.Domain.Models.DTO;
 
 namespace Identity.IntegrationTests
 {
@@ -42,17 +43,17 @@ namespace Identity.IntegrationTests
                 return (T)((ObjectResult)result.Result).Value;
             }
 
-            async Task<IEnumerable<Customer>> GetAllCustomersAsync()
+            async Task<IEnumerable<CustomerDTO>> GetAllCustomersAsync()
             {
                 return await Task.Factory.StartNew
                     (
-                        () => new List<Customer>()
+                        () => new List<CustomerDTO>()
                         {
-                        new Customer(Guid.NewGuid(), true, "a")
+                        new CustomerDTO() { Id = Guid.NewGuid(), IsActive = true, Name = "A" }
                         ,
-                        new Customer(Guid.NewGuid(), true, "b")
+                        new CustomerDTO() { Id = Guid.NewGuid(), IsActive = true, Name = "B" }
                         ,
-                        new Customer(Guid.NewGuid(), true, "c")
+                        new CustomerDTO() { Id = Guid.NewGuid(), IsActive = true, Name = "C" }
                         }
                     );
             }

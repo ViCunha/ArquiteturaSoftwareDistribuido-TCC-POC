@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Identity.Application.Interfaces
 {
-    public interface ICreateNewCustomerOrchestrator
+    public interface ICustomerCommandOrchestrator
     {
         Task<CustomerDTO> CreateNewCustomerAsync (CustomerDTO customer);
     }

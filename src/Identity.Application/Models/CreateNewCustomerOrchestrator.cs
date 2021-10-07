@@ -1,23 +1,20 @@
 ﻿using AutoMapper;
+using Identity.Application.CQRS.Commands;
 using Identity.Application.Interfaces;
 using Identity.Domain.Interfaces;
 using Identity.Domain.Models;
 using Identity.Domain.Models.DTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Identity.Application.CQRS.Commands
+namespace Identity.Application.Models
 {
-    public class CreateNewCustomerOrchestrator : ICreateNewCustomerOrchestrator
+    public class CustomerCommandOrchestrator : ICustomerCommandOrchestrator
     {
         private readonly IMediatRHandler _mediatRHandler;
 
         private readonly IMapper _autoMapper;
 
-        public CreateNewCustomerOrchestrator
+        public CustomerCommandOrchestrator
             (
                 IMediatRHandler mediatRHandler
                 ,

@@ -11,32 +11,35 @@ protected Entity()
 
 Create BackgroundTasks for each Bounded Context
 
-Identity.Application > Receive and return only DTO-Objects
 
-Identity.WebAPI > Define a better route. Example: /api/[public-private]/[controller]/v[number]
+
+
 
 Define the classes as internal by default
 
-
-
 Identity.WebAPI > install-package Microsoft.AspNetCore.Mvc.Api.Analyzers
 
-Application Versioning 
+
 
 Cosmos DB
 
 Event-Sourcing 
+Identity.WebAPI > Define the route in the format: "/api/[public-private]/[controller]/v[number]"
++ Application Versioning 
 
 
 # IN-PROGRESS
 
-xAureoDigital-BackEnd-MicroService-Identity > Apply the sufix 'Async' in all async methods
 
+Identity.Application > Receive and return only DTO-Objects
 
 
 # DONE 
 
-Identity.Application > Update CreateNewCustomerCommandHandler; Update CreateNewCustomerOrchestrator / Identity.Infrastructure > Update ICustomerPersistenceServices and CustomerPersistenceServices
+
+xAureoDigital-BackEnd-MicroService-Identity > Apply the sufix 'Async' in all async methods
+
+Identity.Application > Update CreateNewCustomerCommandHandler; Update CustomerCommandOrchestrator / Identity.Infrastructure > Update ICustomerPersistenceServices and CustomerPersistenceServices
 + http://www.macoratti.net/20/07/aspc_mediatr1.htm
 + http://www.macoratti.net/19/09/aspnc_utst1.htm
 

@@ -1,5 +1,4 @@
-﻿using Identity.Application.CQRS.Queries;
-using Identity.Application.Interfaces;
+﻿using Identity.Application.Interfaces;
 using Identity.Domain.Models;
 using Identity.Domain.Models.DTO;
 using Microsoft.AspNetCore.Http;
@@ -24,9 +23,9 @@ namespace Identity.WebAPI.Controllers
 
         //
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Customer))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CustomerDTO))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<IEnumerable<Customer>>> GetAllCustomersAsync()
+        public async Task<ActionResult<IEnumerable<CustomerDTO>>> GetAllCustomersAsync()
         {
 
             var result = await _customerOrchestrator.GetAllCustomersQuery.GetAllCustomersAsync();
@@ -46,7 +45,7 @@ namespace Identity.WebAPI.Controllers
         public async Task<ActionResult<Customer>> CreateNewCustomerAsync (CustomerDTO customerDTO)
         {
 
-            var result = await _customerOrchestrator.CreateNewCustomerOrchestrator.CreateNewCustomerAsync(customerDTO);
+            var result = await _customerOrchestrator.CustomerCommandOrchestrator.CreateNewCustomerAsync(customerDTO);
             return Ok(result);
         }
     }

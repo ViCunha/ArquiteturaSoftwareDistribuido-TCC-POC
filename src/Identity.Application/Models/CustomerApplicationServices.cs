@@ -11,7 +11,7 @@ namespace Identity.Application.Models
     public class CustomerApplicationServices : ICustomerApplicationServices
     {
         private readonly IGetAllCustomersQuery _getAllCustomersQuery;
-        private readonly ICreateNewCustomerOrchestrator _createNewCustomerOrchestrator;
+        private readonly ICustomerCommandOrchestrator _CustomerCommandOrchestrator;
 
         public IGetAllCustomersQuery GetAllCustomersQuery
         {
@@ -19,9 +19,9 @@ namespace Identity.Application.Models
             private set { }
         }
 
-        public ICreateNewCustomerOrchestrator CreateNewCustomerOrchestrator
+        public ICustomerCommandOrchestrator CustomerCommandOrchestrator
         {
-            get { return _createNewCustomerOrchestrator; }
+            get { return _CustomerCommandOrchestrator; }
             private set { }
         }
 
@@ -29,11 +29,11 @@ namespace Identity.Application.Models
             (
                 IGetAllCustomersQuery getAllCustomersQuery
                 ,
-                ICreateNewCustomerOrchestrator createNewCustomerOrchestrator
+                ICustomerCommandOrchestrator CustomerCommandOrchestrator
             )
         {
             this._getAllCustomersQuery = getAllCustomersQuery;
-            this._createNewCustomerOrchestrator = createNewCustomerOrchestrator;
+            this._CustomerCommandOrchestrator = CustomerCommandOrchestrator;
         }
     }
 }
