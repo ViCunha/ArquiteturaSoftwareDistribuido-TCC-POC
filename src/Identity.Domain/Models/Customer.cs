@@ -11,10 +11,8 @@ namespace Identity.Domain.Models
     {
         public string Name { get; private set; }
 
-        public Customer()
-        {
-
-        }
+        protected Customer()
+        { }
 
         public Customer(Guid Id, bool isActive, string Name)
         {

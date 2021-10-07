@@ -28,13 +28,18 @@ Identity.Domain > Implement the IValidatableObject in the Entity class
 + https://docs.fluentvalidation.net/en/latest/aspnet.html
 + https://stackoverflow.com/questions/45620471/combining-fluentvalidation-and-ivalidatableobject-errors
 + https://github.com/FluentValidation/FluentValidation/issues/545#issuecomment-322757974
++ https://github.com/FluentValidation/FluentValidation
 + https://anexinet.com/blog/asp-net-core-fluentvalidation-swagger/
 (Remove business rules from the Entity classes and accept async processing)
 
 
-Identity.Domain > Add Validations folder on ~/Models # Identity.Application > Rename 'CreateNewCustomerOrchestrator' to 'CustomerCommandOrchestrator'
+
 
 # DONE 
+
+Identity.Domain > install-package FluentValidation.AspNetCore # Identity.Domain > Add CustomerValidator on ~/Models/Validations
+
+Identity.Domain > Add Validations folder on ~/Models # Identity.Application > Rename 'CreateNewCustomerOrchestrator' to 'CustomerCommandOrchestrator'
 
 Identity.WebAPI > install-package Microsoft.AspNetCore.Mvc.Api.Analyzers
 
