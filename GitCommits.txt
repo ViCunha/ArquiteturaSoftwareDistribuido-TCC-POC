@@ -1,7 +1,6 @@
 
 
 # TO-DO
-
 Identity.Domain > Apply some improvements (Object Initializer and validation on Entity class
 protected Entity()
 {
@@ -13,7 +12,6 @@ Create BackgroundTasks for each Bounded Context
 
 Define the classes as internal by default
 
-
 Cosmos DB
 
 Event-Sourcing 
@@ -23,6 +21,18 @@ Identity.WebAPI > Define the route in the format: "/api/[public-private]/[contro
 
 # IN-PROGRESS
 
+Identity.Domain > Implement the IValidatableObject in the Entity class
++ http://www.macoratti.net/19/11/aspnc_traterr1.htm
++ http://www.macoratti.net/19/11/aspnc_traterr2.htm
++ https://www.youtube.com/watch?v=mGXPXjxCqhA
++ https://docs.fluentvalidation.net/en/latest/aspnet.html
++ https://stackoverflow.com/questions/45620471/combining-fluentvalidation-and-ivalidatableobject-errors
++ https://github.com/FluentValidation/FluentValidation/issues/545#issuecomment-322757974
++ https://anexinet.com/blog/asp-net-core-fluentvalidation-swagger/
+(Remove business rules from the Entity classes and accept async processing)
+
+
+Identity.Domain > Add Validations folder on ~/Models # Identity.Application > Rename 'CreateNewCustomerOrchestrator' to 'CustomerCommandOrchestrator'
 
 # DONE 
 
