@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Identity.Domain.Models.Validations
@@ -19,12 +20,12 @@ namespace Identity.Domain.Models.Validations
             RuleFor(x => x.Name).NotEmpty().WithMessage("{PropertyName}...");
             RuleFor(x => x.Name).MinimumLength(005).WithMessage("{PropertyName}...");
             RuleFor(x => x.Name).MaximumLength(150).WithMessage("{PropertyName}...");
-            RuleFor(x => x.Name).Must(BeAValidSomething).WithMessage("{PropertyName}...");
+            RuleFor(x => x.Name).MustAsync(BeAValidSomething).WithMessage("{PropertyName}...");
         }
 
-        protected bool BeAValidSomething(string name)
+        private async Task<bool> BeAValidSomething(string name, CancellationToken token)
         {
-            return true;
+            return await Task.Factory.StartNew(() => true); 
         }
     }
 }

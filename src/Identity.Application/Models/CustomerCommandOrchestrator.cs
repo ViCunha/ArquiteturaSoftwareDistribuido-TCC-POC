@@ -3,7 +3,10 @@ using Identity.Application.CQRS.Commands;
 using Identity.Application.Interfaces;
 using Identity.Domain.Interfaces;
 using Identity.Domain.Models;
+using Identity.Domain.Models.APIResponse;
 using Identity.Domain.Models.DTO;
+using Microsoft.AspNetCore.Http;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Identity.Application.Models
@@ -26,16 +29,15 @@ namespace Identity.Application.Models
         }
 
 
-        public async Task<CustomerDTO> CreateNewCustomerAsync(CustomerDTO customerDTO)
+        public async Task<APIResponseContent> CreateNewCustomerAsync(CustomerDTO customerDTO)
         {
             var result = await _mediatRHandler.SendCommandAsync(new CreateNewCustomerCommand(_autoMapper.Map<Customer>(customerDTO)));
-
-            if (result != null)
+            if (result.Errors.Count > 0)
             {
-
+                return new APIResponseContentFailure(StatusCodes.Status400BadRequest, result.Errors.Select(x =>x.ErrorMessage).ToList());
             }
-
-            return _autoMapper.Map<CustomerDTO>(customerDTO);
+            
+            return new APIResponseContentSuccess(StatusCodes.Status400BadRequest, customerDTO); 
         }
 
     }

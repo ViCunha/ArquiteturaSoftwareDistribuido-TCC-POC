@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using Identity.Application.Interfaces;
+using Identity.Domain.Models.APIResponse;
 using Identity.Domain.Models.DTO;
 using Identity.Infrastructure.Persistence.Interfaces;
+using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -23,9 +25,10 @@ namespace Identity.Application.CQRS.Queries
             this._mapper = mapper;
         }
 
-        public async Task<IEnumerable<CustomerDTO>> GetAllCustomersAsync()
+        public async Task<APIResponseContent> GetAllCustomersAsync()
         {
-            return  _mapper.Map<IEnumerable<CustomerDTO>>(await _PersistenceServicesCustomer.GetAllCustomersAsync());
+            var result = await _PersistenceServicesCustomer.GetAllCustomersAsync();
+            return new APIResponseContentSuccess(StatusCodes.Status200OK, _mapper.Map<IEnumerable<CustomerDTO>>(result));
         }
     }
 }

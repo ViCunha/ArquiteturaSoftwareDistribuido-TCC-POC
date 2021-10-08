@@ -23,7 +23,6 @@ namespace Identity.Application.CQRS.Commands
             var customerValidationResults = await (new CustomerValidator().ValidateAsync(request.Customer));
             if (!customerValidationResults.IsValid)
             {
-                // TODO: Create a robust return type 
                 return customerValidationResults;
             }
 

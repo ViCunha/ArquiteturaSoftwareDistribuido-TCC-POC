@@ -15,11 +15,19 @@ Define the classes as internal by default
 Cosmos DB
 
 Event-Sourcing 
+
 Identity.WebAPI > Define the route in the format: "/api/[public-private]/[controller]/v[number]"
 + Application Versioning 
 
 
 # IN-PROGRESS
+
+Identity.Application > Partial Standarlize the response contents
++ https://docs.microsoft.com/pt-br/azure/architecture/best-practices/api-design
++ https://github.com/Microsoft/api-guidelines/blob/master/Guidelines.md
+
+
+
 
 # DONE 
 

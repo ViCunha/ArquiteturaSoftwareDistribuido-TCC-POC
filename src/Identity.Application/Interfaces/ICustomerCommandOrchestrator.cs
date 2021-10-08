@@ -1,10 +1,11 @@
-﻿using Identity.Domain.Models.DTO;
+﻿using Identity.Domain.Models.APIResponse;
+using Identity.Domain.Models.DTO;
 using System.Threading.Tasks;
 
 namespace Identity.Application.Interfaces
 {
     public interface ICustomerCommandOrchestrator
     {
-        Task<CustomerDTO> CreateNewCustomerAsync (CustomerDTO customer);
+        Task<APIResponseContent> CreateNewCustomerAsync (CustomerDTO customer);
     }
 }

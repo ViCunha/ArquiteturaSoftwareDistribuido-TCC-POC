@@ -1,5 +1,6 @@
 ﻿using Identity.Application.Interfaces;
 using Identity.Domain.Models;
+using Identity.Domain.Models.APIResponse;
 using Identity.Domain.Models.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -23,18 +24,18 @@ namespace Identity.WebAPI.Controllers
 
         //
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CustomerDTO))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(APIResponseContent))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<IEnumerable<CustomerDTO>>> GetAllCustomersAsync()
         {
 
             var result = await _customerOrchestrator.GetAllCustomersQuery.GetAllCustomersAsync();
-            if (result == null)
+            if (result is APIResponseContentFailure)
             {
-                return BadRequest();
+                BadRequest((APIResponseContentFailure)result);
             }
 
-            return Ok(result);
+            return Ok((APIResponseContentSuccess) result);
         }
 
 
@@ -46,7 +47,13 @@ namespace Identity.WebAPI.Controllers
         {
 
             var result = await _customerOrchestrator.CustomerCommandOrchestrator.CreateNewCustomerAsync(customerDTO);
-            return Ok(result);
+            if (result is APIResponseContentFailure)
+            {
+                return BadRequest((APIResponseContentFailure)result);
+            }
+
+
+            return Ok((APIResponseContentSuccess)result);
         }
     }
 }

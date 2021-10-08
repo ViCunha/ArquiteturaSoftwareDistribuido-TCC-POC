@@ -21,8 +21,9 @@ namespace Identity.Infrastructure.Persistence.Repositories
         public async Task<int> CreateNewCustomerAsync(Customer customer)
         {
             await _unitOfWork.CustomerRepository.AddAsync(customer);
-            var result = await _unitOfWork.SaveAsync();
+            // TODO: How manage possible exceptions during the persistences
 
+            var result = await _unitOfWork.SaveAsync();
             return result;
         }
 
