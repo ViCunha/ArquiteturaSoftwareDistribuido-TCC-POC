@@ -4,6 +4,8 @@
 
 # TO-DO
 
+    Define and implement the strategy for logging 
+
     Organize the Startup.cs
 
     MVC consuming from API 
@@ -21,16 +23,39 @@
 
     Cosmos DB
 
-    Event-Sourcing 
+    
 
     CORS configuration 
+    + https://www.youtube.com/watch?v=yozD5Tnd8nw
 
 
 # IN-PROGRESS
 
-    Identity.Domain > Apply some improvements on the Entity class
+    Identity.Infrastructure.Persistence > [Event-Sourcing] Create the history of database sequence of immutable events 
+    + https://desenvolvedor.io/curso-online-modelagem-de-dominios-ricos/aula/4ded1cee-7104-44e5-b950-3bfaf133bb9e
+    + https://desenvolvedor.io/curso-online-modelagem-de-dominios-ricos/aula/361a3216-5a4f-4bc0-912a-6814cbde209b#status
+    + https://microservices.io/patterns/data/event-sourcing.html
+    + https://www.youtube.com/watch?v=XWTrcBqXi6s
+
+    Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to get on specific event
+
+    Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to replay part of the history
+
+    
+    Identity.Domain > [Event-Sourcing] > Create a EventSourcingRecord class on ~/Models/EventSourcing
+        {
+            Guid: EventID
+            Int: Sequence
+            DateTimeUTC: Event
+            type: Create, Update, Delete
+            String: JSON
+        }
+
+    Identity.Domain > [Event-Sourcing] > Create a EventSourcingRecordType Enum on ~/Models/EventSourcing
 
 # DONE 
+
+    Identity.Domain > Apply some improvements on the Entity class
 
     Identity.WebAPI > [ApiVersioning] > Define the route in the format: "/api/[public-private]/[controller]/v{version:apiVersion}" into the controllers
     + [ApiVersion("1.0.0")]
