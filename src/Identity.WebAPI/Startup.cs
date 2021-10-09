@@ -9,6 +9,7 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.IO;
 using System.Reflection;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Identity.WebAPI
 {
@@ -21,32 +22,34 @@ namespace Identity.WebAPI
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Customizations
-            {
-                services.AddApplicationServiceCollection(Configuration);
-            }
+            services.AddApplicationServiceCollection(Configuration);
+
+            services.AddApiVersioning
+                (
+                    options => 
+                    {
+                        options.DefaultApiVersion = new ApiVersion(1, 0);
+                        options.AssumeDefaultVersionWhenUnspecified = true;
+                        options.ReportApiVersions = true;
+                    }
+                );
 
             services.AddControllers()
                     .AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<Startup>());
                 
-                ;
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Identity.WebAPI", Version = "v1" });
 
-                #region
                     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                     c.IncludeXmlComments(xmlPath);
-                #endregion
 
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

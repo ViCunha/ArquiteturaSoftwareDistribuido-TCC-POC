@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 
 namespace Identity.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    
     [ApiController]
+    [ApiVersion("1.0")]
+    [Route("api/[controller]")]
     public class CustomerController : ControllerBase
     {
         //

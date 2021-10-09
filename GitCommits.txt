@@ -4,259 +4,260 @@
 
 # TO-DO
 
+    MVC consuming from API 
+    + http://www.macoratti.net/19/11/aspc_webapi3.htm
+    + https://www.youtube.com/watch?v=aWePkE2ReGw
+    + https://www.youtube.com/watch?v=cwgck1k0YKU
 
-MVC consuming from API 
-+ http://www.macoratti.net/19/11/aspc_webapi3.htm
-+ https://www.youtube.com/watch?v=aWePkE2ReGw
-+ https://www.youtube.com/watch?v=cwgck1k0YKU
+    JWT
+    http://www.macoratti.net/20/06/aspc_apijwt1.htm
 
+    Identity.Domain > Apply some improvements (Object Initializer and validation on Entity class
+    protected Entity()
+    {
+        this.Id = Guid.NewGuid()
+    }
 
-JWT
-http://www.macoratti.net/20/06/aspc_apijwt1.htm
+    Create BackgroundTasks for each Bounded Context
 
-Identity.Domain > Apply some improvements (Object Initializer and validation on Entity class
-protected Entity()
-{
-    this.Id = Guid.NewGuid()
-}
+    Define the classes as internal by default
 
+    Cosmos DB
 
-Create BackgroundTasks for each Bounded Context
+    Event-Sourcing 
 
-Define the classes as internal by default
-
-Cosmos DB
-
-Event-Sourcing 
-
-CORS configuration 
+    CORS configuration 
 
 
 # IN-PROGRESS
 
-Identity.WebAPI > [ApiVersioning] > Define the route in the format: "/api/[public-private]/[controller]/v{version:apiVersion}"
-+ [ApiVersion("1.0.0")]
+    Identity.WebAPI > [ApiVersioning] > Define the route in the format: "/api/[public-private]/[controller]/v{version:apiVersion}"
+    + [ApiVersion("1.0.0")]
 
-Identity.WebAPI > [ApiVersioning] > Configure the API versioning on Startup.cs 
-+ Semantical versioning: 'Major(Breaking Change).Minor(Feature Improvements).Bugs(Failures Corrections)'
-+ Chanage the route and include some information in the response header 
-+ services.AddApiVersioning(options => options)
-+ services.AddApiVersioningExplorer(options => options)
-+ https://desenvolvedor.io/curso-online-rest-com-asp-net-core-webapi/aula/a8b6e10d-da45-43b2-b5ef-45e3d97a3304
-+ https://semver.org/
-+ https://www.youtube.com/watch?v=ryPo5hYHSzM
-(URI, query, request header)
+    Identity.WebAPI > [ApiVersioning] > Configure the API versioning on Startup.cs 
+    + Semantical versioning: 'Major(Breaking Change).Minor(Feature Improvements).Bugs(Failures Corrections)'
+    + Chanage the route and include some information in the response header 
+    + services.AddApiVersioning(options => options)
+    + services.AddApiVersioningExplorer(options => options)
+    + https://desenvolvedor.io/curso-online-rest-com-asp-net-core-webapi/aula/a8b6e10d-da45-43b2-b5ef-45e3d97a3304
+    + https://semver.org/
+    + https://www.youtube.com/watch?v=ryPo5hYHSzM
+    + https://www.youtube.com/watch?v=jXAUAWPhIcc&list=PL9XzOCngAkqs0Q8ZRdafnSYExKQurZrBY&index=23
+    (URI, query, request header)
 
-Identity.WebAPI > [ApiVersioning] > install-package Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer
 
-Identity.WebAPI > [ApiVersioning] > install-package Microsoft.AspNetCore.Mvc.Versioning
+    Identity.WebAPI > [ApiVersioning] > Add [ApiVersion("")] into the controllers
+    + [MaptoApiVersion()]
 
+    Identity.WebAPI > [ApiVersioning] > install-package Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer
 
 # DONE 
 
-Identity.Application > Update Standarlize the response contents
-+ https://docs.microsoft.com/pt-br/azure/architecture/best-practices/api-design
-+ https://github.com/Microsoft/api-guidelines/blob/master/Guidelines.md
-+   {
-      "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
-      "title": "One or more validation errors occurred.",
-      "status": 400,
-      "traceId": "00-6a9cbfcccc787041948eccf2b1b64713-3d3cb58cd4bad040-00",
-      "errors": {
-        "$.id": [
-          "The JSON value could not be converted to System.Guid. Path: $.id | LineNumber: 0 | BytePositionInLine: 18."
-        ]
-      }
-    }
+    Identity.WebAPI > [ApiVersioning] > install-package Microsoft.AspNetCore.Mvc.Versioning
 
-Identity.Domain > Implement the Fluent Validation in the Entity class
-+ http://www.macoratti.net/19/11/aspnc_traterr1.htm
-+ http://www.macoratti.net/19/11/aspnc_traterr2.htm
-+ https://www.youtube.com/watch?v=mGXPXjxCqhA
-+ https://docs.fluentvalidation.net/en/latest/aspnet.html
-+ https://stackoverflow.com/questions/45620471/combining-fluentvalidation-and-ivalidatableobject-errors
-+ https://github.com/FluentValidation/FluentValidation/issues/545#issuecomment-322757974
-+ https://github.com/FluentValidation/FluentValidation
-+ https://www.youtube.com/watch?v=Zh1ccvTFzs8&t=107s
-+ https://anexinet.com/blog/asp-net-core-fluentvalidation-swagger/
-+ https://fluentvalidation.net/
-(Remove business rules from the Entity classes, accept async processing, Inject dependecies into the classvalidator)
+    Identity.Application > Update Standarlize the response contents
+    + https://docs.microsoft.com/pt-br/azure/architecture/best-practices/api-design
+    + https://github.com/Microsoft/api-guidelines/blob/master/Guidelines.md
+    +   {
+          "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+          "title": "One or more validation errors occurred.",
+          "status": 400,
+          "traceId": "00-6a9cbfcccc787041948eccf2b1b64713-3d3cb58cd4bad040-00",
+          "errors": {
+            "$.id": [
+              "The JSON value could not be converted to System.Guid. Path: $.id | LineNumber: 0 | BytePositionInLine: 18."
+            ]
+          }
+        }
 
-Identity.Application > Partial Update CreateNewCustomerCommandHandler class
+    Identity.Domain > Implement the Fluent Validation in the Entity class
+    + http://www.macoratti.net/19/11/aspnc_traterr1.htm
+    + http://www.macoratti.net/19/11/aspnc_traterr2.htm
+    + https://www.youtube.com/watch?v=mGXPXjxCqhA
+    + https://docs.fluentvalidation.net/en/latest/aspnet.html
+    + https://stackoverflow.com/questions/45620471/combining-fluentvalidation-and-ivalidatableobject-errors
+    + https://github.com/FluentValidation/FluentValidation/issues/545#issuecomment-322757974
+    + https://github.com/FluentValidation/FluentValidation
+    + https://www.youtube.com/watch?v=Zh1ccvTFzs8&t=107s
+    + https://anexinet.com/blog/asp-net-core-fluentvalidation-swagger/
+    + https://fluentvalidation.net/
+    (Remove business rules from the Entity classes, accept async processing, Inject dependecies into the classvalidator)
 
-Identity.WebAPI > Update the Startup class to include FluentValidation in the microservice
+    Identity.Application > Partial Update CreateNewCustomerCommandHandler class
 
-Identity.Domain > install-package FluentValidation.AspNetCore # Identity.Domain > Add CustomerValidator on ~/Models/Validations
+    Identity.WebAPI > Update the Startup class to include FluentValidation in the microservice
 
-Identity.Domain > Add Validations folder on ~/Models # Identity.Application > Rename 'CreateNewCustomerOrchestrator' to 'CustomerCommandOrchestrator'
+    Identity.Domain > install-package FluentValidation.AspNetCore # Identity.Domain > Add CustomerValidator on ~/Models/Validations
 
-Identity.WebAPI > install-package Microsoft.AspNetCore.Mvc.Api.Analyzers
+    Identity.Domain > Add Validations folder on ~/Models # Identity.Application > Rename 'CreateNewCustomerOrchestrator' to 'CustomerCommandOrchestrator'
 
-Identity.Application > Receive and return only DTO-Objects
+    Identity.WebAPI > install-package Microsoft.AspNetCore.Mvc.Api.Analyzers
 
-xAureoDigital-BackEnd-MicroService-Identity > Apply the sufix 'Async' in all async methods
+    Identity.Application > Receive and return only DTO-Objects
 
-Identity.Application > Update CreateNewCustomerCommandHandler; Update CustomerCommandOrchestrator / Identity.Infrastructure > Update ICustomerPersistenceServices and CustomerPersistenceServices
-+ http://www.macoratti.net/20/07/aspc_mediatr1.htm
-+ http://www.macoratti.net/19/09/aspnc_utst1.htm
+    xAureoDigital-BackEnd-MicroService-Identity > Apply the sufix 'Async' in all async methods
 
-Identity.Application > Add CustomerAutoMapperProfile class implement AutoMapper Profile / Infrastructure.Persistence > Update ICustomerPersistenceServices
+    Identity.Application > Update CreateNewCustomerCommandHandler; Update CustomerCommandOrchestrator / Identity.Infrastructure > Update ICustomerPersistenceServices and CustomerPersistenceServices
+    + http://www.macoratti.net/20/07/aspc_mediatr1.htm
+    + http://www.macoratti.net/19/09/aspnc_utst1.htm
 
-Identity.Application > install-package AutoMapper.Extensions.Microsoft.DependencyInjection
+    Identity.Application > Add CustomerAutoMapperProfile class implement AutoMapper Profile / Infrastructure.Persistence > Update ICustomerPersistenceServices
 
-Identity.Domain > On ~Models/Events Add Message, Event, DomainEvent and Command classes / Implement the Command & CommandHandlers
+    Identity.Application > install-package AutoMapper.Extensions.Microsoft.DependencyInjection
 
-xAureoDigital-BackEnd-MicroService-Identity > Remane 'IPersistenceServicesCustomer' to 'CustomerPersistenceServices'
+    Identity.Domain > On ~Models/Events Add Message, Event, DomainEvent and Command classes / Implement the Command & CommandHandlers
 
-Identity.Application > Add CustomerApplicationServices class and ICustomerApplicationServices interface
+    xAureoDigital-BackEnd-MicroService-Identity > Remane 'IPersistenceServicesCustomer' to 'CustomerPersistenceServices'
 
-Identity.Domain > Install-Package MediatR.Extensions.Microsoft.DependencyInjection
+    Identity.Application > Add CustomerApplicationServices class and ICustomerApplicationServices interface
 
-Identity.Domain > Install-Package MediatR
+    Identity.Domain > Install-Package MediatR.Extensions.Microsoft.DependencyInjection
 
-Identity.Application > Remove MediatR.Extensions.Microsoft.DependencyInjection
+    Identity.Domain > Install-Package MediatR
 
-Identity.Application > Remove MediatR
+    Identity.Application > Remove MediatR.Extensions.Microsoft.DependencyInjection
 
-Identity.Application > Install-Package MediatR.Extensions.Microsoft.DependencyInjection
+    Identity.Application > Remove MediatR
 
-Identity.Application > Install-Package MediatR
+    Identity.Application > Install-Package MediatR.Extensions.Microsoft.DependencyInjection
 
-Identity.WebAPI > On CustomerController Add Create (HttpPost) method
+    Identity.Application > Install-Package MediatR
 
-Identity.Infrastructure.Persistence > ApplicationDBContextCommands > Add Fluent API configuration files
+    Identity.WebAPI > On CustomerController Add Create (HttpPost) method
 
-Identity.Infrastructure.Persistence > The UnitOfWork and Repository classes to use ApplicationDBContextCommands
+    Identity.Infrastructure.Persistence > ApplicationDBContextCommands > Add Fluent API configuration files
 
-Identity.Infrastructure.Persistence > Delete all previous migrations (into the solution and SGBD)
+    Identity.Infrastructure.Persistence > The UnitOfWork and Repository classes to use ApplicationDBContextCommands
 
-Identity.Infrastructure.Persistence > Add ApplicationDBContextCommands class to ~DBContext
+    Identity.Infrastructure.Persistence > Delete all previous migrations (into the solution and SGBD)
 
-Identity.Infrastructure.Persistence > Implement retries to connect into DBMS
-+ Where will be a good place to store the retries default configuratin ?
+    Identity.Infrastructure.Persistence > Add ApplicationDBContextCommands class to ~DBContext
 
-Identity.Infrastructure.Persistence > Update Repository class 
+    Identity.Infrastructure.Persistence > Implement retries to connect into DBMS
+    + Where will be a good place to store the retries default configuratin ?
 
-xAureoDigital-BackEnd-MicroService-Identity > Update the 'RepositoryCustomer' to 'PersistenceServicesCustomer'
+    Identity.Infrastructure.Persistence > Update Repository class 
 
-Identity.Infrastructure.Persistence > update-database -Context ApplicationDBContextQueries
+    xAureoDigital-BackEnd-MicroService-Identity > Update the 'RepositoryCustomer' to 'PersistenceServicesCustomer'
 
-Identity.Infrastructure.Persistence > add-migration 'first migration' -Context ApplicationDBContextQueries -Output ~/Migrations/CQRS/Queries
+    Identity.Infrastructure.Persistence > update-database -Context ApplicationDBContextQueries
 
-Identity.WebAPI > Install-package Microsoft.EntityFrameworkCore.Design
+    Identity.Infrastructure.Persistence > add-migration 'first migration' -Context ApplicationDBContextQueries -Output ~/Migrations/CQRS/Queries
 
-Identity.Infrastructure.Persistence > Add 'Repositories' folder > Add RepositoryCustomer class and extract IPersistenceServicesCustomer interface; Update RepositoryCustomer / Identity.Infrastructure.Persistence > Upddate InfrastructurePersistenceServiceCollectionExtensions
+    Identity.WebAPI > Install-package Microsoft.EntityFrameworkCore.Design
 
-Identity.Infrastructure.Persistence > Add 'UnitOfWork' folder > Add UnitOfWork class inheriting from IUnitOfWork
+    Identity.Infrastructure.Persistence > Add 'Repositories' folder > Add RepositoryCustomer class and extract IPersistenceServicesCustomer interface; Update RepositoryCustomer / Identity.Infrastructure.Persistence > Upddate InfrastructurePersistenceServiceCollectionExtensions
 
-Identity.Infrastructure.Persistence > Add Repository class that implements IRepository 
+    Identity.Infrastructure.Persistence > Add 'UnitOfWork' folder > Add UnitOfWork class inheriting from IUnitOfWork
 
-Identity.Infrastructure.Persistence > Update 'ApplicationDBContext' class;  Add reference to 'Identity.Domain' project
+    Identity.Infrastructure.Persistence > Add Repository class that implements IRepository 
 
-Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore.Tools
+    Identity.Infrastructure.Persistence > Update 'ApplicationDBContext' class;  Add reference to 'Identity.Domain' project
 
-Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore.SqlServer
+    Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore.Tools
 
-Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore.InMemory
+    Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore.SqlServer
 
-Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore.Design
+    Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore.InMemory
 
-Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore
+    Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore.Design
 
-Identity.Infrastructure.Persistence > Add 'Context' folder > Add 'ApplicationDBContext class 
+    Identity.Infrastructure.Persistence > Install-Package Microsoft.EntityFrameworkCore
 
-Identity.WebAPI > Set the connectingString in the Startup class
+    Identity.Infrastructure.Persistence > Add 'Context' folder > Add 'ApplicationDBContext class 
 
-Identity.Infrastructure.Persistence > Add 'Configure' folder > Add a class 'InfrastructurePersistenceServiceCollectionExtensions' > Update 'InfrastructurePersistenceServiceCollectionExtensions';
+    Identity.WebAPI > Set the connectingString in the Startup class
 
-xAureoDigital-BackEnd-MicroService-Identity > 'Infrastructure.Persistence' folder > Add a Class Libray project named: 'Identity.Infrastructure.Persistence'
+    Identity.Infrastructure.Persistence > Add 'Configure' folder > Add a class 'InfrastructurePersistenceServiceCollectionExtensions' > Update 'InfrastructurePersistenceServiceCollectionExtensions';
 
-Identity.Domain > Add 'Interfaces' folder > Add IRepository interface; Add IUnitOfWork interface
+    xAureoDigital-BackEnd-MicroService-Identity > 'Infrastructure.Persistence' folder > Add a Class Libray project named: 'Identity.Infrastructure.Persistence'
 
-Identity.Domain > 'Model' folder to 'Models'
+    Identity.Domain > Add 'Interfaces' folder > Add IRepository interface; Add IUnitOfWork interface
 
-Identity.Application > Install-Package Microsoft.Extensions.DependencyInjection.Abstractions
+    Identity.Domain > 'Model' folder to 'Models'
 
-Identity.Application > Install-Package Microsoft.Extensions.Configuration.Abstractions
-+ ! It is better to start the development of a new slution with the creation of a record (using HttpPost)
+    Identity.Application > Install-Package Microsoft.Extensions.DependencyInjection.Abstractions
 
-Identity.IntegrationTests > install-package moq.automock / Update 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects'
+    Identity.Application > Install-Package Microsoft.Extensions.Configuration.Abstractions
+    + ! It is better to start the development of a new slution with the creation of a record (using HttpPost)
 
-Update 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects'
+    Identity.IntegrationTests > install-package moq.automock / Update 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects'
 
-Identity.IntegrationTests > install-package moq
+    Update 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects'
 
-Rename 'Indentity.UnitTests' to 'Identity.UnitTests'
+    Identity.IntegrationTests > install-package moq
 
-Partial convertion of 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects' from Identity.UnitTests to Identity.IntegrationTests
+    Rename 'Indentity.UnitTests' to 'Identity.UnitTests'
 
-Identity.IntegrationTests > Add reference to 'Identity.Domain' project
+    Partial convertion of 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects' from Identity.UnitTests to Identity.IntegrationTests
 
-Identity.IntegrationTests > Add reference to 'Identity.WebAPI'
+    Identity.IntegrationTests > Add reference to 'Identity.Domain' project
 
-Identity.IntegrationTests > install-package xunit.runner.visualstudio
+    Identity.IntegrationTests > Add reference to 'Identity.WebAPI'
 
-xAureoDigital-BackEnd-MicroService-Identity > Add on ~/tests/Identity.IntegrationTests a XUnit Test project named: Identity.IntegrationTests;
+    Identity.IntegrationTests > install-package xunit.runner.visualstudio
 
-Identity.WebAPI > Invoke IGetAllCustomersQuery method to get all customers / Identity.Application > Update the class GetAllCustomersQuery and an interface IGetAllCustomersQuery
+    xAureoDigital-BackEnd-MicroService-Identity > Add on ~/tests/Identity.IntegrationTests a XUnit Test project named: Identity.IntegrationTests;
 
-Identity.WebAPI > Add a Contructor with IGetAllCustomersQuery parameter for DI
+    Identity.WebAPI > Invoke IGetAllCustomersQuery method to get all customers / Identity.Application > Update the class GetAllCustomersQuery and an interface IGetAllCustomersQuery
 
-Identity.Application > Add reference to 'Identity.Domain' project
+    Identity.WebAPI > Add a Contructor with IGetAllCustomersQuery parameter for DI
 
-Identity.Application > Add on ~/CQRS/Queires a class GetAllCustomersQuery and an interface IGetAllCustomersQuery
+    Identity.Application > Add reference to 'Identity.Domain' project
 
-Identity.WebAPI > Invoke 'ApplicationServiceCollectionExtensions' on the Startup class
+    Identity.Application > Add on ~/CQRS/Queires a class GetAllCustomersQuery and an interface IGetAllCustomersQuery
 
-Identity.WebAPI > Add reference to 'Identity.Application'
+    Identity.WebAPI > Invoke 'ApplicationServiceCollectionExtensions' on the Startup class
 
-Identity.Application > Add 'Configure' folder > Add a class 'ApplicationServiceCollectionExtensions';
+    Identity.WebAPI > Add reference to 'Identity.Application'
 
-Identity.Application > Add 'CQRS' folder > Add 'Queries' folder; Add 'Commands' folder;
+    Identity.Application > Add 'Configure' folder > Add a class 'ApplicationServiceCollectionExtensions';
 
-xAureoDigital-BackEnd-MicroService-Identity > 'Application' folder > Add a Class Libray project named: 'Identity.Application'
+    Identity.Application > Add 'CQRS' folder > Add 'Queries' folder; Add 'Commands' folder;
 
-Identity.UnitTests > Rename fact 'GetAllCustomers_CallTheMethod_ExpectedResultOkAndEnumerableOfObjects' to 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects'
+    xAureoDigital-BackEnd-MicroService-Identity > 'Application' folder > Add a Class Libray project named: 'Identity.Application'
 
-Identity.UnitTests > Add fact 'GetAllCustomers_CallTheMethod_ExpectedResultOkAndEnumerableOfObjects'
+    Identity.UnitTests > Rename fact 'GetAllCustomers_CallTheMethod_ExpectedResultOkAndEnumerableOfObjects' to 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects'
 
-Identity.UnitTests > Add reference to 'Identity.Domain' project
+    Identity.UnitTests > Add fact 'GetAllCustomers_CallTheMethod_ExpectedResultOkAndEnumerableOfObjects'
 
-+ https://docs.microsoft.com/pt-br/dotnet/core/testing/
-+ https://docs.microsoft.com/pt-br/aspnet/core/mvc/controllers/testing?view=aspnetcore-5.0
-+ https://docs.microsoft.com/pt-br/aspnet/core/test/integration-tests?view=aspnetcore-5.0
-+ http://www.macoratti.net/19/10/cshp_unitestmoq1.htm
-+ http://www.macoratti.net/19/09/aspc_utst2.htm
-+ https://stackoverflow.com/questions/51489111/how-to-unit-test-with-actionresultt
+    Identity.UnitTests > Add reference to 'Identity.Domain' project
 
-Identity.UnitTests > Add reference to 'Identity.WebAPI'
+    + https://docs.microsoft.com/pt-br/dotnet/core/testing/
+    + https://docs.microsoft.com/pt-br/aspnet/core/mvc/controllers/testing?view=aspnetcore-5.0
+    + https://docs.microsoft.com/pt-br/aspnet/core/test/integration-tests?view=aspnetcore-5.0
+    + http://www.macoratti.net/19/10/cshp_unitestmoq1.htm
+    + http://www.macoratti.net/19/09/aspc_utst2.htm
+    + https://stackoverflow.com/questions/51489111/how-to-unit-test-with-actionresultt
 
-Identity.UnitTests > install-package xunit.runner.visualstudio
+    Identity.UnitTests > Add reference to 'Identity.WebAPI'
 
-xAureoDigital-BackEnd-MicroService-Identity > > Add XUnit Test project named: Identity.UnitTests;
+    Identity.UnitTests > install-package xunit.runner.visualstudio
 
-xAureoDigital-BackEnd-MicroService-Identity > Add 'tests' folder > Add folders 'UnitTests', 'IntegrationTests', and 'EndToEndTests'
+    xAureoDigital-BackEnd-MicroService-Identity > > Add XUnit Test project named: Identity.UnitTests;
 
-Identity.WebAPI > Add CustomerController; Update CustomerController; Add reference to 'Identity.Domain' project
+    xAureoDigital-BackEnd-MicroService-Identity > Add 'tests' folder > Add folders 'UnitTests', 'IntegrationTests', and 'EndToEndTests'
 
-Identity.WebAPI > Remove WeatherForecast class and Controller 
+    Identity.WebAPI > Add CustomerController; Update CustomerController; Add reference to 'Identity.Domain' project
 
-Identity.WebAPI > Set as a Startup project 
+    Identity.WebAPI > Remove WeatherForecast class and Controller 
 
-xAureoDigital-BackEnd-MicroService-Identity > Services folder > Add a Class Libray project named: 'Identity.WebAPI'
+    Identity.WebAPI > Set as a Startup project 
 
-Identity.Domain > Update 'Customer' class attributes
+    xAureoDigital-BackEnd-MicroService-Identity > Services folder > Add a Class Libray project named: 'Identity.WebAPI'
+
+    Identity.Domain > Update 'Customer' class attributes
  
-Identity.Domain > 'Model' folder > Add a class named: 'Customer'
+    Identity.Domain > 'Model' folder > Add a class named: 'Customer'
  
-Identity.Domain > Update Entity class attributes
+    Identity.Domain > Update Entity class attributes
 
-Identity.Domain > Add 'Model' folder > Add a class named: 'Entity'
+    Identity.Domain > Add 'Model' folder > Add a class named: 'Entity'
  
-xAureoDigital-BackEnd-MicroService-Identity > Domain folder > Add a Class Libray project named: 'Identity.Domain'
+    xAureoDigital-BackEnd-MicroService-Identity > Domain folder > Add a Class Libray project named: 'Identity.Domain'
 
-xAureoDigital-BackEnd-MicroService-Identity > Add 'src' folder > Add folders 'Services', 'Application', 'Domain', 'Infrastructure.General', and 'Infrastructure.Persistence' folder;
+    xAureoDigital-BackEnd-MicroService-Identity > Add 'src' folder > Add folders 'Services', 'Application', 'Domain', 'Infrastructure.General', and 'Infrastructure.Persistence' folder;
  
-xAureoDigital-BackEnd-MicroService-Identity > Add 'notes' folder > Add GitCommit.txt file to 'notes' folder;
+    xAureoDigital-BackEnd-MicroService-Identity > Add 'notes' folder > Add GitCommit.txt file to 'notes' folder;
  
-Create a blank solution named: 'xAureoDigital-BackEnd-MicroService-Identity';
+    Create a blank solution named: 'xAureoDigital-BackEnd-MicroService-Identity';
