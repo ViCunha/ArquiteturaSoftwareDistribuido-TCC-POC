@@ -32,7 +32,7 @@ namespace Identity.Application.Models
         public async Task<APIResponseContent> CreateNewCustomerAsync(CustomerDTO customerDTO)
         {
             var result = await _mediatRHandler.SendCommandAsync(new CreateNewCustomerCommand(_autoMapper.Map<Customer>(customerDTO)));
-            if (result.Errors.Count > 0)
+            if (result.Errors.Count != 0)
             {
                 return new APIResponseContentFailure(StatusCodes.Status400BadRequest, result.Errors.Select(x =>x.ErrorMessage).ToList());
             }

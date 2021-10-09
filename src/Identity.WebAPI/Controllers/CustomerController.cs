@@ -4,6 +4,7 @@ using Identity.Domain.Models.APIResponse;
 using Identity.Domain.Models.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -49,11 +50,11 @@ namespace Identity.WebAPI.Controllers
         {
 
             var result = await _customerOrchestrator.CustomerCommandOrchestrator.CreateNewCustomerAsync(customerDTO);
+
             if (result is APIResponseContentFailure)
             {
                 return BadRequest((APIResponseContentFailure)result);
             }
-
 
             return Ok((APIResponseContentSuccess)result);
         }

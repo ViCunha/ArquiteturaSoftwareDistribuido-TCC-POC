@@ -4,6 +4,8 @@
 
 # TO-DO
 
+    Organize the Startup.cs
+
     MVC consuming from API 
     + http://www.macoratti.net/19/11/aspc_webapi3.htm
     + https://www.youtube.com/watch?v=aWePkE2ReGw
@@ -12,11 +14,6 @@
     JWT
     http://www.macoratti.net/20/06/aspc_apijwt1.htm
 
-    Identity.Domain > Apply some improvements (Object Initializer and validation on Entity class
-    protected Entity()
-    {
-        this.Id = Guid.NewGuid()
-    }
 
     Create BackgroundTasks for each Bounded Context
 
@@ -31,6 +28,10 @@
 
 # IN-PROGRESS
 
+    Identity.Domain > Apply some improvements on the Entity class
+
+# DONE 
+
     Identity.WebAPI > [ApiVersioning] > Define the route in the format: "/api/[public-private]/[controller]/v{version:apiVersion}" into the controllers
     + [ApiVersion("1.0.0")]
 
@@ -44,10 +45,6 @@
     + https://www.youtube.com/watch?v=ryPo5hYHSzM
     + https://www.youtube.com/watch?v=jXAUAWPhIcc&list=PL9XzOCngAkqs0Q8ZRdafnSYExKQurZrBY&index=23
     (URI, query, request header)
-
-
-
-# DONE 
 
     Identity.WebAPI > [ApiVersioning] > Add [ApiVersion("")] into the controllers
     + [MaptoApiVersion()]

@@ -17,12 +17,17 @@ namespace Identity.Domain.Models
         //
         protected Entity()
         {
-            
+
         }
 
         public void SetIsActive(bool value)
         {
             this.IsActive = value;
+        }
+
+        public void SetId(Guid id)
+        {
+            this.Id = id;
         }
 
     }
