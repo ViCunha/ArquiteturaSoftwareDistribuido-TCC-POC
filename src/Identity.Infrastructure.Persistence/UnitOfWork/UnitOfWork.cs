@@ -1,5 +1,6 @@
 ﻿using Identity.Domain.Interfaces;
 using Identity.Domain.Models;
+using Identity.Domain.Models.EventSourcing;
 using Identity.Infrastructure.Persistence.DBContext;
 using Identity.Infrastructure.Persistence.Repositories;
 using System;
@@ -18,6 +19,8 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
 
         private Repository<Customer> _repositoryCustomer = null;
 
+        private Repository<EventSourcingRecord> _repositoryEventSourcingRecords = null;
+
         public IRepository<Customer> CustomerRepository
         {
             get
@@ -27,6 +30,19 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
                     _repositoryCustomer = new Repository<Customer>(_applicationDbContext);
                 }
                 return _repositoryCustomer;
+            }
+            private set { }
+        }
+
+        public IRepository<EventSourcingRecord> RepositoryEventSourcingRecords
+        {
+            get
+            {
+                if (_repositoryEventSourcingRecords == null)
+                {
+                    _repositoryEventSourcingRecords = new Repository<EventSourcingRecord>(_applicationDbContext);
+                }
+                return _repositoryEventSourcingRecords;
             }
             private set { }
         }

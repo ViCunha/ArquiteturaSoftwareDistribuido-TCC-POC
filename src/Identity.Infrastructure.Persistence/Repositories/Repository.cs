@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Identity.Infrastructure.Persistence.Repositories
 {
-    public class Repository<T> : IRepository<T> where T : Entity, IAggregateRoot
+    public class Repository<T> : IRepository<T> where T : Base, IAggregateRoot
     {
         private readonly ApplicationDbContextCommands _context = null;
 

@@ -51,6 +51,14 @@
             String: JSON
         }
 
+    Identity.Infrastructure.Persistence > [Event-Sourcing] > Update the contract of T of Repository implementation 
+
+    Identity.Infrastructure.Persistence > [Event-Sourcing] > Add EventSourcingRecord as a Dbset into UnitOfWork
+
+    Identity.Infrastructure.Persistence > [Event-Sourcing] > Add EventSourcingRecord as a Dbset into ApplicationDbContextCommands
+
+    Identity.Domain > [Event-Sourcing] > Add EventSourcingRecord class into ~/Models/EventSourcing
+    
     Identity.Domain > [Event-Sourcing] > Create a EventSourcingRecordType Enum on ~/Models/EventSourcing
 
 # DONE 

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Identity.Domain.Models
 {
-    public abstract class Entity 
-    
+    public abstract class Entity : Base
+
     {   //
         public Guid Id { get; protected set; }
 

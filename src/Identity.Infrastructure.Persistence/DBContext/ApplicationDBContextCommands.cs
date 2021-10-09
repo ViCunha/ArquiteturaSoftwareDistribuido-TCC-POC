@@ -1,4 +1,5 @@
 ﻿using Identity.Domain.Models;
+using Identity.Domain.Models.EventSourcing;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,8 @@ namespace Identity.Infrastructure.Persistence.DBContext
     public class ApplicationDbContextCommands : DbContext
     {
         public DbSet<Customer> Customers { get; set; }
+
+        public DbSet<EventSourcingRecord> EventSourcingRecords { get; set; }
 
         public ApplicationDbContextCommands(DbContextOptions<ApplicationDbContextCommands> options)
             : base(options)
