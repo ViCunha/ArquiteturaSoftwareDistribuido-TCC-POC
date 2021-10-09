@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Identity.WebAPI.Controllers
 {
-    
+
     [ApiController]
     [ApiVersion("1.0")]
-    [Route("api/[controller]")]
+    [Route("/api/private/[controller]/v{version:apiVersion}")]
     public class CustomerController : ControllerBase
     {
         //

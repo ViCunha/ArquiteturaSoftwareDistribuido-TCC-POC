@@ -36,6 +36,15 @@ namespace Identity.WebAPI
                     }
                 );
 
+            services.AddVersionedApiExplorer
+                (
+                    options =>
+                    {
+                        options.GroupNameFormat = "'v'VVV";
+                        options.SubstituteApiVersionInUrl = true;
+                    }
+                );
+
             services.AddControllers()
                     .AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<Startup>());
                 

@@ -31,7 +31,7 @@
 
 # IN-PROGRESS
 
-    Identity.WebAPI > [ApiVersioning] > Define the route in the format: "/api/[public-private]/[controller]/v{version:apiVersion}"
+    Identity.WebAPI > [ApiVersioning] > Define the route in the format: "/api/[public-private]/[controller]/v{version:apiVersion}" into the controllers
     + [ApiVersion("1.0.0")]
 
     Identity.WebAPI > [ApiVersioning] > Configure the API versioning on Startup.cs 
@@ -46,12 +46,13 @@
     (URI, query, request header)
 
 
+
+# DONE 
+
     Identity.WebAPI > [ApiVersioning] > Add [ApiVersion("")] into the controllers
     + [MaptoApiVersion()]
 
     Identity.WebAPI > [ApiVersioning] > install-package Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer
-
-# DONE 
 
     Identity.WebAPI > [ApiVersioning] > install-package Microsoft.AspNetCore.Mvc.Versioning
 
