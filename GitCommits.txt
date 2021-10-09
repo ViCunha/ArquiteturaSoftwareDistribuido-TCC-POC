@@ -1,6 +1,19 @@
 
 
++ https://www.youtube.com/watch?v=nY-w9wPFEuY
+
 # TO-DO
+
+
+MVC consuming from API 
++ http://www.macoratti.net/19/11/aspc_webapi3.htm
++ https://www.youtube.com/watch?v=aWePkE2ReGw
++ https://www.youtube.com/watch?v=cwgck1k0YKU
+
+
+JWT
+http://www.macoratti.net/20/06/aspc_apijwt1.htm
+
 Identity.Domain > Apply some improvements (Object Initializer and validation on Entity class
 protected Entity()
 {
@@ -16,13 +29,27 @@ Cosmos DB
 
 Event-Sourcing 
 
-Identity.WebAPI > Define the route in the format: "/api/[public-private]/[controller]/v[number]"
-+ Application Versioning 
+CORS configuration 
 
 
 # IN-PROGRESS
 
+Identity.WebAPI > [ApiVersioning] > Define the route in the format: "/api/[public-private]/[controller]/v{version:apiVersion}"
++ [ApiVersion("1.0.0")]
 
+Identity.WebAPI > [ApiVersioning] > Configure the API versioning on Startup.cs 
++ Semantical versioning: 'Major(Breaking Change).Minor(Feature Improvements).Bugs(Failures Corrections)'
++ Chanage the route and include some information in the response header 
++ services.AddApiVersioning(options => options)
++ services.AddApiVersioningExplorer(options => options)
++ https://desenvolvedor.io/curso-online-rest-com-asp-net-core-webapi/aula/a8b6e10d-da45-43b2-b5ef-45e3d97a3304
++ https://semver.org/
++ https://www.youtube.com/watch?v=ryPo5hYHSzM
+(URI, query, request header)
+
+Identity.WebAPI > [ApiVersioning] > install-package Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer
+
+Identity.WebAPI > [ApiVersioning] > install-package Microsoft.AspNetCore.Mvc.Versioning
 
 
 # DONE 
@@ -41,7 +68,6 @@ Identity.Application > Update Standarlize the response contents
         ]
       }
     }
-
 
 Identity.Domain > Implement the Fluent Validation in the Entity class
 + http://www.macoratti.net/19/11/aspnc_traterr1.htm
