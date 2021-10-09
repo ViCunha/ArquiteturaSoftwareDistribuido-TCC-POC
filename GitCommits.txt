@@ -43,13 +43,8 @@
 
     
     Identity.Domain > [Event-Sourcing] > Create a EventSourcingRecord class on ~/Models/EventSourcing
-        {
-            Guid: EventID
-            Int: Sequence
-            DateTimeUTC: Event
-            type: Create, Update, Delete
-            String: JSON
-        }
+
+# DONE 
 
     Identity.Infrastructure.Persistence > [Event-Sourcing] > Update the contract of T of Repository implementation 
 
@@ -60,8 +55,6 @@
     Identity.Domain > [Event-Sourcing] > Add EventSourcingRecord class into ~/Models/EventSourcing
     
     Identity.Domain > [Event-Sourcing] > Create a EventSourcingRecordType Enum on ~/Models/EventSourcing
-
-# DONE 
 
     Identity.Domain > Apply some improvements on the Entity class
 
