@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Migrations\CQRS\Commands\" />
     <Folder Include="Migrations\CQRS\Queries\" />
   </ItemGroup>
 

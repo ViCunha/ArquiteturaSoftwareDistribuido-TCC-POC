@@ -1,6 +1,7 @@
 ﻿using Identity.Domain.Models;
 using Identity.Domain.Models.EventSourcing;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,19 @@ namespace Identity.Infrastructure.Persistence.DBContext
 
         public DbSet<EventSourcingRecord> EventSourcingRecords { get; set; }
 
+        public DbContextOptions<ApplicationDbContextCommands> DbContextOptions { get; }
+
+        public DatabaseFacade Database 
+        {
+            get
+            { return this.Database; }
+        }
+
         public ApplicationDbContextCommands(DbContextOptions<ApplicationDbContextCommands> options)
             : base(options)
         {
-
+            DbContextOptions = options;
+            
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

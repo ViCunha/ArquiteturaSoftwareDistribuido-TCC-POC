@@ -11,6 +11,7 @@ using System;
 using Moq.AutoMock;
 using Identity.Application.Interfaces;
 using Identity.Domain.Models.DTO;
+using Identity.Domain.Models.APIResponse;
 
 namespace Identity.IntegrationTests
 {
@@ -43,18 +44,11 @@ namespace Identity.IntegrationTests
                 return (T)((ObjectResult)result.Result).Value;
             }
 
-            async Task<IEnumerable<CustomerDTO>> GetAllCustomersAsync()
+            async Task<APIResponseContent> GetAllCustomersAsync()
             {
-                return await Task.Factory.StartNew
+                return await Task<APIResponseContent>.Factory.StartNew
                     (
-                        () => new List<CustomerDTO>()
-                        {
-                        new CustomerDTO() { Id = Guid.NewGuid(), IsActive = true, Name = "A" }
-                        ,
-                        new CustomerDTO() { Id = Guid.NewGuid(), IsActive = true, Name = "B" }
-                        ,
-                        new CustomerDTO() { Id = Guid.NewGuid(), IsActive = true, Name = "C" }
-                        }
+                        () => new APIResponseContentSuccess(0, null) 
                     );
             }
         }

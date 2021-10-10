@@ -1,5 +1,6 @@
 ﻿using Identity.Domain.Interfaces;
 using Identity.Domain.Models;
+using Identity.Domain.Models.EventSourcing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,7 @@ namespace Identity.Infrastructure.Persistence.Interfaces
         Task<IEnumerable<Customer>> GetAllCustomersAsync();
 
         Task<int> CreateNewCustomerAsync(Customer customer);
+
+        //Task<int> SaveAndGenerateEventSourcingAsync(Customer customer, EventSourcingRecordType eventSourcingRecordType);
     }
 }

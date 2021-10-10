@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 
 namespace Identity.Domain.Models.EventSourcing
 {
-    public class EventSourcingRecord : Base, IAggregateRoot
+    public class EventSourcingRecord : Entity, IAggregateRoot
     {
         //
-        public Guid Id { get; private set; }
-
         public DateTime MomentInTime { get; private set; }
 
         public EventSourcingRecordType Type { get; private set; }

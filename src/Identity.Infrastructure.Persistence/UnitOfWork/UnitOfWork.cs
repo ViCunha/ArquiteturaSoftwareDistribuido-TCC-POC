@@ -3,6 +3,8 @@ using Identity.Domain.Models;
 using Identity.Domain.Models.EventSourcing;
 using Identity.Infrastructure.Persistence.DBContext;
 using Identity.Infrastructure.Persistence.Repositories;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +36,7 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
             private set { }
         }
 
-        public IRepository<EventSourcingRecord> RepositoryEventSourcingRecords
+        public IRepository<EventSourcingRecord> EventSourcingRecordRepository
         {
             get
             {
@@ -61,6 +63,51 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
         {
             return await _applicationDbContext.SaveChangesAsync();
         }
+
+
+        private async Task<int> SaveTransactionsAndGenerateEventSourcingAsync<T>(IRepository<T> repository, T entity, EventSourcingRecordType eventSourcingRecordType) where T : Entity
+        {
+            List<int> resultOfSave = new List<int>();
+
+            var strategy = _applicationDbContext.Database.CreateExecutionStrategy();
+            await strategy.ExecuteAsync
+                (
+                    async () =>
+                    {
+                        using (var transaction = _applicationDbContext.Database.BeginTransaction())
+                        {
+                            await repository.AddAsync(entity);
+                            resultOfSave.Add(await SaveAsync());
+
+                            await EventSourcingRecordRepository.AddAsync(await GenerateEventSourcingAsync(entity, eventSourcingRecordType));
+                            resultOfSave.Add(await SaveAsync());
+
+                            await transaction.CommitAsync();
+                        }
+                    }
+                );
+
+            return resultOfSave.Where(x => x != 0).Count();
+
+        }
+
+        private async Task<EventSourcingRecord> GenerateEventSourcingAsync(Entity entity, EventSourcingRecordType eventSourcingRecordType)
+        {
+            return await Task<EventSourcingRecord>.Factory.StartNew
+                (
+                    () => new EventSourcingRecord
+                               (
+                                   Guid.NewGuid()
+                                   ,
+                                   DateTime.UtcNow
+                                   ,
+                                   eventSourcingRecordType
+                                   ,
+                                   Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(entity)).ToString()
+                               )
+                );
+        }
+
 
         protected virtual void Dispose(bool disposing)
         {

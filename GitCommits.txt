@@ -36,15 +36,18 @@
     + https://desenvolvedor.io/curso-online-modelagem-de-dominios-ricos/aula/361a3216-5a4f-4bc0-912a-6814cbde209b#status
     + https://microservices.io/patterns/data/event-sourcing.html
     + https://www.youtube.com/watch?v=XWTrcBqXi6s
+    + https://docs.microsoft.com/en-us/ef/ef6/saving/transactions?redirectedfrom=MSDN
 
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to get on specific event
 
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to replay part of the history
-
     
-    Identity.Domain > [Event-Sourcing] > Create a EventSourcingRecord class on ~/Models/EventSourcing
+    Identity.Infrastructure.Persistence > [Event-Sourcing] > Update the Commands Migrations 
+    add-migration 'EventSourcing' -c ApplicationDbContextCommands -output Migrations/CQRS/Commands
 
 # DONE 
+
+    Identity.Domain > [Event-Sourcing] > Create a EventSourcingRecord class on ~/Models/EventSourcing
 
     Identity.Infrastructure.Persistence > [Event-Sourcing] > Update the contract of T of Repository implementation 
 

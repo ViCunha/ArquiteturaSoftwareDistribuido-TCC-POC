@@ -1,5 +1,6 @@
 ﻿using Identity.Domain.Interfaces;
 using Identity.Domain.Models;
+using Identity.Domain.Models.EventSourcing;
 using Identity.Infrastructure.Persistence.DBContext;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Identity.Infrastructure.Persistence.Repositories
 {
-    public class Repository<T> : IRepository<T> where T : Base, IAggregateRoot
+    public class Repository<T> : IRepository<T> where T : Entity, IAggregateRoot
     {
         private readonly ApplicationDbContextCommands _context = null;
 

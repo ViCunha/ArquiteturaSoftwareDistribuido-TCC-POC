@@ -1,4 +1,5 @@
 ﻿using Identity.Domain.Models;
+using Identity.Domain.Models.EventSourcing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,9 @@ namespace Identity.Domain.Interfaces
     public interface IUnitOfWork
     {
         public IRepository<Customer> CustomerRepository { get; }
+
+        public IRepository<EventSourcingRecord> EventSourcingRecordRepository { get; }
+        
 
         int Save();
 
