@@ -7,22 +7,25 @@ using System.Threading.Tasks;
 
 namespace Identity.Domain.Models.EventSourcing
 {
-    public class EventSourcingRecord : Entity, IAggregateRoot
+    public class EventSourcingHistory : Entity, IAggregateRoot
     {
         //
         public DateTime MomentInTime { get; private set; }
 
-        public EventSourcingRecordType Type { get; private set; }
+        public Byte EventSourcingHistoryType { get; private set; }
+
+        public string ObjectType { get; private set; }
 
         public string Data { get; private set; }
 
         //
-        public EventSourcingRecord(Guid id, DateTime momentInTime, EventSourcingRecordType type, string data)
+        public EventSourcingHistory(Guid id, DateTime momentInTime, EventSourcingHistoryType eventSourcingHistoryType, string objectType, string data)
         {
             Id = id;
             MomentInTime = momentInTime;
-            Type = type;
+            EventSourcingHistoryType = ((byte) eventSourcingHistoryType);
             Data = data;
+            ObjectType = objectType;
         }
 
     }

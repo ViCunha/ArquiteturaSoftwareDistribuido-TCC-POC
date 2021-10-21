@@ -23,7 +23,7 @@ namespace Identity.Infrastructure.Persistence.Repositories
 
         public async Task<int> CreateNewCustomerAsync(Customer customer)
         {
-            return await SaveAndGenerateEventSourcingAsync(customer, EventSourcingRecordType.Create);
+            return await _unitOfWork.SaveAndGenerateEventSourcingAsync<Customer>(_unitOfWork.CustomerRepository, customer, EventSourcingHistoryType.Create);
         }
 
         public async Task<IEnumerable<Customer>> GetAllCustomersAsync()
@@ -31,42 +31,6 @@ namespace Identity.Infrastructure.Persistence.Repositories
             return await _unitOfWork.CustomerRepository.GetAllAsync();
         }
 
-        // TODO: How manage possible exceptions during the persistences
-        private async Task<int> SaveAndGenerateEventSourcingAsync(Customer customer, EventSourcingRecordType eventSourcingRecordType)
-        {
-            List<int> resultOfSave = new List<int>();
-
-            
-            using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
-            {
-                await _unitOfWork.CustomerRepository.AddAsync(customer);
-                resultOfSave.Add(await _unitOfWork.SaveAsync());
-
-
-                await _unitOfWork.EventSourcingRecordRepository.AddAsync(await GenerateEventSourcingAsync(customer, eventSourcingRecordType));
-                resultOfSave.Add(await _unitOfWork.SaveAsync());
-                scope.Complete();
-            }
-
-            return resultOfSave.Where(x => x != 0).Count();
-        }
-
-        private async Task<EventSourcingRecord> GenerateEventSourcingAsync(Entity entity, EventSourcingRecordType eventSourcingRecordType)
-        {
-            return await Task<EventSourcingRecord>.Factory.StartNew
-                (
-                    () => new EventSourcingRecord
-                               (
-                                   Guid.NewGuid()
-                                   ,
-                                   DateTime.UtcNow
-                                   ,
-                                   eventSourcingRecordType
-                                   ,
-                                   Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(entity)).ToString()
-                               )
-                );
-        }
 
     }
 }

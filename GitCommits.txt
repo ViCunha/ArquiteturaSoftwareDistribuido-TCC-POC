@@ -42,22 +42,25 @@
 
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to replay part of the history
     
-    Identity.Infrastructure.Persistence > [Event-Sourcing] > Update the Commands Migrations 
-    add-migration 'EventSourcing' -c ApplicationDbContextCommands -output Migrations/CQRS/Commands
+
+    Rename 'EventSourcingRecord' to 'EventSourcingHistory'; Identity.Domain > [Event-Sourcing] Update EventSourcingHistory class 
 
 # DONE 
 
-    Identity.Domain > [Event-Sourcing] > Create a EventSourcingRecord class on ~/Models/EventSourcing
+    Identity.Infrastructure.Persistence > [Event-Sourcing] > Update the Commands Migrations 
+    add-migration 'EventSourcing' -c ApplicationDbContextCommands -output Migrations/CQRS/Commands
+
+    Identity.Domain > [Event-Sourcing] > Create a EventSourcingHistory class on ~/Models/EventSourcing
 
     Identity.Infrastructure.Persistence > [Event-Sourcing] > Update the contract of T of Repository implementation 
 
-    Identity.Infrastructure.Persistence > [Event-Sourcing] > Add EventSourcingRecord as a Dbset into UnitOfWork
+    Identity.Infrastructure.Persistence > [Event-Sourcing] > Add EventSourcingHistory as a Dbset into UnitOfWork
 
-    Identity.Infrastructure.Persistence > [Event-Sourcing] > Add EventSourcingRecord as a Dbset into ApplicationDbContextCommands
+    Identity.Infrastructure.Persistence > [Event-Sourcing] > Add EventSourcingHistory as a Dbset into ApplicationDbContextCommands
 
-    Identity.Domain > [Event-Sourcing] > Add EventSourcingRecord class into ~/Models/EventSourcing
+    Identity.Domain > [Event-Sourcing] > Add EventSourcingHistory class into ~/Models/EventSourcing
     
-    Identity.Domain > [Event-Sourcing] > Create a EventSourcingRecordType Enum on ~/Models/EventSourcing
+    Identity.Domain > [Event-Sourcing] > Create a EventSourcingHistoryType Enum on ~/Models/EventSourcing
 
     Identity.Domain > Apply some improvements on the Entity class
 
@@ -247,7 +250,7 @@
     Identity.UnitTests > Rename fact 'GetAllCustomers_CallTheMethod_ExpectedResultOkAndEnumerableOfObjects' to 'CustomerController_GetAllCustomers_ExpectedResultOkAndCollectionOfObjects'
 
     Identity.UnitTests > Add fact 'GetAllCustomers_CallTheMethod_ExpectedResultOkAndEnumerableOfObjects'
-
+*
     Identity.UnitTests > Add reference to 'Identity.Domain' project
 
     + https://docs.microsoft.com/pt-br/dotnet/core/testing/
@@ -275,11 +278,11 @@
 
     Identity.Domain > Update 'Customer' class attributes
  
-    Identity.Domain > 'Model' folder > Add a class named: 'Customer'
+    Identity.Domain > Add a class named: 'Customer' at ~Model/ 
  
     Identity.Domain > Update Entity class attributes
 
-    Identity.Domain > Add 'Model' folder > Add a class named: 'Entity'
+    Identity.Domain > Add 'Model' folder > Add a class named: 'Entity' at ~Model/ 
  
     xAureoDigital-BackEnd-MicroService-Identity > Domain folder > Add a Class Libray project named: 'Identity.Domain'
 

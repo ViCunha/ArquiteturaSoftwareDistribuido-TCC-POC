@@ -12,8 +12,9 @@ namespace Identity.Domain.Interfaces
     {
         public IRepository<Customer> CustomerRepository { get; }
 
-        public IRepository<EventSourcingRecord> EventSourcingRecordRepository { get; }
-        
+        public IRepository<EventSourcingHistory> EventSourcingHistoryRepository { get; }
+
+        Task<int> SaveAndGenerateEventSourcingAsync<T>(IRepository<T> repository, T entity, EventSourcingHistoryType EventSourcingHistoryType) where T : Entity;
 
         int Save();
 

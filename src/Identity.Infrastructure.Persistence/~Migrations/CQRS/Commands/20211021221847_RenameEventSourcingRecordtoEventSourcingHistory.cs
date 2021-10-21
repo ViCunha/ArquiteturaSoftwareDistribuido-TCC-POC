@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Identity.Infrastructure.Persistence.Migrations.CQRS.Commands
 {
-    public partial class EventSourcing : Migration
+    public partial class RenameEventSourcingRecordtoEventSourcingHistory : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -21,18 +21,19 @@ namespace Identity.Infrastructure.Persistence.Migrations.CQRS.Commands
                 });
 
             migrationBuilder.CreateTable(
-                name: "EventSourcingRecords",
+                name: "EventSourcingHistory",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     MomentInTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Type = table.Column<byte>(type: "tinyint", nullable: false),
+                    EventSourcingHistoryType = table.Column<byte>(type: "tinyint", nullable: false),
+                    ObjectType = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Data = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EventSourcingRecords", x => x.Id);
+                    table.PrimaryKey("PK_EventSourcingHistory", x => x.Id);
                 });
 
             migrationBuilder.CreateIndex(
@@ -47,7 +48,7 @@ namespace Identity.Infrastructure.Persistence.Migrations.CQRS.Commands
                 name: "Customers");
 
             migrationBuilder.DropTable(
-                name: "EventSourcingRecords");
+                name: "EventSourcingHistory");
         }
     }
 }

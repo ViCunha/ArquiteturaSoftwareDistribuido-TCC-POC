@@ -14,20 +14,12 @@ namespace Identity.Infrastructure.Persistence.DBContext
     {
         public DbSet<Customer> Customers { get; set; }
 
-        public DbSet<EventSourcingRecord> EventSourcingRecords { get; set; }
+        public DbSet<EventSourcingHistory> EventSourcingHistory { get; set; }
 
-        public DbContextOptions<ApplicationDbContextCommands> DbContextOptions { get; }
-
-        public DatabaseFacade Database 
-        {
-            get
-            { return this.Database; }
-        }
 
         public ApplicationDbContextCommands(DbContextOptions<ApplicationDbContextCommands> options)
             : base(options)
         {
-            DbContextOptions = options;
             
         }
 

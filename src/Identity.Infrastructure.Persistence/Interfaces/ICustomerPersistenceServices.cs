@@ -15,6 +15,5 @@ namespace Identity.Infrastructure.Persistence.Interfaces
 
         Task<int> CreateNewCustomerAsync(Customer customer);
 
-        //Task<int> SaveAndGenerateEventSourcingAsync(Customer customer, EventSourcingRecordType eventSourcingRecordType);
     }
 }

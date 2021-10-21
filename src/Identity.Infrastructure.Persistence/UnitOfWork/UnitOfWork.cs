@@ -21,7 +21,7 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
 
         private Repository<Customer> _repositoryCustomer = null;
 
-        private Repository<EventSourcingRecord> _repositoryEventSourcingRecords = null;
+        private Repository<EventSourcingHistory> _repositoryEventSourcingHistory = null;
 
         public IRepository<Customer> CustomerRepository
         {
@@ -36,15 +36,15 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
             private set { }
         }
 
-        public IRepository<EventSourcingRecord> EventSourcingRecordRepository
+        public IRepository<EventSourcingHistory> EventSourcingHistoryRepository
         {
             get
             {
-                if (_repositoryEventSourcingRecords == null)
+                if (_repositoryEventSourcingHistory == null)
                 {
-                    _repositoryEventSourcingRecords = new Repository<EventSourcingRecord>(_applicationDbContext);
+                    _repositoryEventSourcingHistory = new Repository<EventSourcingHistory>(_applicationDbContext);
                 }
-                return _repositoryEventSourcingRecords;
+                return _repositoryEventSourcingHistory;
             }
             private set { }
         }
@@ -65,11 +65,11 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
         }
 
 
-        private async Task<int> SaveTransactionsAndGenerateEventSourcingAsync<T>(IRepository<T> repository, T entity, EventSourcingRecordType eventSourcingRecordType) where T : Entity
+        public async Task<int> SaveAndGenerateEventSourcingAsync<T>(IRepository<T> repository, T entity, EventSourcingHistoryType EventSourcingHistoryType) where T : Entity
         {
-            List<int> resultOfSave = new List<int>();
-
+            var resultOfSave = new List<int>();
             var strategy = _applicationDbContext.Database.CreateExecutionStrategy();
+
             await strategy.ExecuteAsync
                 (
                     async () =>
@@ -79,7 +79,7 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
                             await repository.AddAsync(entity);
                             resultOfSave.Add(await SaveAsync());
 
-                            await EventSourcingRecordRepository.AddAsync(await GenerateEventSourcingAsync(entity, eventSourcingRecordType));
+                            await EventSourcingHistoryRepository.AddAsync(await GenerateEventSourcingAsync<T>(entity, EventSourcingHistoryType));
                             resultOfSave.Add(await SaveAsync());
 
                             await transaction.CommitAsync();
@@ -87,23 +87,24 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
                     }
                 );
 
-            return resultOfSave.Where(x => x != 0).Count();
-
+            return (resultOfSave.Count() == resultOfSave.Where(x => x == 1).Count()) ? 1 : 0;
         }
 
-        private async Task<EventSourcingRecord> GenerateEventSourcingAsync(Entity entity, EventSourcingRecordType eventSourcingRecordType)
+        private async Task<EventSourcingHistory> GenerateEventSourcingAsync<T>(T entity, EventSourcingHistoryType eventSourcingHistoryType) where T : Entity
         {
-            return await Task<EventSourcingRecord>.Factory.StartNew
+            return await Task<EventSourcingHistory>.Factory.StartNew
                 (
-                    () => new EventSourcingRecord
+                    () => new EventSourcingHistory
                                (
-                                   Guid.NewGuid()
+                                   id: Guid.NewGuid()
                                    ,
                                    DateTime.UtcNow
                                    ,
-                                   eventSourcingRecordType
+                                   eventSourcingHistoryType
                                    ,
-                                   Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(entity)).ToString()
+                                   entity.GetType().ToString()
+                                   ,
+                                   JsonConvert.SerializeObject(entity)
                                )
                 );
         }

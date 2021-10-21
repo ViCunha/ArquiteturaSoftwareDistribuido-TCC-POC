@@ -37,7 +37,7 @@ namespace Identity.Application.Models
                 return new APIResponseContentFailure(StatusCodes.Status400BadRequest, result.Errors.Select(x =>x.ErrorMessage).ToList());
             }
             
-            return new APIResponseContentSuccess(StatusCodes.Status400BadRequest, customerDTO); 
+            return new APIResponseContentSuccess(StatusCodes.Status200OK, customerDTO); 
         }
 
     }

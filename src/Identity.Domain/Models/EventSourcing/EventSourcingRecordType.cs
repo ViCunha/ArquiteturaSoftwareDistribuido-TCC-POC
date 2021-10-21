@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Identity.Domain.Models.EventSourcing
 {
-    public enum EventSourcingRecordType : Byte
+    public enum EventSourcingHistoryType : Byte
     {
         Create = 1
         ,

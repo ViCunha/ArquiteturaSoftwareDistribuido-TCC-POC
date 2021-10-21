@@ -39,7 +39,7 @@ namespace Identity.Infrastructure.Persistence.Migrations.CQRS.Commands
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("Identity.Domain.Models.EventSourcing.EventSourcingRecord", b =>
+            modelBuilder.Entity("Identity.Domain.Models.EventSourcing.EventSourcingHistory", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -48,18 +48,21 @@ namespace Identity.Infrastructure.Persistence.Migrations.CQRS.Commands
                     b.Property<string>("Data")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte>("EventSourcingHistoryType")
+                        .HasColumnType("tinyint");
+
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("MomentInTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<byte>("Type")
-                        .HasColumnType("tinyint");
+                    b.Property<string>("ObjectType")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("EventSourcingRecords");
+                    b.ToTable("EventSourcingHistory");
                 });
 #pragma warning restore 612, 618
         }

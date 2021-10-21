@@ -1,13 +1,11 @@
 ﻿using Identity.Domain.Interfaces;
 using Identity.Domain.Models;
-using Identity.Domain.Models.EventSourcing;
 using Identity.Infrastructure.Persistence.DBContext;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Identity.Infrastructure.Persistence.Repositories
