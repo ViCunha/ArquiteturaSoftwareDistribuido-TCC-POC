@@ -79,7 +79,7 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
                             await repository.AddAsync(entity);
                             resultOfSave.Add(await SaveAsync());
 
-                            await EventSourcingHistoryRepository.AddAsync(await GenerateEventSourcingAsync<T>(entity, EventSourcingHistoryType));
+                            await EventSourcingHistoryRepository.AddAsync(await GenerateEventSourcingAsync<T>(entity, (byte) EventSourcingHistoryType));
                             resultOfSave.Add(await SaveAsync());
 
                             await transaction.CommitAsync();
@@ -90,7 +90,7 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
             return (resultOfSave.Count() == resultOfSave.Where(x => x == 1).Count()) ? 1 : 0;
         }
 
-        private async Task<EventSourcingHistory> GenerateEventSourcingAsync<T>(T entity, EventSourcingHistoryType eventSourcingHistoryType) where T : Entity
+        private async Task<EventSourcingHistory> GenerateEventSourcingAsync<T>(T entity, Byte eventSourcingHistoryType) where T : Entity
         {
             return await Task<EventSourcingHistory>.Factory.StartNew
                 (

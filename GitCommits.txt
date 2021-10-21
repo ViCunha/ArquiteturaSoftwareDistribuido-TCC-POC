@@ -42,10 +42,9 @@
 
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to replay part of the history
     
+# DONE 
 
     Rename 'EventSourcingRecord' to 'EventSourcingHistory'; Identity.Domain > [Event-Sourcing] Update EventSourcingHistory class 
-
-# DONE 
 
     Identity.Infrastructure.Persistence > [Event-Sourcing] > Update the Commands Migrations 
     add-migration 'EventSourcing' -c ApplicationDbContextCommands -output Migrations/CQRS/Commands

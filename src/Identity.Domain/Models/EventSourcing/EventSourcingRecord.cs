@@ -19,11 +19,11 @@ namespace Identity.Domain.Models.EventSourcing
         public string Data { get; private set; }
 
         //
-        public EventSourcingHistory(Guid id, DateTime momentInTime, EventSourcingHistoryType eventSourcingHistoryType, string objectType, string data)
+        public EventSourcingHistory(Guid id, DateTime momentInTime, Byte eventSourcingHistoryType, string objectType, string data)
         {
             Id = id;
             MomentInTime = momentInTime;
-            EventSourcingHistoryType = ((byte) eventSourcingHistoryType);
+            EventSourcingHistoryType = eventSourcingHistoryType;
             Data = data;
             ObjectType = objectType;
         }
