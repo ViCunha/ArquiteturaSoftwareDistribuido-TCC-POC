@@ -31,6 +31,11 @@ namespace Identity.Infrastructure.Persistence.Repositories
             return await _unitOfWork.CustomerRepository.GetAllAsync();
         }
 
+        public async Task<Customer> GetCustomersByIdAsync(Guid id)
+        {
+            return await _unitOfWork.CustomerRepository.GetByIdAsync(id);
+        }
+
 
     }
 }

@@ -15,5 +15,7 @@ namespace Identity.Infrastructure.Persistence.Interfaces
 
         Task<int> CreateNewCustomerAsync(Customer customer);
 
+        Task<Customer> GetCustomersByIdAsync(Guid id);
+
     }
 }

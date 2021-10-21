@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Identity.Infrastructure.Persistence.Migrations.CQRS.Commands
 {
     [DbContext(typeof(ApplicationDbContextCommands))]
-    [Migration("20211021221847_RenameEventSourcingRecordtoEventSourcingHistory")]
+    [Migration("20211021224522_RenameEventSourcingRecordtoEventSourcingHistory")]
     partial class RenameEventSourcingRecordtoEventSourcingHistory
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

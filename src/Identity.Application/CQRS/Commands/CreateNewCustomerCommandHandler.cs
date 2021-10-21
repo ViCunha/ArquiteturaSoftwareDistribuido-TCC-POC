@@ -22,7 +22,13 @@ namespace Identity.Application.CQRS.Commands
         public async Task<ValidationResult> Handle(CreateNewCustomerCommand request, CancellationToken cancellationToken)
         {
             //
-            request.Customer.SetId(Guid.NewGuid());
+            var newValidationResult = new ValidationResult();
+            var resultGetCustomersByIdAsync = await _persistenceServicesCustomer.GetCustomersByIdAsync(request.Customer.Id);
+            if (resultGetCustomersByIdAsync != null)
+            {
+                newValidationResult.Errors.Add(new ValidationFailure("Id", $"This {nameof(request.Customer.Id)} already exist"));
+                return newValidationResult;
+            }
 
             //
             var customerValidationResults = await (new CustomerValidator().ValidateAsync(request.Customer));
@@ -32,9 +38,7 @@ namespace Identity.Application.CQRS.Commands
             }
 
             //
-            var newValidationResult = new ValidationResult();
             var result = await _persistenceServicesCustomer.CreateNewCustomerAsync(request.Customer);
-            
             if (result != 1)
             {
                 newValidationResult.Errors.Add(new ValidationFailure("", ""));
