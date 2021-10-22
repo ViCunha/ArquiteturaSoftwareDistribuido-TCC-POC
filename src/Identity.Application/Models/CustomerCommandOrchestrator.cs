@@ -31,7 +31,6 @@ namespace Identity.Application.Models
 
         public async Task<APIResponseContent> CreateNewCustomerAsync(CustomerDTO customerDTO)
         {
-            //var result = await _mediatRHandler.SendCommandAsync(new CreateNewCustomerCommand(_autoMapper.Map<Customer>(customerDTO)));
             var result = await _mediatRHandler.SendCommandAsync(new CreateNewCustomerCommand(customerDTO));
             if (result.Errors.Count != 0)
             {

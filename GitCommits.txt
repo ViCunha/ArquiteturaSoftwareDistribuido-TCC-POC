@@ -42,15 +42,13 @@
 
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to replay part of the history
 
-
-    [Transaction Processing Control] Identity.Domain.Models.DTO > Implement ITransactionProcessingControl into CustomerDTO
-
-    
-    [Transaction Processing Control] Identity.Domain.Models.DTO > Add ITransactionProcessingControl interface
+    [Transaction Processing Control] Identity.Application.Models > Update CreateNewCustomerAsync to replace the parameter of Customer by CustomerDTO
     
 # DONE 
 
-    [Transaction Processing Control] Identity.Domain.Interfaces > Add ITransactionProcessingControl interface
+    [Transaction Processing Control] Identity.Domain.Models.DTO > Implement ITransactionProcessingControl into CustomerDTO
+    
+    [Transaction Processing Control] Identity.Domain.Models.DTO > Add ITransactionProcessingControl interface
 
     Identity.Infrastructure.Persistence > Add GetCustomersByIdAsync method on CustomerPersistenceServices; Identity.Application > CreateNewCustomerCommandHandler is checking if the Id already exist
 
