@@ -35,12 +35,5 @@ namespace Identity.Infrastructure.Persistence.Repositories
         {
             return await _unitOfWork.CustomerRepository.GetByIdAsync(id);
         }
-
-        public async Task<TransactionProcessingControlHistory> GetTransactionProcessingControlByIdAsync(Guid id)
-        {
-            return await _unitOfWork.TransactionProcessingControlHistory.GetByIdAsync(id);
-        }
-
-
     }
 }

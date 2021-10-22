@@ -14,18 +14,18 @@ namespace Identity.Application.CQRS.Commands
 {
     public class CreateNewCustomerCommandHandler : CommandHandler, IRequestHandler<CreateNewCustomerCommand, ValidationResult>
     {
-        private readonly ICustomerPersistenceServices _persistenceServicesCustomer;
+        private readonly ICustomerPersistenceServices _customerPersistenceServices;
         
         private readonly IMapper _autoMapper;
 
         public CreateNewCustomerCommandHandler
             (
-            ICustomerPersistenceServices PersistenceServicesCustomer
+            ICustomerPersistenceServices customerPersistenceServices
             ,
             IMapper autoMapper
             )
         {
-            this._persistenceServicesCustomer = PersistenceServicesCustomer;
+            this._customerPersistenceServices = customerPersistenceServices;
             this._autoMapper = autoMapper;
         }
 
@@ -33,6 +33,7 @@ namespace Identity.Application.CQRS.Commands
         {
             //
             var newValidationResult = new ValidationResult();
+            //var result = _customerPersistenceServices.GetTransactionProcessingControlByIdAsync
             if (true)
             {
 
@@ -40,7 +41,7 @@ namespace Identity.Application.CQRS.Commands
 
             //
             var customer = _autoMapper.Map<Customer>(request.CustomerDTO);
-            var resultGetCustomersByIdAsync = await _persistenceServicesCustomer.GetCustomersByIdAsync(customer.Id);
+            var resultGetCustomersByIdAsync = await _customerPersistenceServices.GetCustomersByIdAsync(customer.Id);
             if (resultGetCustomersByIdAsync != null)
             {
                 newValidationResult.Errors.Add(new ValidationFailure("Id", $"This {nameof(customer.Id)} already exist"));
@@ -55,7 +56,7 @@ namespace Identity.Application.CQRS.Commands
             }
 
             //
-            var result = await _persistenceServicesCustomer.CreateNewCustomerAsync(customer, request.CustomerDTO.TPCId);
+            var result = await _customerPersistenceServices.CreateNewCustomerAsync(customer, request.CustomerDTO.TPCId);
             if (result != 1)
             {
                 newValidationResult.Errors.Add(new ValidationFailure("", ""));
