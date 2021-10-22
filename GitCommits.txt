@@ -42,11 +42,11 @@
 
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to replay part of the history
 
-    [Transaction Processing Control] Identity.Application.Configure > Add ITransactionProcessingControlServices in services of DI
-
     [Transaction Processing Control] Identity.Application.CQRS.Commands > Update CreateNewCustomerCommandHandler to deal with CustomerDTO and the TransactionProcessingControlId
     
 # DONE 
+
+    [Transaction Processing Control] Identity.Application.Configure > Add ITransactionProcessingControlServices in services of DI
 
     [Transaction Processing Control] Identity.Infrastructure.Persistence.Repositories > Add ITransactionProcessingControlServices interface 
 

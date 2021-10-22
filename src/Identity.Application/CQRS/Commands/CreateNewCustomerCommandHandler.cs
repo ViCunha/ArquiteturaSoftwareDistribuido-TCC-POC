@@ -36,16 +36,19 @@ namespace Identity.Application.CQRS.Commands
         {
             //
             var newValidationResult = new ValidationResult();
-            //var result = _customerPersistenceServices.GetTransactionProcessingControlByIdAsync
-            if (true)
-            {
 
+            //
+            var resultOfTransactionProcessingControlServices = await _transactionProcessingControlServices.GetTransactionProcessingControlByIdAsync(request.CustomerDTO.TPCId);
+            if (resultOfTransactionProcessingControlServices != null)
+            {
+                newValidationResult.Errors.Add(new ValidationFailure("TPCId", $"This Transaction was already processed"));
+                return newValidationResult;
             }
 
             //
             var customer = _autoMapper.Map<Customer>(request.CustomerDTO);
-            var resultGetCustomersByIdAsync = await _customerPersistenceServices.GetCustomersByIdAsync(customer.Id);
-            if (resultGetCustomersByIdAsync != null)
+            var resultOfGetCustomersByIdAsync = await _customerPersistenceServices.GetCustomersByIdAsync(customer.Id);
+            if (resultOfGetCustomersByIdAsync != null)
             {
                 newValidationResult.Errors.Add(new ValidationFailure("Id", $"This {nameof(customer.Id)} already exist"));
                 return newValidationResult;
@@ -62,7 +65,7 @@ namespace Identity.Application.CQRS.Commands
             var result = await _customerPersistenceServices.CreateNewCustomerAsync(customer, request.CustomerDTO.TPCId);
             if (result != 1)
             {
-                newValidationResult.Errors.Add(new ValidationFailure("", ""));
+                newValidationResult.Errors.Add(new ValidationFailure("Unknown Failure", ""));
                 return newValidationResult;
             }
 

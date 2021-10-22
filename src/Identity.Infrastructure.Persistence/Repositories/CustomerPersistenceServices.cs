@@ -23,7 +23,7 @@ namespace Identity.Infrastructure.Persistence.Repositories
 
         public async Task<int> CreateNewCustomerAsync(Customer customer, Guid TPCId)
         {
-            return await _unitOfWork.SaveAndGenerateEventSourcingAsync<Customer>(_unitOfWork.CustomerRepository, customer, EventSourcingHistoryType.Create, TPCId);
+            return await _unitOfWork.SaveAndGenerateEventSourcingGenerateTransactionProcessingControlAsync<Customer>(_unitOfWork.CustomerRepository, customer, EventSourcingHistoryType.Create, TPCId);
         }
 
         public async Task<IEnumerable<Customer>> GetAllCustomersAsync()

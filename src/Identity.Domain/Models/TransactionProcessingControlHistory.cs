@@ -9,8 +9,6 @@ namespace Identity.Domain.Models
 {
     public class TransactionProcessingControlHistory : Entity, IAggregateRoot
     {
-        public Guid Id { get; private set; }
-
         public DateTime MomentInTime { get; private set; }
      
         protected TransactionProcessingControlHistory()

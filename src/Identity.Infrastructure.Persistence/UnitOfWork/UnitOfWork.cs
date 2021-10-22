@@ -23,7 +23,7 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
         private Repository<Customer> _repositoryCustomer = null;
 
         private Repository<EventSourcingHistory> _repositoryEventSourcingHistory = null;
-        
+
         private Repository<TransactionProcessingControlHistory> _transactionProcessingControlHistory = null;
 
         //
@@ -83,7 +83,7 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
         }
 
 
-        public async Task<int> SaveAndGenerateEventSourcingAsync<T>(IRepository<T> repository, T entity, EventSourcingHistoryType EventSourcingHistoryType, Guid TPCId) where T : Entity
+        public async Task<int> SaveAndGenerateEventSourcingGenerateTransactionProcessingControlAsync<T>(IRepository<T> repository, T entity, EventSourcingHistoryType EventSourcingHistoryType, Guid TPCId) where T : Entity
         {
             var resultOfSave = new List<int>();
             var strategy = _applicationDbContext.Database.CreateExecutionStrategy();
@@ -97,7 +97,10 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
                             await repository.AddAsync(entity);
                             resultOfSave.Add(await SaveAsync());
 
-                            await EventSourcingHistoryRepository.AddAsync(await GenerateEventSourcingAsync<T>(entity, (byte) EventSourcingHistoryType));
+                            await EventSourcingHistoryRepository.AddAsync(await GenerateEventSourcingAsync<T>(entity, (byte)EventSourcingHistoryType));
+                            resultOfSave.Add(await SaveAsync());
+
+                            await TransactionProcessingControlHistory.AddAsync(await GenerateTransactionProcessingControlAsync<T>(TPCId));
                             resultOfSave.Add(await SaveAsync());
 
                             await transaction.CommitAsync();
@@ -123,6 +126,19 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
                                    entity.GetType().ToString()
                                    ,
                                    JsonConvert.SerializeObject(entity)
+                               )
+                );
+        }
+
+        private async Task<TransactionProcessingControlHistory> GenerateTransactionProcessingControlAsync<T>(Guid TPCId) where T : Entity
+        {
+            return await Task<TransactionProcessingControlHistory>.Factory.StartNew
+                (
+                    () => new TransactionProcessingControlHistory
+                               (
+                                  TPCId
+                                  ,
+                                  DateTime.UtcNow
                                )
                 );
         }
