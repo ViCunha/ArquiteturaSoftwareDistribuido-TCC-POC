@@ -33,13 +33,13 @@ namespace Identity.Application.CQRS.Commands
         {
             //
             var newValidationResult = new ValidationResult();
-            var customer = _autoMapper.Map<Customer>(request.CustomerDTO);
-            
+            if (true)
+            {
 
+            }
 
-
-            
             //
+            var customer = _autoMapper.Map<Customer>(request.CustomerDTO);
             var resultGetCustomersByIdAsync = await _persistenceServicesCustomer.GetCustomersByIdAsync(customer.Id);
             if (resultGetCustomersByIdAsync != null)
             {

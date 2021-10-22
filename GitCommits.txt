@@ -41,12 +41,16 @@
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to get on specific event
 
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to replay part of the history
-    
-    [Transaction Processing Control] Update-Database -Context ApplicationDbContextCommands
+
+
+
+    [Transaction Processing Control] Identity.Domain.Interfaces > Update IUnitOfWork interface
     
     [Transaction Processing Control] Identity.Application.CQRS.Commands > Update CreateNewCustomerCommandHandler to deal with CustomerDTO and the TransactionProcessingControlId
     
 # DONE 
+
+    [Transaction Processing Control] Update-Database -Context ApplicationDbContextCommands
 
     [Transaction Processing Control] add-migration 'AddTransactionProcessingControlHistory' -Context ApplicationDbContextCommands -Output Migrations/CQRS/Commands
 

@@ -14,6 +14,8 @@ namespace Identity.Domain.Interfaces
 
         public IRepository<EventSourcingHistory> EventSourcingHistoryRepository { get; }
 
+        public IRepository<TransactionProcessingControlHistory> TransactionProcessingControlHistory { get; }
+
         Task<int> SaveAndGenerateEventSourcingAsync<T>(IRepository<T> repository, T entity, EventSourcingHistoryType EventSourcingHistoryType, Guid TPCId) where T : Entity;
 
         int Save();

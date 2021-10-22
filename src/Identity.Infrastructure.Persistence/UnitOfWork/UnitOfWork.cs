@@ -15,6 +15,7 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
+        //
         private bool disposed = false;
 
         private readonly ApplicationDbContextCommands _applicationDbContext;
@@ -25,6 +26,7 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
         
         private Repository<TransactionProcessingControlHistory> _transactionProcessingControlHistory = null;
 
+        //
         public IRepository<Customer> CustomerRepository
         {
             get
@@ -64,6 +66,7 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
             private set { }
         }
 
+        //
         public UnitOfWork(ApplicationDbContextCommands applicationDbContext)
         {
             this._applicationDbContext = applicationDbContext;
