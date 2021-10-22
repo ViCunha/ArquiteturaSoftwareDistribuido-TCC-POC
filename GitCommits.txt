@@ -42,10 +42,12 @@
 
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to replay part of the history
 
-    
-    Identity.Infrastructure.Persistence > Add GetCustomersByIdAsync method on CustomerPersistenceServices; Identity.Application > CreateNewCustomerCommandHandler is checking if the Id already exist
+
+    [Transaction Processing Control] Identity.Domain.Models.DTO > Customized the DTO classes to accept Transacation Id
     
 # DONE 
+
+    Identity.Infrastructure.Persistence > Add GetCustomersByIdAsync method on CustomerPersistenceServices; Identity.Application > CreateNewCustomerCommandHandler is checking if the Id already exist
 
     Rename 'EventSourcingRecord' to 'EventSourcingHistory'; Identity.Domain > [Event-Sourcing] Update EventSourcingHistory class 
 

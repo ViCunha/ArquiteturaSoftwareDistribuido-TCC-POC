@@ -44,12 +44,12 @@ namespace Identity.WebAPI.Controllers
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CustomerDTO))]
+        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CustomerDTOTPC))]
 
-        public async Task<ActionResult<Customer>> CreateNewCustomerAsync (CustomerDTO customerDTO)
+        public async Task<ActionResult<CustomerDTOTPC>> CreateNewCustomerAsync (CustomerDTOTPC customerDTOTPC)
         {
 
-            var result = await _customerOrchestrator.CustomerCommandOrchestrator.CreateNewCustomerAsync(customerDTO);
+            var result = await _customerOrchestrator.CustomerCommandOrchestrator.CreateNewCustomerAsync(customerDTOTPC);
 
             if (result is APIResponseContentFailure)
             {
