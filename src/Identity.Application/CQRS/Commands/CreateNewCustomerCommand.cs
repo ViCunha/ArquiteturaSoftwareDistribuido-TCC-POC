@@ -1,5 +1,6 @@
 ﻿using FluentValidation.Results;
 using Identity.Domain.Models;
+using Identity.Domain.Models.DTO;
 using Identity.Domain.Models.Events;
 using MediatR;
 using System.Collections.Generic;
@@ -9,13 +10,14 @@ namespace Identity.Application.CQRS.Commands
 {
     public class CreateNewCustomerCommand : Command, IRequest<ValidationResult> 
     {
-        public Customer Customer { get; set; }
+        public CustomerDTO CustomerDTO { get; set; }
 
-        public CreateNewCustomerCommand(Customer customer)
+        public CreateNewCustomerCommand(CustomerDTO customerDTO)
         {
-
-            this.Customer = customer;
-            this.AggregatedId = customer.Id;
+            this.CustomerDTO = customerDTO;
+            
+            //TODO: Why/Where should I use AggregatedId?
+            this.AggregatedId = customerDTO.Id;
         }
     }
 }

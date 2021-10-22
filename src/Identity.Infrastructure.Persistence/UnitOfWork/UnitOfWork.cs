@@ -22,6 +22,8 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
         private Repository<Customer> _repositoryCustomer = null;
 
         private Repository<EventSourcingHistory> _repositoryEventSourcingHistory = null;
+        
+        private Repository<TransactionProcessingControlHistory> _transactionProcessingControlHistory = null;
 
         public IRepository<Customer> CustomerRepository
         {
@@ -49,6 +51,19 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
             private set { }
         }
 
+        public IRepository<TransactionProcessingControlHistory> TransactionProcessingControlHistory
+        {
+            get
+            {
+                if (_transactionProcessingControlHistory == null)
+                {
+                    _transactionProcessingControlHistory = new Repository<TransactionProcessingControlHistory>(_applicationDbContext);
+                }
+                return _transactionProcessingControlHistory;
+            }
+            private set { }
+        }
+
         public UnitOfWork(ApplicationDbContextCommands applicationDbContext)
         {
             this._applicationDbContext = applicationDbContext;
@@ -65,7 +80,7 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
         }
 
 
-        public async Task<int> SaveAndGenerateEventSourcingAsync<T>(IRepository<T> repository, T entity, EventSourcingHistoryType EventSourcingHistoryType) where T : Entity
+        public async Task<int> SaveAndGenerateEventSourcingAsync<T>(IRepository<T> repository, T entity, EventSourcingHistoryType EventSourcingHistoryType, Guid TPCId) where T : Entity
         {
             var resultOfSave = new List<int>();
             var strategy = _applicationDbContext.Database.CreateExecutionStrategy();

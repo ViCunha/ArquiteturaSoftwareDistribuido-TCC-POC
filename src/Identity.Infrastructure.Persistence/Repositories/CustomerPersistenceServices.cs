@@ -21,9 +21,9 @@ namespace Identity.Infrastructure.Persistence.Repositories
             this._unitOfWork = unitOfWork;
         }
 
-        public async Task<int> CreateNewCustomerAsync(Customer customer)
+        public async Task<int> CreateNewCustomerAsync(Customer customer, Guid TPCId)
         {
-            return await _unitOfWork.SaveAndGenerateEventSourcingAsync<Customer>(_unitOfWork.CustomerRepository, customer, EventSourcingHistoryType.Create);
+            return await _unitOfWork.SaveAndGenerateEventSourcingAsync<Customer>(_unitOfWork.CustomerRepository, customer, EventSourcingHistoryType.Create, TPCId);
         }
 
         public async Task<IEnumerable<Customer>> GetAllCustomersAsync()

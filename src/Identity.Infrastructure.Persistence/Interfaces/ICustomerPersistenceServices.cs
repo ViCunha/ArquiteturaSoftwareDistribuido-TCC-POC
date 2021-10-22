@@ -13,7 +13,7 @@ namespace Identity.Infrastructure.Persistence.Interfaces
     {
         Task<IEnumerable<Customer>> GetAllCustomersAsync();
 
-        Task<int> CreateNewCustomerAsync(Customer customer);
+        Task<int> CreateNewCustomerAsync(Customer customer, Guid TPCId);
 
         Task<Customer> GetCustomersByIdAsync(Guid id);
 

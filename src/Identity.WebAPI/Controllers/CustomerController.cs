@@ -17,12 +17,12 @@ namespace Identity.WebAPI.Controllers
     public class CustomerController : ControllerBase
     {
         //
-        private readonly ICustomerApplicationServices _customerOrchestrator;
+        private readonly ICustomerApplicationServices _customerApplicationServices;
         
         //
-        public CustomerController(ICustomerApplicationServices customerOrchestrator)
+        public CustomerController(ICustomerApplicationServices customerApplicationServices)
         {
-            this._customerOrchestrator = customerOrchestrator;
+            this._customerApplicationServices = customerApplicationServices;
         }
 
         //
@@ -32,7 +32,7 @@ namespace Identity.WebAPI.Controllers
         public async Task<ActionResult<IEnumerable<CustomerDTO>>> GetAllCustomersAsync()
         {
 
-            var result = await _customerOrchestrator.GetAllCustomersQuery.GetAllCustomersAsync();
+            var result = await _customerApplicationServices.GetAllCustomersQuery.GetAllCustomersAsync();
             if (result is APIResponseContentFailure)
             {
                 BadRequest((APIResponseContentFailure)result);
@@ -44,12 +44,12 @@ namespace Identity.WebAPI.Controllers
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CustomerDTOTPC))]
+        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CustomerDTO))]
 
-        public async Task<ActionResult<CustomerDTOTPC>> CreateNewCustomerAsync (CustomerDTOTPC customerDTOTPC)
+        public async Task<ActionResult<Customer>> CreateNewCustomerAsync (CustomerDTO customerDTO)
         {
 
-            var result = await _customerOrchestrator.CustomerCommandOrchestrator.CreateNewCustomerAsync(customerDTOTPC);
+            var result = await _customerApplicationServices.CustomerCommandOrchestrator.CreateNewCustomerAsync(customerDTO);
 
             if (result is APIResponseContentFailure)
             {

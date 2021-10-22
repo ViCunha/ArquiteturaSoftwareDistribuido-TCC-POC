@@ -14,6 +14,8 @@ namespace Identity.Infrastructure.Persistence.DBContext
     {
         public DbSet<Customer> Customers { get; set; }
 
+        public DbSet<TransactionProcessingControlHistory> TransactionProcessingControlHistory { get; set; }
+
         public DbSet<EventSourcingHistory> EventSourcingHistory { get; set; }
 
 

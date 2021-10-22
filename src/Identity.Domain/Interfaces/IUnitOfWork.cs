@@ -14,7 +14,7 @@ namespace Identity.Domain.Interfaces
 
         public IRepository<EventSourcingHistory> EventSourcingHistoryRepository { get; }
 
-        Task<int> SaveAndGenerateEventSourcingAsync<T>(IRepository<T> repository, T entity, EventSourcingHistoryType EventSourcingHistoryType) where T : Entity;
+        Task<int> SaveAndGenerateEventSourcingAsync<T>(IRepository<T> repository, T entity, EventSourcingHistoryType EventSourcingHistoryType, Guid TPCId) where T : Entity;
 
         int Save();
 
