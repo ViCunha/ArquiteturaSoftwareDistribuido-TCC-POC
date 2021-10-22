@@ -43,9 +43,11 @@
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to replay part of the history
 
 
-    [Transaction Processing Control] Identity.Domain.Models.DTO > Customized the DTO classes to accept Transacation Id
+    [Transaction Processing Control] Identity.WebAPI.Controllers > Update CreateNewCustomerAsync to accpect CustomerDTOTPC
     
 # DONE 
+
+    [Transaction Processing Control] Identity.Domain.Models.DTO > Create new class CustomerDTOTPC in order to accept Transacation Id
 
     Identity.Infrastructure.Persistence > Add GetCustomersByIdAsync method on CustomerPersistenceServices; Identity.Application > CreateNewCustomerCommandHandler is checking if the Id already exist
 
