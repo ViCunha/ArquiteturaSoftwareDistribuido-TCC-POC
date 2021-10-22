@@ -15,17 +15,20 @@ namespace Identity.Application.CQRS.Commands
     public class CreateNewCustomerCommandHandler : CommandHandler, IRequestHandler<CreateNewCustomerCommand, ValidationResult>
     {
         private readonly ICustomerPersistenceServices _customerPersistenceServices;
-        
+        private readonly ITransactionProcessingControlServices _transactionProcessingControlServices;
         private readonly IMapper _autoMapper;
 
         public CreateNewCustomerCommandHandler
             (
             ICustomerPersistenceServices customerPersistenceServices
             ,
+            ITransactionProcessingControlServices transactionProcessingControlServices
+            ,
             IMapper autoMapper
             )
         {
             this._customerPersistenceServices = customerPersistenceServices;
+            this._transactionProcessingControlServices = transactionProcessingControlServices;
             this._autoMapper = autoMapper;
         }
 
