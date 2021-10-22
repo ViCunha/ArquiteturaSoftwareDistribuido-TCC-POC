@@ -117,7 +117,7 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
                 (
                     () => new EventSourcingHistory
                                (
-                                   id: Guid.NewGuid()
+                                   Guid.NewGuid()
                                    ,
                                    DateTime.UtcNow
                                    ,
