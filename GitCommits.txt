@@ -43,10 +43,13 @@
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to replay part of the history
     
     
-    [Transaction Processing Control] Identity.Application.Interfaces > Update the signature of ICustomerCommandOrchestrator
     
+    [Transaction Processing Control] Identity.Application.CQRS.Commands > Update CreateNewCustomerCommand to receive CustomerDTO in its constructor 
+
     
 # DONE 
+
+    [Transaction Processing Control] Identity.Application.Interfaces > Update the signature of ICustomerCommandOrchestrator
 
     [Transaction Processing Control] Identity.Application.Models > Update CreateNewCustomerAsync to replace the parameter of Customer by CustomerDTO
 
