@@ -4,14 +4,16 @@ using Identity.Infrastructure.Persistence.DBContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Identity.Infrastructure.Persistence.Migrations.CQRS.Commands
 {
     [DbContext(typeof(ApplicationDbContextCommands))]
-    partial class ApplicationDbContextCommandsModelSnapshot : ModelSnapshot
+    [Migration("20211029010229_AddObjectIdAndObjectEntityPropertiesInEventSourcingHistory")]
+    partial class AddObjectIdAndObjectEntityPropertiesInEventSourcingHistory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
