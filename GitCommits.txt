@@ -34,6 +34,9 @@
 
 # IN-PROGRESS
 
+
+
+
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create the history of database sequence of immutable events 
     + https://desenvolvedor.io/curso-online-modelagem-de-dominios-ricos/aula/4ded1cee-7104-44e5-b950-3bfaf133bb9e
     + https://desenvolvedor.io/curso-online-modelagem-de-dominios-ricos/aula/361a3216-5a4f-4bc0-912a-6814cbde209b#status
@@ -46,10 +49,9 @@
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to replay part of the history
 
         
-    
-
-
 # DONE 
+
+    [Event Sourcing] Update-database -Context ApplicationDbContextCommands
 
     [Event Sourcing] add-migration 'RemoveObjectEntityPropertiesInEventSourcingHistory' -Context ApplicationDbContextCommands -Output Migrations/CQRS/Commands
 
