@@ -41,7 +41,7 @@ namespace Identity.WebAPI.Controllers
             return Ok((APIResponseContentSuccess) result);
         }
 
-
+        //
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CustomerDTO))]

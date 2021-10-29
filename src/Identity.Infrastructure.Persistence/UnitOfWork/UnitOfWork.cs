@@ -123,6 +123,10 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
                                    ,
                                    eventSourcingHistoryType
                                    ,
+                                   entity.Id
+                                   ,
+                                   nameof(entity)
+                                   ,
                                    entity.GetType().ToString()
                                    ,
                                    JsonConvert.SerializeObject(entity)

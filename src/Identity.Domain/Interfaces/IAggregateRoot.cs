@@ -7,5 +7,7 @@ using System.Threading.Tasks;
 namespace Identity.Domain.Interfaces
 {
     public interface IAggregateRoot
-    { }
+    {
+
+    }
 }
