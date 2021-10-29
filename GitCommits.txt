@@ -49,9 +49,15 @@
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to replay part of the history
 
        
-    [Optimistic Concurrency]Identity.Domain.Models > Add DataVersion into Entity class
+
+
+    [Optimistic Concurrency] Update-database -Context ApplicationDbContextCommands
+
+    [Optimistic Concurrency] Add-migration 'AddDataVersionPropertyAndInitializationMethodIntoEntityClass' -Context ApplicationDbContextCommands -Output Migrations/CQRS/Commands
 
 # DONE 
+
+    [Optimistic Concurrency] Identity.Domain.Models > Add DataVersion into Entity class
 
     [Event Sourcing] Update-database -Context ApplicationDbContextCommands
 
