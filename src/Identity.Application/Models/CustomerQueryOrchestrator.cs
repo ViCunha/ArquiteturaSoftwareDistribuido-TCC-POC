@@ -1,20 +1,27 @@
 ﻿using AutoMapper;
+using Identity.Application.CQRS.Commands;
 using Identity.Application.Interfaces;
+using Identity.Domain.Interfaces;
+using Identity.Domain.Models;
 using Identity.Domain.Models.APIResponse;
 using Identity.Domain.Models.DTO;
 using Identity.Infrastructure.Persistence.Interfaces;
 using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
-namespace Identity.Application.CQRS.Queries
+namespace Identity.Application.Models
 {
-    public class GetAllCustomersQuery : IGetAllCustomersQuery
+    public class CustomerQueryOrchestrator : ICustomerQueryOrchestrator
     {
+        //
         private readonly ICustomerPersistenceServices _PersistenceServicesCustomer;
         private readonly IMapper _mapper;
 
-        public GetAllCustomersQuery
+        //
+        public CustomerQueryOrchestrator
             (
                 ICustomerPersistenceServices persistenceServicesCustomer
                 ,
@@ -25,10 +32,17 @@ namespace Identity.Application.CQRS.Queries
             this._mapper = mapper;
         }
 
+        public async Task<APIResponseContent> GetCustomerByIdAsync(Guid id)
+        {
+            var result = await _PersistenceServicesCustomer.GetCustomersByIdAsync(id);
+            return new APIResponseContentSuccess(StatusCodes.Status200OK, _mapper.Map<CustomerDTO>(result));
+        }
+
         public async Task<APIResponseContent> GetAllCustomersAsync()
         {
             var result = await _PersistenceServicesCustomer.GetAllCustomersAsync();
             return new APIResponseContentSuccess(StatusCodes.Status200OK, _mapper.Map<IEnumerable<CustomerDTO>>(result));
         }
+
     }
 }

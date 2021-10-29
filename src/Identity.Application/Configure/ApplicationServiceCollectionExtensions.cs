@@ -1,6 +1,5 @@
 ﻿using FluentValidation.Results;
 using Identity.Application.CQRS.Commands;
-using Identity.Application.CQRS.Queries;
 using Identity.Application.Interfaces;
 using Identity.Application.MediatR;
 using Identity.Application.Models;
@@ -31,7 +30,7 @@ namespace Identity.Application.Configure
             services.AddScoped<IRequestHandler<CreateNewCustomerCommand, ValidationResult>, CreateNewCustomerCommandHandler>();
             services.AddScoped<ICustomerApplicationServices, CustomerApplicationServices>();
             services.AddScoped<ICustomerCommandOrchestrator, CustomerCommandOrchestrator>();
-            services.AddScoped<IGetAllCustomersQuery, GetAllCustomersQuery>();
+            services.AddScoped<ICustomerQueryOrchestrator, CustomerQueryOrchestrator>();
             services.AddScoped<ICustomerPersistenceServices, CustomerPersistenceServices>();
             services.AddScoped<ITransactionProcessingControlServices, TransactionProcessingControlServices>();
 

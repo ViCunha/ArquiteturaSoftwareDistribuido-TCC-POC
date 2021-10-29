@@ -15,10 +15,9 @@ namespace Identity.Domain.Models
         { }
 
         public TransactionProcessingControlHistory(Guid id, DateTime momentInTime)
+            : base(id, true, 1)
         {
-            this.Id = id;
             this.MomentInTime = momentInTime;
         }
-
     }
 }

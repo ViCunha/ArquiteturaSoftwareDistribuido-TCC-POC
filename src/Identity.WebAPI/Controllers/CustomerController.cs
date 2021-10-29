@@ -25,13 +25,31 @@ namespace Identity.WebAPI.Controllers
             this._customerApplicationServices = customerApplicationServices;
         }
 
+
+        //
+        [HttpGet]
+        [Route("{id:guid}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(APIResponseContent))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(APIResponseContent))]
+        public async Task<ActionResult<CustomerDTO>> GetCustomerAsync(Guid id)
+        {
+            var result = await _customerApplicationServices.CustomerQueryOrchestrator.GetCustomerByIdAsync(id);
+
+            if (result is APIResponseContentFailure)
+            {
+                BadRequest((APIResponseContentFailure)result);
+            }
+
+            return Ok((APIResponseContentSuccess)result);
+        }
+
         //
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(APIResponseContent))]
         public async Task<ActionResult<IEnumerable<CustomerDTO>>> GetAllCustomersAsync()
         {
-            var result = await _customerApplicationServices.GetAllCustomersQuery.GetAllCustomersAsync();
+            var result = await _customerApplicationServices.CustomerQueryOrchestrator.GetAllCustomersAsync();
 
             if (result is APIResponseContentFailure)
             {

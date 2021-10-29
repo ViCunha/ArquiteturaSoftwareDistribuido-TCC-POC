@@ -24,8 +24,8 @@ namespace Identity.Domain.Models.EventSourcing
 
         //
         public EventSourcingHistory(Guid id, DateTime momentInTime, Byte eventSourcingHistoryType, Guid objectId, string objectType, string data)
+            : base(id, true, 1)
         {
-            Id = id;
             MomentInTime = momentInTime;
             EventSourcingHistoryType = eventSourcingHistoryType;
             ObjectId = objectId;

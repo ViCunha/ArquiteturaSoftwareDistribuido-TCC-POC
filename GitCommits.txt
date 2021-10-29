@@ -26,15 +26,10 @@
 
     Cosmos DB
 
-    
+# ON-HOLD
 
     CORS configuration 
     + https://www.youtube.com/watch?v=yozD5Tnd8nw
-
-
-# IN-PROGRESS
-
-
 
 
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create the history of database sequence of immutable events 
@@ -48,14 +43,23 @@
 
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to replay part of the history
 
-       
+    
 
+    [CRUD] Identity.WebAPI > Add UpdateCustomerAsync method
+
+    [CRUD] Identity.WebAPI > Add DeleteCustomerAsync method
+
+
+# IN-PROGRESS
+
+    [CRUD - READ] Identity.Application.Models > Add CustomerQueryOrchestrator class; [CRUD - READ] Identity.Application.Interfaces > Add ICustomerQueryOrchestrator interface; [CRUD - READ] Identity.Application.Models > Update CustomerApplicationServices class; [CRUD - READ] Identity.Application.Interfaces > Update ICustomerApplicationServices interface; [CRUD - READ] Identity.WebAPI > Add GetCustomerAsync Method;
+    
+
+# DONE 
 
     [Optimistic Concurrency] Update-database -Context ApplicationDbContextCommands
 
     [Optimistic Concurrency] Add-migration 'AddDataVersionPropertyAndInitializationMethodIntoEntityClass' -Context ApplicationDbContextCommands -Output Migrations/CQRS/Commands
-
-# DONE 
 
     [Optimistic Concurrency] Identity.Domain.Models > Add DataVersion into Entity class
 
@@ -295,13 +299,13 @@
 
     xAureoDigital-BackEnd-MicroService-Identity > Add on ~/tests/Identity.IntegrationTests a XUnit Test project named: Identity.IntegrationTests;
 
-    Identity.WebAPI > Invoke IGetAllCustomersQuery method to get all customers / Identity.Application > Update the class GetAllCustomersQuery and an interface IGetAllCustomersQuery
+    Identity.WebAPI > Invoke ICustomerQuery method to get all customers / Identity.Application > Update the class GetAllCustomersQuery and an interface ICustomerQuery
 
-    Identity.WebAPI > Add a Contructor with IGetAllCustomersQuery parameter for DI
+    Identity.WebAPI > Add a Contructor with ICustomerQuery parameter for DI
 
     Identity.Application > Add reference to 'Identity.Domain' project
 
-    Identity.Application > Add on ~/CQRS/Queires a class GetAllCustomersQuery and an interface IGetAllCustomersQuery
+    Identity.Application > Add on ~/CQRS/Queires a class GetAllCustomersQuery and an interface ICustomerQuery
 
     Identity.WebAPI > Invoke 'ApplicationServiceCollectionExtensions' on the Startup class
 
@@ -356,4 +360,4 @@
  
     xAureoDigital-BackEnd-MicroService-Identity > Add 'notes' folder > Add GitCommit.txt file to 'notes' folder;
  
-    Create a blank solution named: 'xAureoDigital-BackEnd-MicroService-Identity';
+    Create a blank solution named: 'xAureoDigital-BackEnd-MicroService-Identity'

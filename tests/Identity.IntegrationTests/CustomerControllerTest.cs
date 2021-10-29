@@ -1,4 +1,3 @@
-using Identity.Application.CQRS.Queries;
 using Identity.Domain.Models;
 using Identity.WebAPI.Controllers;
 using Microsoft.AspNetCore.Mvc;
@@ -24,7 +23,7 @@ namespace Identity.IntegrationTests
             var mocker = new AutoMocker();
             var controller = mocker.CreateInstance<CustomerController>();
             
-            mocker.GetMock<IGetAllCustomersQuery>()
+            mocker.GetMock<ICustomerQueryOrchestrator>()
                   .Setup(x => x.GetAllCustomersAsync())
                   .Returns(GetAllCustomersAsync());
 
@@ -35,7 +34,7 @@ namespace Identity.IntegrationTests
 
             //Assert
             Assert.True(statuscodeOk200Result != null);
-            mocker.GetMock<IGetAllCustomersQuery>().Verify(c => c.GetAllCustomersAsync(), Times.Once);
+            mocker.GetMock<ICustomerQueryOrchestrator>().Verify(c => c.GetAllCustomersAsync(), Times.Once);
             Assert.True(resultObject.Result.Count() == 3);
 
             async Task<T> GetCollectionResultContent<T>(ActionResult<T> result)

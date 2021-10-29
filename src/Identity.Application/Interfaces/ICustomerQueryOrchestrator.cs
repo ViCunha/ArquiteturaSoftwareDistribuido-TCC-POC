@@ -1,12 +1,14 @@
 ﻿using Identity.Domain.Models.APIResponse;
 using Identity.Domain.Models.DTO;
-using System.Collections.Generic;
+using System;
 using System.Threading.Tasks;
 
 namespace Identity.Application.Interfaces
 {
-    public interface IGetAllCustomersQuery
+    public interface ICustomerQueryOrchestrator
     {
+        Task<APIResponseContent> GetCustomerByIdAsync(Guid id);
+
         Task<APIResponseContent> GetAllCustomersAsync();
     }
 }

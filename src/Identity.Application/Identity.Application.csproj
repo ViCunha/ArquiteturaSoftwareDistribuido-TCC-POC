@@ -17,4 +17,8 @@
     <ProjectReference Include="..\Identity.Infrastructure.Persistence\Identity.Infrastructure.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CQRS\Queries\" />
+  </ItemGroup>
+
 </Project>

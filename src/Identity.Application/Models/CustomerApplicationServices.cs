@@ -4,30 +4,30 @@ namespace Identity.Application.Models
 {
     public class CustomerApplicationServices : ICustomerApplicationServices
     {
-        private readonly IGetAllCustomersQuery _getAllCustomersQuery;
-        private readonly ICustomerCommandOrchestrator _CustomerCommandOrchestrator;
+        private readonly ICustomerQueryOrchestrator _customerQueryOrchestrator;
+        private readonly ICustomerCommandOrchestrator _customerCommandOrchestrator;
 
-        public IGetAllCustomersQuery GetAllCustomersQuery
+        public ICustomerQueryOrchestrator CustomerQueryOrchestrator
         {
-            get { return _getAllCustomersQuery; }
+            get { return _customerQueryOrchestrator; }
             private set { }
         }
 
         public ICustomerCommandOrchestrator CustomerCommandOrchestrator
         {
-            get { return _CustomerCommandOrchestrator; }
+            get { return _customerCommandOrchestrator; }
             private set { }
         }
 
         public CustomerApplicationServices
             (
-                IGetAllCustomersQuery getAllCustomersQuery
+                ICustomerQueryOrchestrator customerQueryOrchestrator
                 ,
                 ICustomerCommandOrchestrator CustomerCommandOrchestrator
             )
         {
-            this._getAllCustomersQuery = getAllCustomersQuery;
-            this._CustomerCommandOrchestrator = CustomerCommandOrchestrator;
+            this._customerQueryOrchestrator = customerQueryOrchestrator;
+            this._customerCommandOrchestrator = CustomerCommandOrchestrator;
         }
     }
 }

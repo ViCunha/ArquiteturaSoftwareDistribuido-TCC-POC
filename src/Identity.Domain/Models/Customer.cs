@@ -14,10 +14,9 @@ namespace Identity.Domain.Models
         protected Customer()
         { }
 
-        public Customer(Guid Id, bool isActive, string Name)
+        public Customer(Guid Id, bool isActive, ulong dataVersion, string Name)
+            : base(Id, isActive, dataVersion)
         {
-            this.Id = Id;
-            this.IsActive = isActive;
             this.Name = Name;
         }
 

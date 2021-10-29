@@ -10,16 +10,24 @@ namespace Identity.Domain.Models
     public abstract class Entity
 
     {   //
-        public Guid Id { get; protected set; }
+        public Guid Id { get; private set; }
 
-        public Boolean IsActive { get; protected set; }
+        public Boolean IsActive { get; private set; }
 
-        public ulong DataVersion { get; protected set; }
+        public ulong DataVersion { get; private set; }
 
         //
         protected Entity()
         {
             Initialization();
+        }
+
+        public Entity(Guid id, bool isActive, ulong dataVersion)
+            : this()
+        {
+            Id = id;
+            IsActive = isActive;
+            DataVersion = dataVersion;
         }
 
         private void Initialization()
@@ -33,11 +41,5 @@ namespace Identity.Domain.Models
         {
             this.IsActive = value;
         }
-
-        public void SetId(Guid id)
-        {
-            this.Id = id;
-        }
-
     }
 }
