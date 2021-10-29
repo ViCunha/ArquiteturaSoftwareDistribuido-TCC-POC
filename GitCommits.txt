@@ -48,7 +48,9 @@
 
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to replay part of the history
 
-        
+       
+    [Optimistic Concurrency]Identity.Domain.Models > Add DataVersion into Entity class
+
 # DONE 
 
     [Event Sourcing] Update-database -Context ApplicationDbContextCommands

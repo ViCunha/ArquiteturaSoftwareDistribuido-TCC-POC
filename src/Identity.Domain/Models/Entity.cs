@@ -14,10 +14,19 @@ namespace Identity.Domain.Models
 
         public Boolean IsActive { get; protected set; }
 
+        public ulong DataVersion { get; protected set; }
+
         //
         protected Entity()
         {
+            Initialization();
+        }
 
+        private void Initialization()
+        {
+            Id = Guid.Empty;
+            IsActive = true;
+            DataVersion = 1;
         }
 
         public void SetIsActive(bool value)
