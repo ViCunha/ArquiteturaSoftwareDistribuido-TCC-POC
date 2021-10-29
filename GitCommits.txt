@@ -45,14 +45,18 @@
 
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to replay part of the history
 
-    [Event Sourcing] add-migration 'AddObjectIdAndObjectEntityPropertiesInEventSourcingHistory' -Context ApplicationDbContextCommands -Output Migrations/CQRS/Commands; [Event Sourcing] Update-database -Context ApplicationDbContextCommands
+    [Event Sourcing] Identity.Domain.Models.EventSourcing > Update EventSourcingHistory class; [Event Sourcing] Identity.Infrastructure.Persistence.UnitOfWork > Update GenerateEventSourcingAsync method on UnitOfWork Class
 
 
 # DONE 
 
-    Identity.Domain.Models.EventSourcing > Update EventSourcingHistory class
+    [Event Sourcing] add-migration 'AddObjectIdAndObjectEntityPropertiesInEventSourcingHistory' -Context ApplicationDbContextCommands -Output Migrations/CQRS/Commands; 
     
-    Identity.Infrastructure.Persistence.UnitOfWork > Update GenerateEventSourcingAsync method on UnitOfWork Class
+    [Event Sourcing] Update-database -Context ApplicationDbContextCommands
+
+    [Event Sourcing] Identity.Domain.Models.EventSourcing > Update EventSourcingHistory class
+    
+    [Event Sourcing] Identity.Infrastructure.Persistence.UnitOfWork > Update GenerateEventSourcingAsync method on UnitOfWork Class
 
     Identity.Domain > Add class diagrams
     + https://docs.microsoft.com/en-us/visualstudio/ide/class-designer/how-to-add-class-diagrams-to-projects?view=vs-2019

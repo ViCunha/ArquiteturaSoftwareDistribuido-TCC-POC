@@ -125,8 +125,6 @@ namespace Identity.Infrastructure.Persistence.UnitOfWork
                                    ,
                                    entity.Id
                                    ,
-                                   nameof(entity)
-                                   ,
                                    entity.GetType().ToString()
                                    ,
                                    JsonConvert.SerializeObject(entity)

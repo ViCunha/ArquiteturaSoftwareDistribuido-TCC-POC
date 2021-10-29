@@ -27,12 +27,12 @@ namespace Identity.WebAPI.Controllers
 
         //
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(APIResponseContent))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(APIResponseContent))]
         public async Task<ActionResult<IEnumerable<CustomerDTO>>> GetAllCustomersAsync()
         {
-
             var result = await _customerApplicationServices.GetAllCustomersQuery.GetAllCustomersAsync();
+
             if (result is APIResponseContentFailure)
             {
                 BadRequest((APIResponseContentFailure)result);
@@ -44,8 +44,7 @@ namespace Identity.WebAPI.Controllers
         //
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CustomerDTO))]
-
+        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(APIResponseContent))]
         public async Task<ActionResult<Customer>> CreateNewCustomerAsync (CustomerDTO customerDTO)
         {
 
