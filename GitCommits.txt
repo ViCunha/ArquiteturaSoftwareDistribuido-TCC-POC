@@ -45,12 +45,13 @@
 
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to replay part of the history
 
-    [Event Sourcing] add-migration 'RemoveObjectEntityPropertiesInEventSourcingHistory' -Context ApplicationDbContextCommands -Output Migrations/CQRS/Commands
+        
     
-    [Event Sourcing] Update-database -Context ApplicationDbContextCommands
 
 
 # DONE 
+
+    [Event Sourcing] add-migration 'RemoveObjectEntityPropertiesInEventSourcingHistory' -Context ApplicationDbContextCommands -Output Migrations/CQRS/Commands
 
     [Event Sourcing] Identity.Domain.Models.EventSourcing > Update EventSourcingHistory class
     
