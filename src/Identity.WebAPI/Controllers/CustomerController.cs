@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+//using System.Threading.Tasks;
 
 namespace Identity.WebAPI.Controllers
 {
@@ -25,10 +26,8 @@ namespace Identity.WebAPI.Controllers
             this._customerApplicationServices = customerApplicationServices;
         }
 
-
         //
-        [HttpGet]
-        [Route("{id:guid}")]
+        [HttpGet("{id:guid}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(APIResponseContent))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(APIResponseContent))]
         public async Task<ActionResult<CustomerDTO>> GetCustomerAsync(Guid id)

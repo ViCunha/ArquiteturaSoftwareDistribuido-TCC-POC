@@ -16,7 +16,7 @@
     + https://www.youtube.com/watch?v=aWePkE2ReGw
     + https://www.youtube.com/watch?v=cwgck1k0YKU
 
-    JWT
+    
     http://www.macoratti.net/20/06/aspc_apijwt1.htm
 
 
@@ -43,19 +43,30 @@
 
     Identity.Infrastructure.Persistence > [Event-Sourcing] Create feature to replay part of the history
 
-    
-
     [CRUD] Identity.WebAPI > Add UpdateCustomerAsync method
 
     [CRUD] Identity.WebAPI > Add DeleteCustomerAsync method
 
 
+
+    [JWT] Identity.WebAPI > Add JWTSettings section into appsettings.json
+
+
 # IN-PROGRESS
 
-    [CRUD - READ] Identity.Application.Models > Add CustomerQueryOrchestrator class; [CRUD - READ] Identity.Application.Interfaces > Add ICustomerQueryOrchestrator interface; [CRUD - READ] Identity.Application.Models > Update CustomerApplicationServices class; [CRUD - READ] Identity.Application.Interfaces > Update ICustomerApplicationServices interface; [CRUD - READ] Identity.WebAPI > Add GetCustomerAsync Method;
-    
+   
 
 # DONE 
+
+    [CRUD - READ] Identity.Application.Models > Add CustomerQueryOrchestrator class
+    
+    [CRUD - READ] Identity.Application.Interfaces > Add ICustomerQueryOrchestrator interface
+    
+    [CRUD - READ] Identity.Application.Models > Update CustomerApplicationServices class
+    
+    [CRUD - READ] Identity.Application.Interfaces > Update ICustomerApplicationServices interface
+    
+    [CRUD - READ] Identity.WebAPI > Add GetCustomerAsync Method
 
     [Optimistic Concurrency] Update-database -Context ApplicationDbContextCommands
 
