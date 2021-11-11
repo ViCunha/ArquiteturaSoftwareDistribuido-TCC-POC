@@ -49,14 +49,17 @@
 
 
 
-    [JWT] Identity.WebAPI > Add JWTSettings section into appsettings.json
+    
 
 
 # IN-PROGRESS
 
-   
+   [JWT] Identity.WebAPI > Partial update ConfigureServices into the Startup class
+   [JWT] Identity.WebAPI > Install-package Microsoft.AspNetCore.Authentication.JwtBearer
 
 # DONE 
+
+    [JWT] Identity.WebAPI > Add JWTSettings section into appsettings.json
 
     [CRUD - READ] Identity.Application.Models > Add CustomerQueryOrchestrator class
     
