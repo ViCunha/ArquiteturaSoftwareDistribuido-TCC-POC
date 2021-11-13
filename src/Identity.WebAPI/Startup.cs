@@ -10,6 +10,7 @@ using System;
 using System.IO;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace Identity.WebAPI
 {
@@ -31,7 +32,7 @@ namespace Identity.WebAPI
                      (
                         options =>
                         {
-                            //options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                             //options.DefaultChallengeScheme = 
                         }
 

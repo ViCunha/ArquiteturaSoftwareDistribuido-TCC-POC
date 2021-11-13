@@ -48,14 +48,11 @@
     [CRUD] Identity.WebAPI > Add DeleteCustomerAsync method
 
 
-
-    
-
-
 # IN-PROGRESS
 
    [JWT] Identity.WebAPI > Partial update ConfigureServices into the Startup class
    
+   [JWT] Identity.WebAPI > Install-Package Microsoft.AspNetCore.Authentication.JwtBearer
 
 # DONE 
 
