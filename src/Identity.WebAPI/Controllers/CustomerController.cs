@@ -4,6 +4,7 @@ using Identity.Domain.Models.APIResponse;
 using Identity.Domain.Models.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -19,11 +20,18 @@ namespace Identity.WebAPI.Controllers
     {
         //
         private readonly ICustomerApplicationServices _customerApplicationServices;
-        
+        private readonly IConfiguration _configuration;
+
         //
-        public CustomerController(ICustomerApplicationServices customerApplicationServices)
+        public CustomerController
+            (
+                ICustomerApplicationServices customerApplicationServices
+                ,
+                IConfiguration configuration
+            )
         {
             this._customerApplicationServices = customerApplicationServices;
+            this._configuration = configuration;
         }
 
         //
@@ -74,5 +82,9 @@ namespace Identity.WebAPI.Controllers
 
             return Ok((APIResponseContentSuccess)result);
         }
+
+
+
+        public async Task<ActionResult<>>
     }
 }

@@ -51,6 +51,8 @@
 # IN-PROGRESS
 
    
+   CustomerJWT
+
    
 
    [JWT] Identity.Application.Interfaces > Add GenerateCustomerJWTToken into ICustomerApplicationServices 
