@@ -33,6 +33,9 @@ namespace Identity.Application.Configure
             services.AddScoped<ICustomerQueryOrchestrator, CustomerQueryOrchestrator>();
             services.AddScoped<ICustomerPersistenceServices, CustomerPersistenceServices>();
             services.AddScoped<ITransactionProcessingControlServices, TransactionProcessingControlServices>();
+            services.AddSingleton<IConfiguration>(configuration);
+
+
 
             // Dependency Injection # Identity.Infrastructure.Persistence
             InfrastructurePersistenceServiceCollectionExtensions.AddInfrastructurePersistenceServiceCollection(services, configuration);
