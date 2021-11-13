@@ -50,13 +50,16 @@
 
 # IN-PROGRESS
 
-   [JWT] Identity.Domain.Models.DTO > Add JWTSettingsDTO class 
+   
+   
 
    [JWT] Identity.Application.Interfaces > Add GenerateCustomerJWTToken into ICustomerApplicationServices 
 
    [JWT] Identity.Application.Models > Add GenerateCustomerJWTToken into CustomerApplicationServices 
    
 # DONE 
+
+    [JWT] Identity.Domain.Models.DTO > Add JWTSettingsDTO class 
 
     [JWT] Identity.WebAPI > Update ConfigureServices into the Startup class
     
