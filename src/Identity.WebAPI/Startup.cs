@@ -11,6 +11,8 @@ using System.IO;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace Identity.WebAPI
 {
@@ -29,34 +31,37 @@ namespace Identity.WebAPI
             services.AddApplicationServiceCollection(Configuration);
 
             services.AddAuthentication
-                     (
+                        (
                         options =>
                         {
                             options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                            //options.DefaultChallengeScheme = 
+                            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
                         }
 
-                    );
-                     
-                     //.AddJwtBearer(options =>
-                     //       {
-                     //           options.TokenValidationParameters = new TokenValidationParameters
-                     //           {
-                     //               ValidateIssuer = true,
-                     //               ValidateAudience = true,
-                     //               ValidateLifetime = true,
-                     //               ValidateIssuerSigningKey = true,
+                    )
+                    .AddJwtBearer
+                        (
+                            options =>
+                            {
+                                options.RequireHttpsMetadata = true;
+                                options.SaveToken = true;
+                                options.TokenValidationParameters = new TokenValidationParameters
+                                {
+                                    ValidateIssuer = true,
+                                    ValidateAudience = true,
+                                    ValidateLifetime = true,
+                                    ValidateIssuerSigningKey = true,
 
-                     //               ValidIssuer = Configuration["Jwt:Issuer"],
-                     //               ValidAudience = Configuration["Jwt:Audience"],
-                     //               IssuerSigningKey = new SymmetricSecurityKey
-                     //             (Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
-                     //           };
-                     //       });
+                                    ValidIssuer = Configuration["JWTSettings:Issuer"],
+                                    ValidAudience = Configuration["JWTSettings:Audience"],
+                                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWTSettings:Key"]))
+                                };
+                            }
+                        );
 
             services.AddApiVersioning
                 (
-                    options => 
+                    options =>
                     {
                         options.DefaultApiVersion = new ApiVersion(1, 0);
                         options.AssumeDefaultVersionWhenUnspecified = true;
@@ -75,14 +80,14 @@ namespace Identity.WebAPI
 
             services.AddControllers()
                     .AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<Startup>());
-                
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Identity.WebAPI", Version = "v1" });
 
-                    //var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                    //var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                    //c.IncludeXmlComments(xmlPath);
+                //var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                //var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                //c.IncludeXmlComments(xmlPath);
 
             });
         }
@@ -100,6 +105,8 @@ namespace Identity.WebAPI
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

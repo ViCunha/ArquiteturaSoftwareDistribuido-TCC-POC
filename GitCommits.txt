@@ -50,12 +50,14 @@
 
 # IN-PROGRESS
 
-   [JWT] Identity.WebAPI > Partial update ConfigureServices into the Startup class
+   [JWT] Identity.WebAPI > Update ConfigureServices into the Startup class
    
-   [JWT] Identity.WebAPI > Install-Package Microsoft.AspNetCore.Authentication.JwtBearer
+   
 
 # DONE 
-
+    
+    [JWT] Identity.WebAPI > Install-Package Microsoft.AspNetCore.Authentication.JwtBearer
+    
     xAureoDigital-BackEnd-MicroService-Identity > Update the solution and its projects to .Net 6.0
 
     [JWT] Identity.WebAPI > Add JWTSettings section into appsettings.json
