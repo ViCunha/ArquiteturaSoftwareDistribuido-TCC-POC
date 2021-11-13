@@ -50,14 +50,15 @@
 
 # IN-PROGRESS
 
-   
-   [JWT] Identity.Domain.Models.DTO > Add CustomerJWT class
 
-   [JWT] Identity.Application.Interfaces > Add GenerateCustomerJWTToken into ICustomerApplicationServices 
+
+   
 
    [JWT] Identity.Application.Models > Add GenerateCustomerJWTToken into CustomerApplicationServices 
    
 # DONE 
+
+    [JWT] Identity.Domain.Models.DTO > Add CustomerJWT class
 
     [JWT] Identity.Domain.Models.DTO > Pass IConfiguration in the constructor 
 

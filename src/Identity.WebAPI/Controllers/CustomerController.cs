@@ -84,7 +84,12 @@ namespace Identity.WebAPI.Controllers
         }
 
 
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CustomerJWT))]
+        public async Task<ActionResult<CustomerJWT>> GenerateJWTToCustomerAsync(CustomerDTO customerDTO)
+        {
 
-        public async Task<ActionResult<>>
+            return Ok(new CustomerJWT());
+        }
     }
 }

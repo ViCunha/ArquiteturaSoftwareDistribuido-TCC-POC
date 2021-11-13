@@ -1,4 +1,5 @@
 ﻿using Identity.Application.Interfaces;
+using Identity.Domain.Models.DTO;
 
 namespace Identity.Application.Models
 {
@@ -23,11 +24,16 @@ namespace Identity.Application.Models
             (
                 ICustomerQueryOrchestrator customerQueryOrchestrator
                 ,
-                ICustomerCommandOrchestrator CustomerCommandOrchestrator
+                ICustomerCommandOrchestrator customerCommandOrchestrator
             )
         {
             this._customerQueryOrchestrator = customerQueryOrchestrator;
-            this._customerCommandOrchestrator = CustomerCommandOrchestrator;
+            this._customerCommandOrchestrator = customerCommandOrchestrator;
+        }
+
+        public CustomerJWT GenerateJWTToCustomerAsync()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
