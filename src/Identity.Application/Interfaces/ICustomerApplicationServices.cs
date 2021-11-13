@@ -6,8 +6,9 @@ namespace Identity.Application.Interfaces
 
         public ICustomerQueryOrchestrator CustomerQueryOrchestrator { get; }
 
-
         public ICustomerCommandOrchestrator CustomerCommandOrchestrator { get; }
+
+        
 
     }
 }
