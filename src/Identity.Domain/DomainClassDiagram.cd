@@ -1,28 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Identity.Domain.Models.APIResponse.APIResponseContent" Collapsed="true">
-    <Position X="8.5" Y="3.5" Width="1.5" />
+  <Class Name="Identity.Domain.Models.APIResponse.APIResponseContent">
+    <Position X="8" Y="6.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAABBAAAAAAAAAAQAAAAABAAAAAAAAAAAgAA=</HashCode>
       <FileName>Models\APIResponse\APIResponseContent.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Identity.Domain.Models.APIResponse.APIResponseContentFailure" Collapsed="true">
-    <Position X="9.5" Y="4.75" Width="2.25" />
+  <Class Name="Identity.Domain.Models.APIResponse.APIResponseContentFailure">
+    <Position X="9.5" Y="9.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\APIResponse\APIResponseContentFailure.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Identity.Domain.Models.APIResponse.APIResponseContentSuccess" Collapsed="true">
-    <Position X="6.5" Y="4.75" Width="2.25" />
+  <Class Name="Identity.Domain.Models.APIResponse.APIResponseContentSuccess">
+    <Position X="6.5" Y="9.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\APIResponse\APIResponseContentSuccess.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Identity.Domain.Models.Events.Command" Collapsed="true">
-    <Position X="1.5" Y="4.75" Width="1.5" />
+  <Class Name="Identity.Domain.Models.Events.Command">
+    <Position X="1.5" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Events\Command.cs</FileName>
@@ -36,24 +36,24 @@
       <FileName>Models\Events\CommandHandler.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Identity.Domain.Models.Events.Event" Collapsed="true">
-    <Position X="3.75" Y="4.75" Width="1.5" />
+  <Class Name="Identity.Domain.Models.Events.Event">
+    <Position X="3.75" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Events\Event.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Identity.Domain.Models.Events.Message" Collapsed="true">
-    <Position X="2.75" Y="3.5" Width="1.5" />
+  <Class Name="Identity.Domain.Models.Events.Message">
+    <Position X="2.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAIAA=</HashCode>
       <FileName>Models\Events\Message.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Identity.Domain.Models.EventSourcing.EventSourcingHistory" Collapsed="true">
-    <Position X="1.75" Y="1.75" Width="1.75" />
+  <Class Name="Identity.Domain.Models.EventSourcing.EventSourcingHistory">
+    <Position X="1.75" Y="3.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAQAAABAAAIAAAAAAAAA=</HashCode>
+      <HashCode>QAAAAAAAAAAIAAAAAAAAAAAAAQAAABAAAIAAAAAAAAA=</HashCode>
       <FileName>Models\EventSourcing\EventSourcingRecord.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -65,23 +65,23 @@
       <FileName>Models\Validations\CustomerValidator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Identity.Domain.Models.Customer" Collapsed="true">
-    <Position X="4.25" Y="1.75" Width="1.5" />
+  <Class Name="Identity.Domain.Models.Customer">
+    <Position X="4.25" Y="3.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Customer.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Identity.Domain.Models.Entity" Collapsed="true">
-    <Position X="4.75" Y="0.5" Width="1.5" />
+  <Class Name="Identity.Domain.Models.Entity">
+    <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAIAAAEAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAEAAAAAEAAAAAAAAAAAABAAAAAAAACAAAA=</HashCode>
       <FileName>Models\Entity.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Identity.Domain.Models.TransactionProcessingControlHistory" Collapsed="true">
-    <Position X="6.5" Y="1.75" Width="2.75" />
+  <Class Name="Identity.Domain.Models.TransactionProcessingControlHistory">
+    <Position X="7.5" Y="3.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\TransactionProcessingControlHistory.cs</FileName>
