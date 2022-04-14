@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net;
 
 namespace Identity.Domain.Models.APIResponse
 {
@@ -15,18 +10,18 @@ namespace Identity.Domain.Models.APIResponse
 
         protected readonly bool _isSucess;
 
-        public object Response 
+        public object Response
         {
             get
             {
                 return FormatResponseObject();
-            } 
+            }
         }
 
         public APIResponseContent(int httpStatusCode, bool isSucess)
         {
             _httpStatusCode = httpStatusCode;
-            _httpStatusCodeDescription = ((HttpStatusCode) httpStatusCode).ToString();
+            _httpStatusCodeDescription = ((HttpStatusCode)httpStatusCode).ToString();
             _isSucess = isSucess;
         }
 

@@ -12,7 +12,7 @@ namespace Identity.Application.Interfaces
 
         public CustomerJWT GenerateJWTToCustomerAsync();
 
-        
+
 
     }
 }

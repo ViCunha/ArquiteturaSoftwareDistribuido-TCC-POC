@@ -2,8 +2,6 @@
 using Identity.Domain.Interfaces;
 using Identity.Domain.Models.Events;
 using MediatR;
-using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Identity.Application.MediatR
@@ -24,7 +22,7 @@ namespace Identity.Application.MediatR
 
         public async Task<ValidationResult> SendCommandAsync<T>(T @command) where T : Command
         {
-            return await _mediator.Send(@command); 
+            return await _mediator.Send(@command);
         }
     }
 

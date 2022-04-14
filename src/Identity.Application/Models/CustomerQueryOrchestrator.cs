@@ -1,15 +1,11 @@
 ﻿using AutoMapper;
-using Identity.Application.CQRS.Commands;
 using Identity.Application.Interfaces;
-using Identity.Domain.Interfaces;
-using Identity.Domain.Models;
 using Identity.Domain.Models.APIResponse;
 using Identity.Domain.Models.DTO;
 using Identity.Infrastructure.Persistence.Interfaces;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Identity.Application.Models

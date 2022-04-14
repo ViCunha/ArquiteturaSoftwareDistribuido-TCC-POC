@@ -5,8 +5,6 @@ using Identity.Domain.Models.Events;
 using Identity.Domain.Models.Validations;
 using Identity.Infrastructure.Persistence.Interfaces;
 using MediatR;
-using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 

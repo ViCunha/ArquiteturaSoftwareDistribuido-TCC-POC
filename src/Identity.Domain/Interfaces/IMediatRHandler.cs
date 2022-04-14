@@ -1,7 +1,5 @@
 ﻿using FluentValidation.Results;
 using Identity.Domain.Models.Events;
-using System;
-using System.Collections.Generic;
 
 using System.Threading.Tasks;
 

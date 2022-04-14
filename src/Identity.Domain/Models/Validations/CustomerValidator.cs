@@ -1,8 +1,5 @@
 ﻿using FluentValidation;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -25,7 +22,7 @@ namespace Identity.Domain.Models.Validations
 
         private async Task<bool> BeAValidSomething(string name, CancellationToken token)
         {
-            return await Task.Factory.StartNew(() => true); 
+            return await Task.Factory.StartNew(() => true);
         }
     }
 }

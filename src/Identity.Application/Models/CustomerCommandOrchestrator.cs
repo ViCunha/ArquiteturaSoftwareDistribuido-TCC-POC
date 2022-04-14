@@ -2,7 +2,6 @@
 using Identity.Application.CQRS.Commands;
 using Identity.Application.Interfaces;
 using Identity.Domain.Interfaces;
-using Identity.Domain.Models;
 using Identity.Domain.Models.APIResponse;
 using Identity.Domain.Models.DTO;
 using Microsoft.AspNetCore.Http;
@@ -34,10 +33,10 @@ namespace Identity.Application.Models
             var result = await _mediatRHandler.SendCommandAsync(new CreateNewCustomerCommand(customerDTO));
             if (result.Errors.Count != 0)
             {
-                return new APIResponseContentFailure(StatusCodes.Status400BadRequest, result.Errors.Select(x =>x.ErrorMessage).ToList());
+                return new APIResponseContentFailure(StatusCodes.Status400BadRequest, result.Errors.Select(x => x.ErrorMessage).ToList());
             }
-            
-            return new APIResponseContentSuccess(StatusCodes.Status200OK, customerDTO); 
+
+            return new APIResponseContentSuccess(StatusCodes.Status200OK, customerDTO);
         }
 
     }

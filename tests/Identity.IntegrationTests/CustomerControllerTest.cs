@@ -1,16 +1,14 @@
+using Identity.Application.Interfaces;
 using Identity.Domain.Models;
+using Identity.Domain.Models.APIResponse;
 using Identity.WebAPI.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using System.Linq;
+using Moq.AutoMock;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
-using System;
-using Moq.AutoMock;
-using Identity.Application.Interfaces;
-using Identity.Domain.Models.DTO;
-using Identity.Domain.Models.APIResponse;
 
 namespace Identity.IntegrationTests
 {
@@ -22,7 +20,7 @@ namespace Identity.IntegrationTests
             //Arrange
             var mocker = new AutoMocker();
             var controller = mocker.CreateInstance<CustomerController>();
-            
+
             mocker.GetMock<ICustomerQueryOrchestrator>()
                   .Setup(x => x.GetAllCustomersAsync())
                   .Returns(GetAllCustomersAsync());
@@ -47,7 +45,7 @@ namespace Identity.IntegrationTests
             {
                 return await Task<APIResponseContent>.Factory.StartNew
                     (
-                        () => new APIResponseContentSuccess(0, null) 
+                        () => new APIResponseContentSuccess(0, null)
                     );
             }
         }

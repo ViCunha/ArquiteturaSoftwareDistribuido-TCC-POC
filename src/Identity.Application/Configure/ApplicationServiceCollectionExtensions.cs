@@ -10,7 +10,6 @@ using Identity.Infrastructure.Persistence.Repositories;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Collections.Generic;
 
 namespace Identity.Application.Configure
 {

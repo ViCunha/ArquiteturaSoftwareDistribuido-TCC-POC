@@ -63,14 +63,14 @@ namespace Identity.WebAPI.Controllers
                 BadRequest((APIResponseContentFailure)result);
             }
 
-            return Ok((APIResponseContentSuccess) result);
+            return Ok((APIResponseContentSuccess)result);
         }
 
         //
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(APIResponseContent))]
-        public async Task<ActionResult<Customer>> CreateNewCustomerAsync (CustomerDTO customerDTO)
+        public async Task<ActionResult<Customer>> CreateNewCustomerAsync(CustomerDTO customerDTO)
         {
 
             var result = await _customerApplicationServices.CustomerCommandOrchestrator.CreateNewCustomerAsync(customerDTO);
